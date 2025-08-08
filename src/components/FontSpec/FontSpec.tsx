@@ -67,12 +67,6 @@ export default function FontSpecSheet() {
     // If NOT applied globally, uncomment the next line to ensure font vars exist here:
     // <div className={`${akzidenz.variable} ${univers.variable}`}>
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 lg:grid-cols-2">
-      {/* LEFT: dark text on light background */}
-      <Block title="Typography Specimens" inverse={false} />
-
-      {/* RIGHT: light text on dark background */}
-      <Block title="Typography Specimens" inverse />
-
       {/* Usage / Docs */}
       <section className="lg:col-span-2 rounded-2xl bg-paper-main ring-1 ring-paper-2 p-6">
         <h3 className="font-uni font-[700] text-xl tracking-tight mb-3">How to use these fonts</h3>
@@ -122,6 +116,11 @@ export default function FontSpecSheet() {
           </div>
         </div>
       </section>
+      {/* LEFT: dark text on light background */}
+      <Block title="Typography Specimens" inverse={false} />
+
+      {/* RIGHT: light text on dark background */}
+      <Block title="Typography Specimens" inverse />
     </div>
     // </div>
   );

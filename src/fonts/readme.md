@@ -1,5 +1,10 @@
-The raw fonts supplied by our designers are not in wott2 format (which is a compressed and web optimized format).
-I've manually compressed and converted the relevant font files. If you need to add any, or adjust the compression, here are the steps.
+## Adding more fonts
+
+The fonts themselves are defined in src/app/fonts.tsx. Once you've added a font there, you then need to add them to globals.css under the `@theme` defintion, and if you want nice combined classes, add those to `@layer components`.
+
+## Compressing fonts
+
+The raw fonts supplied by our designers are not in wott2 format (which is a compressed and web optimized format). I've manually compressed and converted the relevant font files. If you need to add any, or adjust the compression, here are the steps.
 
 1. Install python's font tools with `pip install fonttools brotli zopfli`
 2. Convert the font using the snippet below:
