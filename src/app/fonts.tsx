@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 export const akzidenz = localFont({
   src: [
     {
-      path: "../fonts/akzidenz/Akzidenz-Grotesk-Black.otf",
+      path: "../fonts/compressed/Akzidenz-Grotesk-Black-latinExt-puct-curr.woff2",
       weight: "900",
       style: "normal",
     },
@@ -19,12 +19,12 @@ export const akzidenz = localFont({
 export const univers = localFont({
   src: [
     {
-      path: "../fonts/univers/UniversRegular.ttf",
+      path: "../fonts/compressed/UniversRegular-latinExt-puct-curr.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/univers/UniversBold.ttf",
+      path: "../fonts/compressed/UniversBold-latinExt-puct-curr.woff2",
       weight: "700",
       style: "normal",
     },

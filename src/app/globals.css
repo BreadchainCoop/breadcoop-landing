@@ -39,10 +39,9 @@
   --color-text-standard: #171414;
 
   /* Custom Fonts */
-  --font-inter: var(--font-inter);
   --font-roboto: var(--font-roboto);
-  --font-akzidenz: var(--font-inter);
-  --font-univers: var(--font-roboto);
+  --font-akzidenz: var(--font-akzidenz);
+  --font-univers: var(--font-univers);
 }
 
 @media (prefers-color-scheme: dark) {
