@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 export const akzidenz = localFont({
   src: [
     {
-      path: "../fonts/akzidenz/AkzidenzGroteskBE-Super.otf",
+      path: "../fonts/akzidenz/Akzidenz-Grotesk-Black.otf",
       weight: "900",
       style: "normal",
     },
@@ -19,7 +19,7 @@ export const akzidenz = localFont({
 export const univers = localFont({
   src: [
     {
-      path: "../fonts/univers/UniversRegular.otf", // or .ttf
+      path: "../fonts/univers/UniversRegular.ttf",
       weight: "400",
       style: "normal",
     },
