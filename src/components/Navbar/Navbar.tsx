@@ -8,16 +8,23 @@ import {
   ArrowSquareOutIcon,
   ArrowUpRightIcon,
   ArrowUpIcon,
+  List,
+  X,
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
 
 export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const showDropdown = isDropdownOpen || isHovered;
@@ -40,23 +47,23 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-paper-0 border-b border-paper-2 px-6 py-4 relative">
+    <nav className="bg-paper-main border-b border-paper-2 px-6 py-4 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand */}
         <div className="flex items-center gap-3">
           <Image
             src="/logo.svg"
             alt="Bread Cooperative Logo"
-            width={40}
-            height={40}
-            className="w-10 h-10"
+            width={32}
+            height={32}
+            className="w-8 h-8"
           />
-          <span className="font-inter font-bold text-[40px] text-text-standard leading-none">
+          <span className="hidden md:block text-akz-bold text-text-standard leading-none">
             BREAD COOPERATIVE
           </span>
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
           <div className="group relative" ref={dropdownRef}>
             <div
@@ -65,7 +72,7 @@ export function Navbar() {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <span className="font-univers">Solidarity tools</span>
+              <span className="text-body">Solidarity tools</span>
               {showDropdown ? (
                 <ArrowUpIcon className="w-4 h-4" />
               ) : (
@@ -83,12 +90,12 @@ export function Navbar() {
             >
               <div className="flex">
                 {/* First Column - 66% width */}
-                <div className="w-2/3 p-8">
-                  <h3 className="font-akzidenz font-bold uppercase text-xl text-text-standard mb-6">
+                <div className="w-2/3">
+                  <h4 className="text-h4 uppercase text-surface-grey mb-6">
                     Bread Solidarity Tools
-                  </h3>
+                  </h4>
 
-                  <div className="space-y-6">
+                  <div className="space-y-6 px-[10px]">
                     {/* Item 1 */}
                     <div className="flex items-center gap-4">
                       <Image
@@ -99,10 +106,10 @@ export function Navbar() {
                         className="w-8 h-8 flex-shrink-0"
                       />
                       <div>
-                        <div className="font-univers font-bold text-text-standard">
+                        <div className="text-body-bold text-text-standard">
                           Solidarity fund
                         </div>
-                        <div className="font-univers font-light text-surface-grey">
+                        <div className="text-body text-surface-grey">
                           Funding post-capitalism.
                         </div>
                       </div>
@@ -119,14 +126,14 @@ export function Navbar() {
                       />
                       <div>
                         <div className="flex items-center gap-2">
-                          <div className="font-univers font-bold text-text-standard">
+                          <div className="text-body-bold text-text-standard">
                             Savings
                           </div>
-                          <div className="font-univers font-bold text-primary-orange text-xs">
+                          <div className="text-body-bold text-primary-orange text-xs">
                             Coming soon
                           </div>
                         </div>
-                        <div className="font-univers font-light text-surface-grey">
+                        <div className="text-body text-surface-grey">
                           Save money together.
                         </div>
                       </div>
@@ -143,14 +150,14 @@ export function Navbar() {
                       />
                       <div>
                         <div className="flex items-center gap-2">
-                          <div className="font-univers font-bold text-text-standard">
+                          <div className="text-body-bold text-text-standard">
                             Insurance
                           </div>
-                          <div className="font-univers font-bold text-primary-orange text-xs">
+                          <div className="text-body-bold text-primary-orange text-xs">
                             Coming soon
                           </div>
                         </div>
-                        <div className="font-univers font-light text-surface-grey">
+                        <div className="text-body text-surface-grey">
                           Save money together.
                         </div>
                       </div>
@@ -166,10 +173,10 @@ export function Navbar() {
                         className="w-8 h-8 flex-shrink-0"
                       />
                       <div>
-                        <div className="font-univers font-bold text-text-standard">
+                        <div className="text-body-bold text-text-standard">
                           I have a post-capitalist idea...
                         </div>
-                        <div className="font-univers font-light text-surface-grey">
+                        <div className="text-body text-surface-grey">
                           Have a better idea? Share it.
                         </div>
                       </div>
@@ -180,16 +187,16 @@ export function Navbar() {
                 {/* Second Column - Orange box */}
                 <div className="w-1/3 bg-primary-orange relative">
                   <div className="absolute top-4 right-4">
-                    <ArrowUpRightIcon className="w-6 h-6 text-white" />
+                    <ArrowUpRightIcon className="w-6 h-6 text-text-standard" />
                   </div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="font-akzidenz font-black text-white text-5xl">
+                    <div className="text-h2 leading-[48px] text-white">
                       What is $BREAD?
                     </div>
                     <div className="mt-4">
                       <Link
                         href="#"
-                        className="font-univers text-primary-blue underline text-base"
+                        className="text-body text-primary-blue underline"
                       >
                         Read more in our documentation
                       </Link>
@@ -202,33 +209,235 @@ export function Navbar() {
 
           <Link
             href="#"
-            className="font-univers text-text-standard hover:text-primary-orange"
+            className="text-body text-text-standard hover:text-primary-orange"
           >
             Docs
           </Link>
           <Link
             href="#"
-            className="font-univers text-text-standard hover:text-primary-orange"
+            className="text-body text-text-standard hover:text-primary-orange"
           >
             Blog
           </Link>
           <Link
             href="#"
-            className="font-univers text-text-standard hover:text-primary-orange"
+            className="text-body text-text-standard hover:text-primary-orange"
           >
             Contribute
           </Link>
         </div>
 
-        {/* Visit App Button */}
-        <Button
-          variant="primary"
-          className="bg-primary-orange flex items-center gap-2"
-        >
-          <span>Visit app</span>
-          <ArrowSquareOutIcon className="w-4 h-4" />
-        </Button>
+        {/* Right side buttons */}
+        <div className="flex items-center gap-4">
+          {/* Desktop: Visit App Button */}
+          <div className="hidden md:block">
+            <Button
+              variant="primary"
+              className="bg-primary-orange flex items-center gap-2"
+            >
+              <span>Visit app</span>
+              <ArrowSquareOutIcon className="w-4 h-4" />
+            </Button>
+          </div>
+
+          {/* Mobile: Visit App Button */}
+          <div className="md:hidden">
+            <Button
+              variant="primary"
+              className="bg-primary-orange flex items-center gap-2"
+            >
+              <span>Visit app</span>
+              <ArrowSquareOutIcon className="w-4 h-4" />
+            </Button>
+          </div>
+
+          {/* Mobile: Hamburger Menu */}
+          <div className="md:hidden">
+            <button className="text-primary-orange" onClick={toggleMobileMenu}>
+              <List className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-paper-main z-50 md:hidden">
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-paper-2">
+            <Image
+              src="/logo.svg"
+              alt="Bread Cooperative Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
+            <div className="flex items-center gap-4">
+              <Button
+                variant="primary"
+                className="bg-primary-orange flex items-center gap-2"
+              >
+                <span>Visit app</span>
+                <ArrowSquareOutIcon className="w-4 h-4" />
+              </Button>
+              <button
+                className="text-primary-orange"
+                onClick={toggleMobileMenu}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Content */}
+          <div className="p-6 space-y-8">
+            {/* Informational Banner */}
+            <div className="bg-primary-orange rounded-none px-[20px] py-[10px] relative overflow-hidden h-[118px]">
+              <div className="text-body-bold pt-8 text-[24px] text-paper-main">
+                What is $BREAD?
+              </div>
+              <Link href="#" className="text-body text-primary-blue underline">
+                Read more in our documentation
+              </Link>
+              <div className="absolute top-4 right-4">
+                <ArrowUpRightIcon className="w-6 h-6 text-text-standard" />
+              </div>
+            </div>
+
+            {/* Bottom Navigation Links */}
+            <div className="space-y-4 p-2 ">
+              <div
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <span className="text-body text-text-standard hover:text-primary-orange">
+                  Solidarity tools
+                </span>
+                {isDropdownOpen ? (
+                  <ArrowUpIcon className="w-4 h-4 text-text-standard" />
+                ) : (
+                  <ArrowDownIcon className="w-4 h-4 text-text-standard" />
+                )}
+              </div>
+
+              {isDropdownOpen && (
+                <div className="pl-4 space-y-4">
+                  <h4 className="text-h4 uppercase text-surface-grey mb-4">
+                    BREAD SOLIDARITY TOOLS
+                  </h4>
+
+                  <div className="space-y-4">
+                    {/* Item 1 */}
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src="/logo.svg"
+                        alt="Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 flex-shrink-0"
+                      />
+                      <div>
+                        <div className="text-body-bold text-text-standard">
+                          Solidarity fund
+                        </div>
+                        <div className="text-body text-surface-grey">
+                          Funding post-capitalism.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src="/logo-blue.svg"
+                        alt="Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 flex-shrink-0"
+                      />
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <div className="text-body-bold text-text-standard">
+                            Savings
+                          </div>
+                          <div className="text-body-bold text-primary-orange text-xs">
+                            Coming soon
+                          </div>
+                        </div>
+                        <div className="text-body text-surface-grey">
+                          Save money together.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src="/logo-green.svg"
+                        alt="Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 flex-shrink-0"
+                      />
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <div className="text-body-bold text-text-standard">
+                            Insurance
+                          </div>
+                          <div className="text-body-bold text-primary-orange text-xs">
+                            Coming soon
+                          </div>
+                        </div>
+                        <div className="text-body text-surface-grey">
+                          Save money together.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Item 4 */}
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src="/logo-stroke.svg"
+                        alt="Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 flex-shrink-0"
+                      />
+                      <div>
+                        <div className="text-body-bold text-text-standard">
+                          I have a post-capitalist idea...
+                        </div>
+                        <div className="text-body text-surface-grey">
+                          Have a better idea? Share it.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <Link
+                href="#"
+                className="block text-body text-text-standard hover:text-primary-orange"
+              >
+                Docs
+              </Link>
+              <Link
+                href="#"
+                className="block text-body text-text-standard hover:text-primary-orange"
+              >
+                Blog
+              </Link>
+              <Link
+                href="#"
+                className="block text-body text-text-standard hover:text-primary-orange"
+              >
+                Contribute
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

@@ -52,12 +52,31 @@
 }
 
 @layer components {
-  .text-h1 { @apply font-akz font-[900] text-[5rem] tracking-[-2.5%] uppercase; }
-  .text-h2 { @apply font-akz font-[900] text-[3rem] tracking-[-2.5%]; }
-  .text-h3 { @apply font-uni font-[700] text-[2rem] tracking-[-2.5%]; }
-  .text-body { @apply font-uni text-base; }
-  .text-body-bold { @apply font-uni text-base font-[700]; }
-  .text-caption { @apply font-uni text-[0.7rem]; }
+  .text-h1 {
+    @apply font-akz font-[900] text-[5rem] tracking-[-2.5%] uppercase;
+  }
+  .text-h2 {
+    @apply font-akz font-[900] text-[3rem] tracking-[-2.5%];
+  }
+  .text-h3 {
+    @apply font-uni font-[700] text-[2rem] tracking-[-2.5%];
+  }
+  .text-h4 {
+    @apply font-akz font-[500] text-[1rem];
+  }
+  .text-body {
+    @apply font-uni text-base;
+  }
+
+  .text-akz-bold {
+    @apply font-akz font-[300] text-base;
+  }
+  .text-body-bold {
+    @apply font-uni text-base font-[700];
+  }
+  .text-caption {
+    @apply font-uni text-[0.7rem];
+  }
 }
 
 body {
