@@ -42,11 +42,11 @@ export default function LiftedButton({
   // Turn out inputs into CSS variables for use with tailwind.
   // More bloody boilerplate really.
   const styleVars: React.CSSProperties = {
-    // colors
     ["--btn-bg" as any]: bgCol,
     ["--btn-text" as any]: textCol,
     ["--btn-hover-bg" as any]: hoverBgCol,
     ["--btn-hover-text" as any]: hoverTextCol,
+    // colors
     ["--btn-shadow" as any]: shadowBgCol,
     // offset
     ["--btn-offset" as any]: `${offsetPx}px`,
@@ -61,28 +61,27 @@ export default function LiftedButton({
     "px-4 py-2",
   ]
   
- // `bg-[${bgCol}] text-[${textCol}]`,
   const activeClassNames = [
-    // idle colors
+    // idle colours
     "bg-[var(--btn-bg)] text-[var(--btn-text)]",
-    // hover colors
+    // hover colours
     "group-hover:bg-[var(--btn-hover-bg)] group-hover:text-[var(--btn-hover-text)]",
-    // on click/activate restores colors (same as idle)
+    // active (returns to idle colours)
     "group-active:bg-[var(--btn-bg)] group-active:text-[var(--btn-text)]",
     // motion
     "transition-all duration-[var(--btn-duration)] ease-out",
-    // initial lifted offset
-    "translate-x-[var(--btn-offset)] translate-y-[var(--btn-offset)]",
-    // on active (click), snap to base (0,0)
+    // lifted offset
+    "-translate-x-[var(--btn-offset)] -translate-y-[var(--btn-offset)]",
+    // depress to base on active
     "group-active:translate-x-0 group-active:translate-y-0",
-    // focus styles for accessibility
-    "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-    "focus-visible:ring-white/80 focus-visible:ring-offset-black/40",
   ]
 
   const disabledClassNames = [
     "bg-[var(--color-surface-grey)] text-[var(--color-background)] opacity-50",
   ]
+
+  const classNames = baseClassNames.concat(disabled ? disabledClassNames : activeClassNames)
+  classNames.push(className)
 
   return (
     <span
@@ -98,11 +97,7 @@ export default function LiftedButton({
       {/* Main button */}
       <button
         type={type}
-        className={[
-          ...baseClassNames,
-          ...[disabled ? disabledClassNames : activeClassNames],
-          className,
-        ].join(" ")}
+        className={classNames.join(" ")}
         {...rest}
       >
         {leftIcon ? <span className="shrink-0" aria-hidden>{leftIcon}</span> : null}
