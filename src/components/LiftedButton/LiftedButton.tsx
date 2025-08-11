@@ -1,4 +1,5 @@
 import React from "react";
+import { LiftedButtonColors, LiftedButtonPreset, LIFTED_BUTTON_PRESETS, colorsToStyleVars } from "./LiftedButtonPresets";
 
 // Boilerplate for typesafe inputs
 export type LiftedButtonProps = {
@@ -6,11 +7,8 @@ export type LiftedButtonProps = {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   disabled?: boolean;
-  bgCol?: string;
-  textCol?: string;
-  hoverBgCol?: string;
-  hoverTextCol?: string;
-  shadowBgCol?: string;
+  preset: LiftedButtonPreset,
+  colorOverrides: Partial<LiftedButtonColors>,
   offsetPx?: number;
   durationMs?: number;
   className?: string;
@@ -28,11 +26,8 @@ export default function LiftedButton({
   leftIcon,
   rightIcon,
   disabled = false,
-  bgCol = "#e11d48", // rose-600
-  textCol = "#ffffff",
-  hoverBgCol = "#fb7185", // rose-400
-  hoverTextCol = "#ffffff",
-  shadowBgCol = "#111827", // gray-900
+  preset = "primary",
+  colorOverrides = {},
   offsetPx = 4,
   durationMs = 500,
   className = "",
@@ -41,13 +36,10 @@ export default function LiftedButton({
 }: LiftedButtonProps) {
   // Turn out inputs into CSS variables for use with tailwind.
   // More bloody boilerplate really.
+  const base = LIFTED_BUTTON_PRESETS[preset];
+  const mergedColors: LiftedButtonColors = { ...base, ...(colorOverrides) };
   const styleVars: React.CSSProperties = {
-    ["--btn-bg" as any]: bgCol,
-    ["--btn-text" as any]: textCol,
-    ["--btn-hover-bg" as any]: hoverBgCol,
-    ["--btn-hover-text" as any]: hoverTextCol,
-    // colors
-    ["--btn-shadow" as any]: shadowBgCol,
+    ...colorsToStyleVars(mergedColors),
     // offset
     ["--btn-offset" as any]: `${offsetPx}px`,
     // timing
@@ -56,9 +48,10 @@ export default function LiftedButton({
 
   const baseClassNames = [
     // layout (can have text and button, always horizontally and vertivally centered)
-    "relative z-10 inline-flex items-center justify-center gap-2",
+    "relative z-10 inline-flex items-center justify-center gap-[8px]",
+    "text-body-bold text-[16px]",
     // padding
-    "px-4 py-2",
+    "px-[32px] py-[8px]",
   ]
   
   const activeClassNames = [
@@ -100,33 +93,10 @@ export default function LiftedButton({
         className={classNames.join(" ")}
         {...rest}
       >
-        {leftIcon ? <span className="shrink-0" aria-hidden>{leftIcon}</span> : null}
-        <span className="whitespace-nowrap leading-none">{children}</span>
-        {rightIcon ? <span className="shrink-0" aria-hidden>{rightIcon}</span> : null}
+        {leftIcon ? <span className="shrink-0 p-[5px]" aria-hidden>{leftIcon}</span> : null}
+        <span className="whitespace-nowrap leading-none p-[5px]">{children}</span>
+        {rightIcon ? <span className="shrink-0 p-[5px]" aria-hidden>{rightIcon}</span> : null}
       </button>
     </span>
   );
 }
-
-/*
-Usage example (Next.js / React):
-
-import { ArrowRight } from "lucide-react";
-import LiftedButton from "@/components/ui/LiftedButton";
-
-export default function Example() {
-  return (
-    <div className="p-8 bg-neutral-900 min-h-[50vh] flex items-center justify-center">
-      <LiftedButton
-        rightIcon={<ArrowRight size={18} />}
-        bg="#dc2626" // red-600
-        hoverBg="#f87171" // red-400
-        shadowBg="#1f2937" // gray-800
-        onClick={() => console.log("clicked")}
-      >
-        Click Me
-      </LiftedButton>
-    </div>
-  );
-}
-*/

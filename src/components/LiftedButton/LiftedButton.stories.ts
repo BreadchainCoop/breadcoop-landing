@@ -7,11 +7,7 @@ const meta: Meta<typeof LiftedButton> = {
   title: "Components/LiftedButton",
   component: LiftedButton,
   argTypes: {
-    bgCol: { control: "color" },
-    textCol: { control: "color" },
-    hoverBgCol: { control: "color" },
-    hoverTextCol: { control: "color" },
-    shadowBgCol: { control: "color" },
+    preset: { control: { type: "radio"}, options: ["primary", "secondary", "destructive", "positive"]},
     offsetPx: { control: { type: "number", min: 0, max: 20, step: 1 } },
     durationMs: { control: { type: "number", min: 100, max: 2000, step: 50 } },
   },
@@ -32,18 +28,6 @@ export const WithIcons: Story = {
     children: "Next",
     leftIcon: React.createElement(ArrowRight, { size: 18, weight: "bold" }),
     rightIcon: React.createElement(ArrowRight, { size: 18, weight: "bold" }),
-  },
-};
-
-export const CustomColors: Story = {
-  args: {
-    children: "Custom Colors",
-    rightIcon: React.createElement(ArrowRight, { size: 18, weight: "bold" }),
-    bgCol: "#dc2626", // red-600
-    textCol: "#ffffff",
-    hoverBgCol: "#f87171", // red-400
-    hoverTextCol: "#000000",
-    shadowBgCol: "#1f2937", // gray-800
   },
 };
 
