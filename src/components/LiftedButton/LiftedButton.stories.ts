@@ -27,9 +27,10 @@ export const Default: Story = {
   },
 };
 
-export const WithIcon: Story = {
+export const WithIcons: Story = {
   args: {
     children: "Next",
+    leftIcon: React.createElement(ArrowRight, { size: 18, weight: "bold" }),
     rightIcon: React.createElement(ArrowRight, { size: 18, weight: "bold" }),
   },
 };

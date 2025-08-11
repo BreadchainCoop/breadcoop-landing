@@ -3,7 +3,9 @@ import React from "react";
 // Boilerplate for typesafe inputs
 export type LiftedButtonProps = {
   children: React.ReactNode;
+  leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  disabled?: boolean;
   bgCol?: string;
   textCol?: string;
   hoverBgCol?: string;
@@ -23,7 +25,9 @@ export type LiftedButtonProps = {
  */
 export default function LiftedButton({
   children,
+  leftIcon,
   rightIcon,
+  disabled = false,
   bgCol = "#e11d48", // rose-600
   textCol = "#ffffff",
   hoverBgCol = "#fb7185", // rose-400
@@ -46,11 +50,39 @@ export default function LiftedButton({
     ["--btn-shadow" as any]: shadowBgCol,
     // offset
     ["--btn-offset" as any]: `${offsetPx}px`,
-    ["--btn-off-x" as any]: `calc(-1 * var(--btn-offset))`,
-    ["--btn-off-y" as any]: `calc(-1 * var(--btn-offset))`,
     // timing
     ["--btn-duration" as any]: `${durationMs}ms`,
   };
+
+  const baseClassNames = [
+    // layout (can have text and button, always horizontally and vertivally centered)
+    "relative z-10 inline-flex items-center justify-center gap-2",
+    // padding
+    "px-4 py-2",
+  ]
+  
+ // `bg-[${bgCol}] text-[${textCol}]`,
+  const activeClassNames = [
+    // idle colors
+    "bg-[var(--btn-bg)] text-[var(--btn-text)]",
+    // hover colors
+    "group-hover:bg-[var(--btn-hover-bg)] group-hover:text-[var(--btn-hover-text)]",
+    // on click/activate restores colors (same as idle)
+    "group-active:bg-[var(--btn-bg)] group-active:text-[var(--btn-text)]",
+    // motion
+    "transition-all duration-[var(--btn-duration)] ease-out",
+    // initial lifted offset
+    "translate-x-[var(--btn-offset)] translate-y-[var(--btn-offset)]",
+    // on active (click), snap to base (0,0)
+    "group-active:translate-x-0 group-active:translate-y-0",
+    // focus styles for accessibility
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+    "focus-visible:ring-white/80 focus-visible:ring-offset-black/40",
+  ]
+
+  const disabledClassNames = [
+    "bg-[var(--color-surface-grey)] text-[var(--color-background)] opacity-50",
+  ]
 
   return (
     <span
@@ -61,38 +93,19 @@ export default function LiftedButton({
       style={styleVars}
     >
       {/* Background layer */}
-      <span
-        aria-hidden
-        className="absolute inset-0 bg-[var(--btn-shadow)]"
-      />
+      {disabled ? null : <span aria-hidden className="absolute inset-0 bg-[var(--btn-shadow)]"/>}
 
       {/* Main button */}
       <button
         type={type}
         className={[
-          // layout (can have text and button, always horizontally and vertivally centered)
-          "relative z-10 inline-flex items-center justify-center gap-2",
-          // padding
-          "px-4 py-2",
-          // idle colors
-          "bg-[var(--btn-bg)] text-[var(--btn-text)]",
-          // hover colors
-          "group-hover:bg-[var(--btn-hover-bg)] group-hover:text-[var(--btn-hover-text)]",
-          // on click/activate restores colors (same as idle)
-          "group-active:bg-[var(--btn-bg)] group-active:text-[var(--btn-text)]",
-          // motion
-          "transition-all duration-[var(--btn-duration)] ease-out",
-          // initial lifted offset
-          "translate-x-[var(--btn-off-x)] translate-y-[var(--btn-off-y)]",
-          // on active (click), snap to base (0,0)
-          "group-active:translate-x-0 group-active:translate-y-0",
-          // focus styles for accessibility
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-          "focus-visible:ring-white/80 focus-visible:ring-offset-black/40",
+          ...baseClassNames,
+          ...[disabled ? disabledClassNames : activeClassNames],
           className,
         ].join(" ")}
         {...rest}
       >
+        {leftIcon ? <span className="shrink-0" aria-hidden>{leftIcon}</span> : null}
         <span className="whitespace-nowrap leading-none">{children}</span>
         {rightIcon ? <span className="shrink-0" aria-hidden>{rightIcon}</span> : null}
       </button>
