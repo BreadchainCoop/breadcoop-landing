@@ -1,5 +1,8 @@
+'use client'
+
 import React from "react";
 import { LiftedButtonColors, LiftedButtonPreset, LIFTED_BUTTON_PRESETS, colorsToStyleVars } from "./LiftedButtonPresets";
+import {ArrowUpRightIcon} from "@phosphor-icons/react/ssr";
 
 // Boilerplate for typesafe inputs
 export type LiftedButtonProps = {
@@ -42,17 +45,13 @@ export default function LiftedButton({
   const mergedColors: LiftedButtonColors = { ...base, ...(colorOverrides) };
   const styleVars: React.CSSProperties = {
     ...colorsToStyleVars(mergedColors),
-    // offset
     ["--btn-offset" as any]: `${offsetPx}px`,
-    // timing
     ["--btn-duration" as any]: `${durationMs}ms`,
   };
 
   const baseClassNames = [
-    // layout (can have text and button, always horizontally and vertivally centered)
     "relative z-10 inline-flex items-center justify-center gap-[8px]",
     "text-body-bold text-[16px]",
-    // padding
     "px-[32px] py-[8px]",
   ]
   
