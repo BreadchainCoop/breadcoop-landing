@@ -93,9 +93,9 @@ export default function LiftedButton({
         className={classNames.join(" ")}
         {...rest}
       >
-        {leftIcon ? <span className="shrink-0 p-[5px]" aria-hidden>{leftIcon}</span> : null}
+        {leftIcon ? <span className="shrink-0 py-[5px]" aria-hidden>{leftIcon}</span> : null}
         <span className="whitespace-nowrap leading-none p-[5px]">{children}</span>
-        {rightIcon ? <span className="shrink-0 p-[5px]" aria-hidden>{rightIcon}</span> : null}
+        {rightIcon ? <span className="shrink-0 py-[5px]" aria-hidden>{rightIcon}</span> : null}
       </button>
     </span>
   );
