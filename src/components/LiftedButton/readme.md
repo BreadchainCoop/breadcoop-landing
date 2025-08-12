@@ -1,5 +1,5 @@
 ## How to update the hardcoded presets
-Go into Lifted button presets and look at the `LIFTED_BUTTON_PRESETS` definition.
+Go into `LiftedButtonPresets.tsx` and look at the `LIFTED_BUTTON_PRESETS` definition.
 God help you if you want to add gradients.
 
 ## How to use
@@ -20,10 +20,10 @@ export default function Home() {
 function doSomething() { alert("You do it!") }
 ```
 
-### With an icon
 You could use any of the style presets "primary" (default), "secondary", "destructive", or "positive":
 `<LiftedButton onPress={doSomething} preset="positive">Click here</LiftedButton>`
 
+### With an icon
 Set icons using the iconRight or iconLeft fields. Note, you'll need to import and configure your icon first:
 ``` javascript
 import { LiftedButton } from "@/components/LiftedButton";
@@ -53,3 +53,6 @@ export default function Home() {
   )
 }
 ```
+
+## Note on the design and interface
+The interface of the LiftedButton pretty basic apart from handling colours. There's built in presets which can be defined with a string, and `LIFTED_BUTTON_PRESETS`is the object which definines those schemes. `LiftedButtonPreset` is where we get our enum of scheme names.

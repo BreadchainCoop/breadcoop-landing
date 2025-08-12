@@ -1,21 +1,4 @@
-export type LiftedButtonPreset = keyof typeof LIFTED_BUTTON_PRESETS
-
-/** Merge chosen preset + manual overrides, then emit CSS vars. */
-export function colorsToStyleVars(c: LiftedButtonColors): React.CSSProperties {
-  return {
-    ["--btn-bg" as any]: asCssValue(c.bg),
-    ["--btn-text" as any]: asCssValue(c.text),
-    ["--btn-hover-bg" as any]: asCssValue(c.hoverBg),
-    ["--btn-hover-text" as any]: asCssValue(c.hoverText),
-    ["--btn-shadow" as any]: asCssValue(c.shadowBg),
-  };
-}
-
-function asCssValue(v: string): string {
-  if (!v) return "";
-  return v.startsWith("--") ? `var(${v})` : v;
-}
-
+/* Structured colours our button uses */
 export type LiftedButtonColors = {
   bg: string;
   text: string;
@@ -24,6 +7,10 @@ export type LiftedButtonColors = {
   shadowBg: string;
 };
 
+/* Exposes our predefined styles as an enum like object */
+export type LiftedButtonPreset = keyof typeof LIFTED_BUTTON_PRESETS
+
+/* Library of pre-defined styles */
 export const LIFTED_BUTTON_PRESETS = {
   primary: {
     bg: "--color-primary-orange",
@@ -53,4 +40,21 @@ export const LIFTED_BUTTON_PRESETS = {
     hoverText: "#ffffff",
     shadowBg: "#595959",
   },
+}
+
+/* Converts the LiftedButtonColors object into CSS properties that tailwind can work with */
+export function colorsToStyleVars(c: LiftedButtonColors): React.CSSProperties {
+  return {
+    ["--btn-bg" as any]: asCssValue(c.bg),
+    ["--btn-text" as any]: asCssValue(c.text),
+    ["--btn-hover-bg" as any]: asCssValue(c.hoverBg),
+    ["--btn-hover-text" as any]: asCssValue(c.hoverText),
+    ["--btn-shadow" as any]: asCssValue(c.shadowBg),
+  };
+}
+
+/* Looks for CSS variables and wraps them with var() if found */
+function asCssValue(v: string): string {
+  if (!v) return "";
+  return v.startsWith("--") ? `var(${v})` : v;
 }
