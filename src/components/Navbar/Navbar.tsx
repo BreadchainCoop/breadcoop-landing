@@ -82,7 +82,7 @@ export function Navbar() {
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-1/2 transform -translate-x-1/2 w-[75vw] bg-paper-main border border-primary-orange shadow-lg transition-all duration-200 z-50 p-4 ${
+              className={`fixed top-[72px] left-1/2 transform -translate-x-1/2 md:w-[717px] lg:w-[917px] max-w-[917px] w-[65vw] bg-paper-main border border-primary-orange shadow-lg transition-all duration-200 z-50 p-4 ${
                 showDropdown ? "opacity-100 visible" : "opacity-0 invisible"
               }`}
               onMouseEnter={() => setIsHovered(true)}

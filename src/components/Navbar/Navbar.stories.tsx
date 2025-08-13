@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import React from "react";
 
 import { Navbar } from "./Navbar";
 
@@ -12,6 +13,13 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ height: "100vh" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
