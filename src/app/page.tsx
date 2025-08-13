@@ -1,5 +1,8 @@
+'use client'
+
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
+import { LiftedButton } from "@/components/LiftedButton";
 
 export default function Home() {
   return (
@@ -13,6 +16,7 @@ export default function Home() {
             <h1 className="text-h1 md:text-7xl text-text-standard mb-6">
               Imagine a post-capitalist world with us
             </h1>
+            <LiftedButton onClick={doSomething}>Click here</LiftedButton>
             <p className="font-univers text-xl text-surface-grey max-w-3xl mx-auto mb-8">
               Bread Cooperative is a worker collective building crypto tools for
               solidarity.
@@ -28,4 +32,8 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+function doSomething() {
+  alert("Something")
 }
