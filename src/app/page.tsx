@@ -1,39 +1,371 @@
-'use client'
+"use client";
 
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 import { LiftedButton } from "@/components/LiftedButton";
+import { ArrowUpRightIcon, ArrowRightIcon } from "@phosphor-icons/react/ssr";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-paper-0 to-paper-1 py-20 px-6">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-h1 md:text-7xl text-text-standard mb-6">
-              Imagine a post-capitalist world with us
-            </h1>
-            <LiftedButton onClick={doSomething}>Click here</LiftedButton>
-            <p className="font-univers text-xl text-surface-grey max-w-3xl mx-auto mb-8">
-              Bread Cooperative is a worker collective building crypto tools for
-              solidarity.
-            </p>
-          </div>
-        </section>
-        {/* Features Section */}
-        <section className="py-20 px-6 bg-paper-0"></section>
-        {/* CTA Section */}
-        <section className="py-20 px-6 bg-primary-orange"></section>
+      <main className="flex-1 bg-black">
+        <div className="max-w-[1280px] mx-auto">
+          {/* First Section - Dark Background */}
+          <section className="relative px-12 bg-surface-ink">
+            {/* Background Texture */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/grain-texture.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Content - Full width with proper positioning */}
+            <div className="relative z-10 w-full px-6 py-20">
+              <div className="max-w-7xl mx-auto">
+                {/* Title spans full width */}
+                <h1 className="text-h1">
+                  WE BUILD THINGS FOR PEOPLE WHO CARE.
+                </h1>
+
+                {/* Two column layout for content and image */}
+                <div className="grid md:grid-cols-2 gap-12 items-start">
+                  {/* Left column - Text and buttons */}
+                  <div id="LeftColumn">
+                    <h3 className="text-h3 text-white my-8 max-w-[519px]">
+                      A worker collective building the crypto tools for
+                      solidarity.
+                    </h3>
+                    <div className="flex gap-6">
+                      <LiftedButton
+                        className="w-[200px] h-[56px]"
+                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                      >
+                        <span>Visit app</span>
+                      </LiftedButton>
+                      <LiftedButton
+                        preset="secondary"
+                        className="w-[200px] h-[56px]"
+                        rightIcon={<ArrowRightIcon className="w-6 h-6" />}
+                      >
+                        <span>Our tools</span>
+                      </LiftedButton>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Image - Overlaps sections */}
+            <div className="absolute right-0 bottom-0 mb-[-290px] w-[640px]">
+              <Image
+                src="/holding-baby.jpg"
+                alt="People caring for each other"
+                width={675}
+                height={652}
+                className="object-cover w-full h-[652px] object-top"
+              />
+            </div>
+          </section>
+
+          {/* Second Section - Light Background */}
+          <section className="bg-paper-main py-20 px-16 md:pt-76">
+            <div className="max-w-7xl mr-12 mx-auto">
+              {/* Orange H1 - Right Aligned */}
+              <div className="text-right mb-8">
+                <h1 className="text-h1 text-primary-orange">
+                  TECH-POWERED
+                  <br />& OWNED BY WORKERS
+                </h1>
+              </div>
+
+              {/* Bold Left Aligned Text */}
+              <div className="mb-8 -mt-20">
+                <h2 className="text-h2 text-text-standard w-2/3">
+                  We are building real tools for people to use—right now.
+                </h2>
+              </div>
+
+              {/* Content Section with Two Columns */}
+              <div className="grid md:grid-cols-2 gap-12  pt-20 items-start">
+                {/* Left Column - Content */}
+                <div className="flex flex-col w-full pe-12">
+                  <h4 className="text-h4 text-text-standard mb-6">
+                    The most powerful mission is the one where you act.
+                  </h4>
+                  <p className="text-body text-text-standard mb-8">
+                    Bread Cooperative is a collective federation of
+                    decentralized cooperative projects looking to advance a
+                    progressive vision for power and tech and its effect on
+                    society. We aim to do this by building and utilizing what we
+                    call solidarity primitives — development tools which help to
+                    forge solidarity between individuals and collectives.
+                  </p>
+                  <LiftedButton
+                    rightIcon={<ArrowUpRightIcon className="w-4 h-4" />}
+                    className="w-full bg-primary-orange text-white flex items-center gap-2"
+                  >
+                    <span>Our manifest</span>
+                  </LiftedButton>
+                </div>
+
+                {/* Right Column - Image */}
+                <div className="relative -me-[112px]">
+                  <Image
+                    src="/hands.jpg"
+                    alt="Hands reaching towards each other"
+                    width={703}
+                    height={412}
+                    className="object-cover object-bottom-left w-full h-[412px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Third Section - Stats */}
+          <section className="bg-paper-main py-20 px-16">
+            <div className="max-w-7xl mx-auto">
+              {/* Header with overlapping text */}
+              <div className="mb-8 -mt-8">
+                <h1 className="text-h1 text-primary-orange mb-4">
+                  REAL <br />
+                  PEOPLE
+                </h1>
+                <h2 className="text-h2 text-text-standard w-3/4 -mt-12 text-right">
+                  behind every number.
+                </h2>
+              </div>
+
+              {/* Mission statement paragraph */}
+              <p className="text-body text-text-standard mb-16 w-5/9">
+                Bread Cooperative is a collective federation of democratized
+                cooperative projects looking to advance a progressive vision for
+                power and tech and its effect on society. We aim to do this by
+                building and utilizing educational solidarity practices —
+                development roadmap to help to forge solidarity between
+                individuals and collectives.
+              </p>
+
+              {/* Stats Sections */}
+              <div className="space-y-12">
+                {/* First Stat */}
+                <div className="grid md:grid-cols-2 gap-12 items-center border-b border-orange-0 pb-12">
+                  <div className="text-right">
+                    <h1 className="text-h1 text-surface-brown">450,000</h1>
+                    <p className="text-caption text-text-standard pt-4">
+                      *1 $BREAD is always equal to 1 USD
+                    </p>
+                  </div>
+                  <div className="px-12">
+                    <h5 className="text-h5 text-text-standard mb-8">
+                      $BREAD in existence funding the future after capital
+                    </h5>
+                    <LiftedButton
+                      preset="stroke"
+                      className="border border-surface-ink"
+                      rightIcon={
+                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
+                      }
+                    >
+                      <span>View analytics</span>
+                    </LiftedButton>
+                  </div>
+                </div>
+
+                {/* Second Stat */}
+                <div className="grid md:grid-cols-2 gap-12 items-center border-b border-orange-0 pb-12">
+                  <div className="text-right">
+                    <h1 className="text-h1 text-surface-brown">6</h1>
+                  </div>
+                  <div className="px-12">
+                    <h5 className="text-h5 text-text-standard mb-8">
+                      Projects empowering each other
+                    </h5>
+                    <LiftedButton
+                      preset="stroke"
+                      className="border border-surface-ink"
+                      rightIcon={
+                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
+                      }
+                    >
+                      <span>View analytics</span>
+                    </LiftedButton>
+                  </div>
+                </div>
+
+                {/* Third Stat */}
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="text-right">
+                    <h1 className="text-h1 text-surface-brown">40,000</h1>
+                  </div>
+                  <div className="px-12">
+                    <h5 className="text-h5 text-text-standard mb-8">
+                      Total $BREAD distributed since launch
+                    </h5>
+                    <LiftedButton
+                      preset="stroke"
+                      className="border border-surface-ink"
+                      rightIcon={
+                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
+                      }
+                    >
+                      <span>View analytics</span>
+                    </LiftedButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Fourth Section - Solidarity Tools */}
+          <section className="relative bg-surface-ink">
+            {/* Background Texture */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/grain-texture.jpg"
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 w-full px-16 py-10">
+              <div className="max-w-7xl mx-auto">
+                {/* First Row - Two Columns */}
+                <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+                  {/* Left Column - Image */}
+                  <div className="-mt-50">
+                    <Image
+                      src="/hands-2.jpg"
+                      alt="People working together"
+                      width={600}
+                      height={400}
+                      className="object-cover w-full h-auto"
+                    />
+                  </div>
+
+                  {/* Right Column - Text and Bullet List */}
+                  <div>
+                    <h2 className="text-h2 text-[80px] leading-[63px] text-orange-2 mb-8">
+                      THIS IS WHAT SOLIDARITY LOOKS LIKE
+                    </h2>
+                    <ul className="text-paper-0 w-2/3 ms-6 list-disc">
+                      <li className="text-body">
+                        A community that never gives up
+                      </li>
+                      <li className="text-body">Tools that are open to use</li>
+                      <li className="text-body">
+                        A way to be of service but also to keep building a
+                        compelling user experience
+                      </li>
+                      <li className="text-body">
+                        The way to save money together with others
+                      </li>
+                      <li className="text-body">
+                        Cover of health (often with BERKO) for when times are
+                        rough.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Second Row - Three Columns */}
+                <div className="grid md:grid-cols-3 gap-12">
+                  {/* Column 1 - Solidarity Fund */}
+                  <div className="relative flex flex-col h-full">
+                    <h2 className="text-h2 text-orange-2 mb-4">
+                      Solidarity Fund
+                    </h2>
+                    <p className="text-body text-white mb-6">
+                      A shared fund for funding community projects. Known for
+                      helping BERKO and funding the local labor capital.
+                    </p>
+                    <div className="w-[210px] h-[56px]">
+                      <LiftedButton
+                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                        className="bg-primary-orange text-white w-full h-full"
+                      >
+                        <span>Learn more</span>
+                      </LiftedButton>
+                    </div>
+                    <div className="absolute -top-18 right-0 -z-10">
+                      <Image
+                        src="/logo-line-orange.svg"
+                        alt="Logo"
+                        width={140}
+                        height={140}
+                        className="w-45 h-45"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Column 2 - Savings */}
+                  <div className="relative flex flex-col h-full">
+                    <div className="flex-grow"></div>
+                    <h2 className="text-h2 text-primary-blue mb-4">Savings</h2>
+                    <p className="text-body text-white mb-6">
+                      Save for your next purchase together with your friends.
+                    </p>
+                    <div className="mb-6"></div>
+                    <div className="w-[210px] h-[56px]">
+                      <LiftedButton
+                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                        className="bg-primary-blue text-white w-full h-full"
+                      >
+                        <span>Learn more</span>
+                      </LiftedButton>
+                    </div>
+                    <div className="absolute -top-18 right-0 -z-10">
+                      <Image
+                        src="/logo-line-blue.svg"
+                        alt="Logo"
+                        width={140}
+                        height={140}
+                        className="w-45 h-45"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Column 3 - Mutuals */}
+                  <div className="relative flex flex-col h-full">
+                    <div className="flex-grow"></div>
+                    <h2 className="text-h2 text-primary-jade mb-4">Mutuals</h2>
+                    <p className="text-body text-white mb-6">
+                      Save for each other for when times are rough. Both money
+                      together and your in-return in case something.
+                    </p>
+                    <div className="w-[210px] h-[56px]">
+                      <LiftedButton
+                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                        className="bg-primary-jade text-white w-full h-full"
+                      >
+                        <span>Learn more</span>
+                      </LiftedButton>
+                    </div>
+                    <div className="absolute -top-18 right-0 -z-10">
+                      <Image
+                        src="/logo-line-green.svg"
+                        alt="Logo"
+                        width={140}
+                        height={140}
+                        className="w-45 h-45"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
 
       <Footer />
     </div>
   );
-}
-
-function doSomething() {
-  alert("Something")
 }

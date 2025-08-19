@@ -8,7 +8,7 @@ export type LiftedButtonColors = {
 };
 
 /* Exposes our predefined styles as an enum like object */
-export type LiftedButtonPreset = keyof typeof LIFTED_BUTTON_PRESETS
+export type LiftedButtonPreset = keyof typeof LIFTED_BUTTON_PRESETS;
 
 /* Library of pre-defined styles */
 export const LIFTED_BUTTON_PRESETS = {
@@ -40,7 +40,14 @@ export const LIFTED_BUTTON_PRESETS = {
     hoverText: "#ffffff",
     shadowBg: "#595959",
   },
-}
+  stroke: {
+    bg: "--color-paper-main",
+    text: "--color-surface-ink",
+    hoverBg: "transparent",
+    hoverText: "--color-surface-ink",
+    shadowBg: "#595959",
+  },
+};
 
 /* Converts the LiftedButtonColors object into CSS properties that tailwind can work with */
 export function colorsToStyleVars(c: LiftedButtonColors): React.CSSProperties {

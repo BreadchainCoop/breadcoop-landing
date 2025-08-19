@@ -19,6 +19,11 @@ export const akzidenz = localFont({
       weight: "500",
       style: "normal",
     },
+    {
+      path: "../fonts/raw/akzidenz/AkzidenzGroteskBE-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
     // add more weights/styles here if you use them
   ],
   variable: "--font-akzidenz",
