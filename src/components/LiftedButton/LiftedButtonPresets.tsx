@@ -52,11 +52,11 @@ export const LIFTED_BUTTON_PRESETS = {
 /* Converts the LiftedButtonColors object into CSS properties that tailwind can work with */
 export function colorsToStyleVars(c: LiftedButtonColors): React.CSSProperties {
   return {
-    ["--btn-bg" as any]: asCssValue(c.bg),
-    ["--btn-text" as any]: asCssValue(c.text),
-    ["--btn-hover-bg" as any]: asCssValue(c.hoverBg),
-    ["--btn-hover-text" as any]: asCssValue(c.hoverText),
-    ["--btn-shadow" as any]: asCssValue(c.shadowBg),
+    ["--btn-bg" as string]: asCssValue(c.bg),
+    ["--btn-text" as string]: asCssValue(c.text),
+    ["--btn-hover-bg" as string]: asCssValue(c.hoverBg),
+    ["--btn-hover-text" as string]: asCssValue(c.hoverText),
+    ["--btn-shadow" as string]: asCssValue(c.shadowBg),
   };
 }
 

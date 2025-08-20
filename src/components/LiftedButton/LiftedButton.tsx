@@ -7,7 +7,6 @@ import {
   LIFTED_BUTTON_PRESETS,
   colorsToStyleVars,
 } from "./LiftedButtonPresets";
-import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 
 // Boilerplate for typesafe inputs
 export type LiftedButtonProps = {
@@ -50,8 +49,8 @@ export default function LiftedButton({
   const mergedColors: LiftedButtonColors = { ...base, ...colorOverrides };
   const styleVars: React.CSSProperties = {
     ...colorsToStyleVars(mergedColors),
-    ["--btn-offset" as any]: `${offsetPx}px`,
-    ["--btn-duration" as any]: `${durationMs}ms`,
+    ["--btn-offset" as string]: `${offsetPx}px`,
+    ["--btn-duration" as string]: `${durationMs}ms`,
   };
 
   const baseClassNames = [

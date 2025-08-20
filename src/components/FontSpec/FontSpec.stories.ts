@@ -1,5 +1,5 @@
 // src/components/FontSpec/FontSpec.stories.ts
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
 import "@/app/globals.css";
 import { akzidenz, univers } from "@/app/fonts";
