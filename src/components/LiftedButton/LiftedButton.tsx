@@ -19,6 +19,7 @@ export type LiftedButtonProps = {
   offsetPx?: number;
   durationMs?: number;
   className?: string;
+  width?: "full" | "auto";
 } & React.ComponentPropsWithoutRef<"button">;
 
 /**
@@ -41,6 +42,7 @@ export default function LiftedButton({
   durationMs = 500,
   className = "",
   type = "button",
+  width = "auto",
   ...rest // Add extra props to apply to the button
 }: LiftedButtonProps) {
   // Turn out inputs into CSS variables for use with tailwind.
@@ -56,7 +58,8 @@ export default function LiftedButton({
   const baseClassNames = [
     "relative z-10 inline-flex items-center justify-center gap-[8px]",
     "text-body text-[16px]",
-    "px-[32px] py-[16px]",
+    "px-[32px] py-[11px]",
+    width === "full" ? "w-full" : "",
   ];
 
   const activeClassNames = [
@@ -86,7 +89,9 @@ export default function LiftedButton({
   return (
     <span
       className={[
-        "relative inline-block select-none align-middle",
+        width === "full"
+          ? "relative block select-none align-middle"
+          : "relative inline-block select-none align-middle",
         "group", // allows us to inherit hover activity on this parent in the children
       ].join(" ")}
       style={styleVars}

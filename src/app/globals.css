@@ -56,10 +56,10 @@
     @apply font-akz font-[900] text-[7.3rem]  leading-[94px]  tracking-[-3%] uppercase;
   }
   .text-h2 {
-    @apply font-akz font-[900] text-[3rem] leading-[48px] tracking-[-2.5%];
+    @apply font-akz font-[900] text-[3rem] leading-[48px] tracking-tight;
   }
   .text-h3 {
-    @apply font-akz font-[400] text-[4rem] leading-[64px] tracking-tighter;
+    @apply font-akz font-[900] text-[80px] leading-[63px] tracking-tighter;
   }
   .text-h4 {
     @apply font-uni font-[700] text-[2rem];

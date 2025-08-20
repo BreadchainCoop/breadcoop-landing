@@ -3,7 +3,13 @@
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 import { LiftedButton } from "@/components/LiftedButton";
-import { ArrowUpRightIcon, ArrowRightIcon } from "@phosphor-icons/react/ssr";
+import {
+  ArrowUpRightIcon,
+  ArrowRightIcon,
+  BookOpenIcon,
+  CurrencyCircleDollarIcon,
+  HandPeaceIcon,
+} from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 
 export default function Home() {
@@ -36,7 +42,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn">
-                    <h3 className="text-h3 text-white my-8 max-w-[519px]">
+                    <h3 className="text-h3 font-[400] text-[4rem] leading-[64px] text-white my-8 max-w-[519px]">
                       A worker collective building the crypto tools for
                       solidarity.
                     </h3>
@@ -358,6 +364,208 @@ export default function Home() {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Fifth Section - $BREAD How It Works */}
+          <section className="bg-paper-main py-20 px-16">
+            <div className="max-w-7xl mx-auto">
+              {/* Header */}
+              <div className="mb-16">
+                <h1 className="text-h1 text-primary-orange mb-4">
+                  $BREAD—HOW IT
+                  <br />
+                  WORKS
+                </h1>
+                <h2 className="text-h2 text-text-standard  text-right me-12 -mt-36">
+                  The $BREAD we all <br />
+                  share
+                </h2>
+              </div>
+
+              {/* Two Column Layout */}
+              <div className="grid md:grid-cols-8 gap-12 items-start">
+                {/* Left Column - Text and Buttons */}
+                <div className="flex flex-col ps-8 md:col-span-3">
+                  <p className="text-body text-text-standard mb-6">
+                    BREAD is digital money with built in solidarity — it is our
+                    first proven solidarity primitive and the foundation of our
+                    tools.
+                  </p>
+                  <p className="text-body text-text-standard mb-8">
+                    It is secured on the Gnosis Chain Network and is a digital
+                    USD backed currency designed to share its profits.
+                  </p>
+
+                  {/* Stacked Buttons */}
+                  <div className="flex flex-col gap-6">
+                    <LiftedButton
+                      preset="primary"
+                      className="w-full bg-primary-orange text-white"
+                    >
+                      <span>Get $BREAD</span>
+                    </LiftedButton>
+                    <LiftedButton
+                      preset="secondary"
+                      className="w-full"
+                      leftIcon={<BookOpenIcon className="w-6 h-6" />}
+                    >
+                      <span>Read more</span>
+                    </LiftedButton>
+                  </div>
+                </div>
+
+                {/* Right Column - SVG and Chips */}
+                <div className="relative md:col-span-5">
+                  {/* Large SVG */}
+                  <div className="flex justify-center mb-8">
+                    <Image
+                      src="/logo-stroke-filled-orange.png"
+                      alt="BREAD Logo"
+                      width={286}
+                      height={286}
+                      className="w-[286px] h-[286px]"
+                    />
+                  </div>
+
+                  {/* Chips and Text */}
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <div className="border border-text-standard px-4 py-2 shadow-sm flex items-center gap-2">
+                      <span className="text-body text-text-standard flex items-center gap-2">
+                        <Image
+                          src="/logo.svg"
+                          alt="$BREAD"
+                          width={24}
+                          height={24}
+                          className="w-[24px] h-[24px] inline"
+                        />
+                        1 BREAD
+                      </span>
+                    </div>
+                    <span className="text-body-bold text-text-standard">=</span>
+                    <div className="border border-text-standard px-4 py-2 shadow-sm flex items-center gap-2">
+                      <CurrencyCircleDollarIcon className="w-6 h-6 text-primary-orange" />
+                      <span className="text-body text-text-standard">
+                        1 USD
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Forever Text */}
+                  <div className="text-right me-12">
+                    <h5 className="text-h5 text-text-standard">Forever.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Sixth Section - Cooperative and Services */}
+          <section className="">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Left Column - Join the Cooperative */}
+                <div className="bg-paper-2 py-24 px-5 flex flex-col h-full relative overflow-hidden">
+                  {/* Background Logo */}
+                  <div className="absolute -left-40 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="/logo-line-orange.svg"
+                      alt=""
+                      width={400}
+                      height={400}
+                      className="w-[400px] h-[400px]"
+                    />
+                  </div>
+                  <div className="flex-grow relative z-10">
+                    <h3 className="text-h3 text-primary-orange mb-6">
+                      JOIN THE
+                      <br />
+                      COOPERATIVE.
+                    </h3>
+                    <p className="text-body text-text-standard mb-8">
+                      We are always open to workers that want to work together
+                      in building the tools that can bring us together and build
+                      a future after capital.
+                    </p>
+                  </div>
+                  <LiftedButton
+                    preset="primary"
+                    width="full"
+                    className="bg-primary-orange text-white"
+                    leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                  >
+                    <span>Contribute and join</span>
+                  </LiftedButton>
+                </div>
+
+                {/* Right Column - Build with You */}
+                <div className="bg-surface-brown py-24 px-5 flex flex-col h-full relative overflow-hidden">
+                  {/* Background Logo */}
+                  <div className="absolute -left-30 top-1/2 transform -translate-y-1/2">
+                    <Image
+                      src="/sourdough-systems-logo.svg"
+                      alt=""
+                      width={400}
+                      height={400}
+                      className="w-[400px] h-[400px]"
+                    />
+                  </div>
+                  <div className="flex-grow relative z-10">
+                    <h3 className="text-h3 text-paper-main mb-6">
+                      WE CAN BUILD
+                      <br />
+                      WITH YOU.
+                    </h3>
+                    <p className="text-body text-paper-main mb-8">
+                      Sourdough Systems is our organization where we offer our
+                      work to the world. We can build powerful digital tools.
+                    </p>
+                  </div>
+                  <LiftedButton
+                    preset="primary"
+                    width="full"
+                    className="bg-primary-orange text-white"
+                    rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                  >
+                    <span>Explore our services</span>
+                  </LiftedButton>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Seventh Section - Subscribe */}
+          <section className="bg-paper-main py-20 px-12">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Text */}
+                <div>
+                  <h2 className="text-h2 text-text-standard mb-6">
+                    Subscribe, stay updated.
+                  </h2>
+                  <p className="text-body text-text-standard">
+                    Receive updates on the latest features, partnerships and new
+                    crypto leftist initiatives.
+                  </p>
+                </div>
+
+                {/* Right Column - Subscription Form */}
+                <div className="space-y-4">
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 bg-paper-main border border-orange-2 rounded-none text-body text-surface-grey focus:outline-none focus:border-primary-orange -translate-x-1 -translate-y-1"
+                  />
+                  <LiftedButton
+                    preset="primary"
+                    width="full"
+                    className="bg-primary-orange text-white"
+                    leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                  >
+                    <span>Subscribe</span>
+                  </LiftedButton>
                 </div>
               </div>
             </div>
