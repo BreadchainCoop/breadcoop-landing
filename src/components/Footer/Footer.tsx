@@ -35,8 +35,8 @@ function FooterLink({
 
 export function Footer() {
   return (
-    <footer className="bg-primary-orange px-6 py-12">
-      <div className="max-w-7xl mx-auto">
+    <footer className="xl:w-[1280px] mx-auto bg-primary-orange px-6 py-12">
+      <div className="">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
           {/* Logo and Tagline */}
           <div className="md:col-span-2 max-w-[311px]">

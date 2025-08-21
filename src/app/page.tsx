@@ -34,7 +34,7 @@ export default function Home() {
             <div className="relative z-10 w-full px-6 py-20">
               <div className="max-w-7xl mx-auto">
                 {/* Title spans full width */}
-                <h1 className="text-h1">
+                <h1 className="text-h1 pt-4">
                   WE BUILD THINGS FOR PEOPLE WHO CARE.
                 </h1>
 
@@ -322,7 +322,11 @@ export default function Home() {
                     <div className="w-[210px] h-[56px]">
                       <LiftedButton
                         rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                        className="bg-primary-blue text-white w-full h-full"
+                        colorOverrides={{
+                          bg: "--color-primary-blue",
+                          hoverBg: "--color-blue-2",
+                        }}
+                        className="w-full h-full"
                       >
                         <span>Learn more</span>
                       </LiftedButton>
@@ -348,8 +352,12 @@ export default function Home() {
                     </p>
                     <div className="w-[210px] h-[56px]">
                       <LiftedButton
+                        colorOverrides={{
+                          bg: "--color-primary-jade",
+                          hoverBg: "--color-jade-2",
+                        }}
                         rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                        className="bg-primary-jade text-white w-full h-full"
+                        className="w-full h-full"
                       >
                         <span>Learn more</span>
                       </LiftedButton>

@@ -72,7 +72,7 @@
   }
 
   .text-akz-bold {
-    @apply font-akz font-[300] text-base;
+    @apply font-akz font-[700] text-base;
   }
   .text-body-bold {
     @apply font-uni text-base font-[700];
