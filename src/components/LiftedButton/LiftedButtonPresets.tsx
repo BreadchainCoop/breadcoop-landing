@@ -43,7 +43,7 @@ export const LIFTED_BUTTON_PRESETS = {
   stroke: {
     bg: "--color-paper-main",
     text: "--color-surface-ink",
-    hoverBg: "transparent",
+    hoverBg: "--color-paper-2",
     hoverText: "--color-surface-ink",
     shadowBg: "#595959",
   },

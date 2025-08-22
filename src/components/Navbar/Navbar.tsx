@@ -7,11 +7,61 @@ import {
   ArrowDownIcon,
   ArrowUpRightIcon,
   ArrowUpIcon,
+  ArrowRightIcon,
   List,
   X,
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
 import { LiftedButton } from "@/components/LiftedButton";
+
+// Solidarity Tool Item Component
+interface SolidarityToolItemProps {
+  id: string;
+  logo: string;
+  title: string;
+  description: string;
+  color: string;
+  comingSoon?: boolean;
+}
+
+function SolidarityToolItem({
+  id,
+  logo,
+  title,
+  description,
+  color,
+  comingSoon,
+}: SolidarityToolItemProps) {
+  return (
+    <Link href="#" className="block">
+      <div
+        className={`group/${id} flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent hover:border-${color} relative cursor-pointer`}
+      >
+        <Image
+          src={logo}
+          alt="Logo"
+          width={32}
+          height={32}
+          className="w-8 h-8 flex-shrink-0"
+        />
+        <div className="flex-grow">
+          <div className="flex items-center gap-2">
+            <div className="text-body-bold text-text-standard">{title}</div>
+            {comingSoon && (
+              <div className="text-body-bold text-primary-orange text-xs">
+                Coming soon
+              </div>
+            )}
+          </div>
+          <div className="text-body text-surface-grey">{description}</div>
+        </div>
+        <ArrowRightIcon
+          className={`w-6 h-6 text-${color} opacity-0 group-hover/${id}:opacity-100 transition-opacity duration-300 absolute right-2`}
+        />
+      </div>
+    </Link>
+  );
+}
 
 export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,14 +84,23 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Show navbar after 50px scroll
+      const wasScrolled = isScrolled;
+      const newIsScrolled = scrollTop > 50;
+
+      setIsScrolled(newIsScrolled);
+
+      // Close dropdown when navbar disappears (scrolling back to top)
+      if (wasScrolled && !newIsScrolled) {
+        setIsDropdownOpen(false);
+        setIsHovered(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isScrolled]);
 
   // Handle click outside to close dropdown
   useEffect(() => {
@@ -64,7 +123,9 @@ export function Navbar() {
     <>
       <nav
         className={`fixed max-w-[1200px] mx-auto top-2 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-paper-main  px-6 py-2" : "bg-transparent px-6 py-4"
+          isScrolled
+            ? "bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
+            : "bg-transparent px-6 py-4 border border-transparent shadow-none"
         }`}
       >
         <div className=" flex items-center justify-between">
@@ -78,10 +139,8 @@ export function Navbar() {
               className="w-8 h-8"
             />
             <span
-              className={`hidden md:block text-akz-bold leading-none transition-opacity duration-300 ${
-                isScrolled
-                  ? "text-text-standard opacity-100"
-                  : "text-white opacity-0"
+              className={`hidden md:block text-text-standard text-akz-bold leading-none transition-opacity duration-300 ${
+                isScrolled ? " opacity-100" : " opacity-0"
               }`}
             >
               BREAD COOPERATIVE
@@ -96,7 +155,7 @@ export function Navbar() {
           >
             <div className="group relative" ref={dropdownRef}>
               <div
-                className="flex items-center gap-1 text-text-standard hover:text-primary-orange cursor-pointer"
+                className="flex items-center gap-1 text-text-standard hover:text-primary-orange cursor-pointer py-1"
                 onClick={toggleDropdown}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -120,96 +179,44 @@ export function Navbar() {
                 <div className="flex">
                   {/* First Column - 66% width */}
                   <div className="w-2/3">
-                    <h4 className="text-h4 uppercase text-surface-grey mb-6">
+                    <h4 className="text-akz font-[500] uppercase text-surface-grey mb-4">
                       Bread Solidarity Tools
                     </h4>
 
-                    <div className="space-y-6 px-[10px]">
-                      {/* Item 1 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="text-body-bold text-text-standard">
-                            Solidarity fund
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Funding post-capitalism.
-                          </div>
-                        </div>
-                      </div>
+                    <div className="space-y-6  pe-6">
+                      <SolidarityToolItem
+                        id="item1"
+                        logo="/logo.svg"
+                        title="Solidarity fund"
+                        description="Funding post-capitalism."
+                        color="primary-orange"
+                      />
 
-                      {/* Item 2 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-blue.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <div className="text-body-bold text-text-standard">
-                              Savings
-                            </div>
-                            <div className="text-body-bold text-primary-orange text-xs">
-                              Coming soon
-                            </div>
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Save money together.
-                          </div>
-                        </div>
-                      </div>
+                      <SolidarityToolItem
+                        id="item2"
+                        logo="/logo-blue.svg"
+                        title="Savings"
+                        description="Save money together."
+                        color="primary-blue"
+                        comingSoon={true}
+                      />
 
-                      {/* Item 3 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-green.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <div className="text-body-bold text-text-standard">
-                              Insurance
-                            </div>
-                            <div className="text-body-bold text-primary-orange text-xs">
-                              Coming soon
-                            </div>
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Save money together.
-                          </div>
-                        </div>
-                      </div>
+                      <SolidarityToolItem
+                        id="item3"
+                        logo="/logo-green.svg"
+                        title="Insurance"
+                        description="Save money together."
+                        color="primary-jade"
+                        comingSoon={true}
+                      />
 
-                      {/* Item 4 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-stroke.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="text-body-bold text-text-standard">
-                            I have a post-capitalist idea...
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Have a better idea? Share it.
-                          </div>
-                        </div>
-                      </div>
+                      <SolidarityToolItem
+                        id="item4"
+                        logo="/logo-stroke.svg"
+                        title="I have a post-capitalist idea..."
+                        description="Have a better idea? Share it."
+                        color="surface-ink"
+                      />
                     </div>
                   </div>
 

@@ -17,21 +17,22 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1 bg-black">
-        <div className="max-w-[1280px] mx-auto">
-          {/* First Section - Dark Background */}
-          <section className="relative px-12 bg-surface-ink">
-            {/* Background Texture */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src="/grain-texture.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
+      <main className="flex-1">
+        {/* First Section - Dark Background */}
+        <section className="relative bg-surface-ink">
+          {/* Background Texture */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/grain-texture.jpg"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+          {/* Content Container */}
+          <div className="relative z-10 max-w-[1280px] mx-auto px-12">
             {/* Content - Full width with proper positioning */}
-            <div className="relative z-10 w-full px-6 py-20">
+            <div className="w-full px-6 py-20">
               <div className="max-w-7xl mx-auto">
                 {/* Title spans full width */}
                 <h1 className="text-h1 pt-4">
@@ -76,10 +77,12 @@ export default function Home() {
                 className="object-cover w-full h-[652px] object-top"
               />
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Second Section - Light Background */}
-          <section className="bg-paper-main py-20 px-16 md:pt-76">
+        {/* Second Section - Light Background */}
+        <section className="bg-paper-main py-20 md:pt-76">
+          <div className="max-w-[1280px] mx-auto px-16">
             <div className="max-w-7xl mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
               <div className="text-right mb-8">
@@ -131,10 +134,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Third Section - Stats */}
-          <section className="bg-paper-main py-20 px-16">
+        {/* Third Section - Stats */}
+        <section className="bg-paper-main py-20">
+          <div className="max-w-[1280px] mx-auto px-16">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="mb-8 -mt-8">
@@ -226,159 +231,161 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Fourth Section - Solidarity Tools */}
-          <section className="relative bg-surface-ink">
-            {/* Background Texture */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src="/grain-texture.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
+        {/* Fourth Section - Solidarity Tools */}
+        <section className="relative bg-surface-ink">
+          {/* Background Texture */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/grain-texture.jpg"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
 
-            {/* Content */}
-            <div className="relative z-10 w-full px-16 py-10">
-              <div className="max-w-7xl mx-auto">
-                {/* First Row - Two Columns */}
-                <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-                  {/* Left Column - Image */}
-                  <div className="-mt-50">
-                    <Image
-                      src="/hands-2.jpg"
-                      alt="People working together"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
+          {/* Content */}
+          <div className="relative z-10 max-w-[1280px] mx-auto px-16 py-10">
+            <div className="max-w-7xl mx-auto">
+              {/* First Row - Two Columns */}
+              <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+                {/* Left Column - Image */}
+                <div className="-mt-50">
+                  <Image
+                    src="/hands-2.jpg"
+                    alt="People working together"
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-auto"
+                  />
+                </div>
+
+                {/* Right Column - Text and Bullet List */}
+                <div>
+                  <h2 className="text-h2 text-[80px] leading-[63px] text-orange-2 mb-8">
+                    THIS IS WHAT SOLIDARITY LOOKS LIKE
+                  </h2>
+                  <ul className="text-paper-0 w-2/3 ms-6 list-disc">
+                    <li className="text-body">
+                      A community that never gives up
+                    </li>
+                    <li className="text-body">Tools that are open to use</li>
+                    <li className="text-body">
+                      A way to be of service but also to keep building a
+                      compelling user experience
+                    </li>
+                    <li className="text-body">
+                      The way to save money together with others
+                    </li>
+                    <li className="text-body">
+                      Cover of health (often with BERKO) for when times are
+                      rough.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Second Row - Three Columns */}
+              <div className="grid md:grid-cols-3 gap-12">
+                {/* Column 1 - Solidarity Fund */}
+                <div className="relative flex flex-col h-full">
+                  <h2 className="text-h2 text-orange-2 mb-4">
+                    Solidarity Fund
+                  </h2>
+                  <p className="text-body text-white mb-6">
+                    A shared fund for funding community projects. Known for
+                    helping BERKO and funding the local labor capital.
+                  </p>
+                  <div className="w-[210px] h-[56px]">
+                    <LiftedButton
+                      rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                      className="bg-primary-orange text-white w-full h-full"
+                    >
+                      <span>Learn more</span>
+                    </LiftedButton>
                   </div>
-
-                  {/* Right Column - Text and Bullet List */}
-                  <div>
-                    <h2 className="text-h2 text-[80px] leading-[63px] text-orange-2 mb-8">
-                      THIS IS WHAT SOLIDARITY LOOKS LIKE
-                    </h2>
-                    <ul className="text-paper-0 w-2/3 ms-6 list-disc">
-                      <li className="text-body">
-                        A community that never gives up
-                      </li>
-                      <li className="text-body">Tools that are open to use</li>
-                      <li className="text-body">
-                        A way to be of service but also to keep building a
-                        compelling user experience
-                      </li>
-                      <li className="text-body">
-                        The way to save money together with others
-                      </li>
-                      <li className="text-body">
-                        Cover of health (often with BERKO) for when times are
-                        rough.
-                      </li>
-                    </ul>
+                  <div className="absolute -top-18 right-0 -z-10">
+                    <Image
+                      src="/logo-line-orange.svg"
+                      alt="Logo"
+                      width={140}
+                      height={140}
+                      className="w-45 h-45"
+                    />
                   </div>
                 </div>
 
-                {/* Second Row - Three Columns */}
-                <div className="grid md:grid-cols-3 gap-12">
-                  {/* Column 1 - Solidarity Fund */}
-                  <div className="relative flex flex-col h-full">
-                    <h2 className="text-h2 text-orange-2 mb-4">
-                      Solidarity Fund
-                    </h2>
-                    <p className="text-body text-white mb-6">
-                      A shared fund for funding community projects. Known for
-                      helping BERKO and funding the local labor capital.
-                    </p>
-                    <div className="w-[210px] h-[56px]">
-                      <LiftedButton
-                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                        className="bg-primary-orange text-white w-full h-full"
-                      >
-                        <span>Learn more</span>
-                      </LiftedButton>
-                    </div>
-                    <div className="absolute -top-18 right-0 -z-10">
-                      <Image
-                        src="/logo-line-orange.svg"
-                        alt="Logo"
-                        width={140}
-                        height={140}
-                        className="w-45 h-45"
-                      />
-                    </div>
+                {/* Column 2 - Savings */}
+                <div className="relative flex flex-col h-full">
+                  <div className="flex-grow"></div>
+                  <h2 className="text-h2 text-primary-blue mb-4">Savings</h2>
+                  <p className="text-body text-white mb-6">
+                    Save for your next purchase together with your friends.
+                  </p>
+                  <div className="mb-6"></div>
+                  <div className="w-[210px] h-[56px]">
+                    <LiftedButton
+                      rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                      colorOverrides={{
+                        bg: "--color-primary-blue",
+                        hoverBg: "--color-blue-2",
+                      }}
+                      className="w-full h-full"
+                    >
+                      <span>Learn more</span>
+                    </LiftedButton>
                   </div>
-
-                  {/* Column 2 - Savings */}
-                  <div className="relative flex flex-col h-full">
-                    <div className="flex-grow"></div>
-                    <h2 className="text-h2 text-primary-blue mb-4">Savings</h2>
-                    <p className="text-body text-white mb-6">
-                      Save for your next purchase together with your friends.
-                    </p>
-                    <div className="mb-6"></div>
-                    <div className="w-[210px] h-[56px]">
-                      <LiftedButton
-                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                        colorOverrides={{
-                          bg: "--color-primary-blue",
-                          hoverBg: "--color-blue-2",
-                        }}
-                        className="w-full h-full"
-                      >
-                        <span>Learn more</span>
-                      </LiftedButton>
-                    </div>
-                    <div className="absolute -top-18 right-0 -z-10">
-                      <Image
-                        src="/logo-line-blue.svg"
-                        alt="Logo"
-                        width={140}
-                        height={140}
-                        className="w-45 h-45"
-                      />
-                    </div>
+                  <div className="absolute -top-18 right-0 -z-10">
+                    <Image
+                      src="/logo-line-blue.svg"
+                      alt="Logo"
+                      width={140}
+                      height={140}
+                      className="w-45 h-45"
+                    />
                   </div>
+                </div>
 
-                  {/* Column 3 - Mutuals */}
-                  <div className="relative flex flex-col h-full">
-                    <div className="flex-grow"></div>
-                    <h2 className="text-h2 text-primary-jade mb-4">Mutuals</h2>
-                    <p className="text-body text-white mb-6">
-                      Save for each other for when times are rough. Both money
-                      together and your in-return in case something.
-                    </p>
-                    <div className="w-[210px] h-[56px]">
-                      <LiftedButton
-                        colorOverrides={{
-                          bg: "--color-primary-jade",
-                          hoverBg: "--color-jade-2",
-                        }}
-                        rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                        className="w-full h-full"
-                      >
-                        <span>Learn more</span>
-                      </LiftedButton>
-                    </div>
-                    <div className="absolute -top-18 right-0 -z-10">
-                      <Image
-                        src="/logo-line-green.svg"
-                        alt="Logo"
-                        width={140}
-                        height={140}
-                        className="w-45 h-45"
-                      />
-                    </div>
+                {/* Column 3 - Mutuals */}
+                <div className="relative flex flex-col h-full">
+                  <div className="flex-grow"></div>
+                  <h2 className="text-h2 text-primary-jade mb-4">Mutuals</h2>
+                  <p className="text-body text-white mb-6">
+                    Save for each other for when times are rough. Both money
+                    together and your in-return in case something.
+                  </p>
+                  <div className="w-[210px] h-[56px]">
+                    <LiftedButton
+                      colorOverrides={{
+                        bg: "--color-primary-jade",
+                        hoverBg: "--color-jade-2",
+                      }}
+                      rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                      className="w-full h-full"
+                    >
+                      <span>Learn more</span>
+                    </LiftedButton>
+                  </div>
+                  <div className="absolute -top-18 right-0 -z-10">
+                    <Image
+                      src="/logo-line-green.svg"
+                      alt="Logo"
+                      width={140}
+                      height={140}
+                      className="w-45 h-45"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Fifth Section - $BREAD How It Works */}
-          <section className="bg-paper-main py-20 px-16">
+        {/* Fifth Section - $BREAD How It Works */}
+        <section className="bg-paper-main py-20">
+          <div className="max-w-[1280px] mx-auto px-16">
             <div className="max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-16">
@@ -468,84 +475,86 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Sixth Section - Cooperative and Services */}
-          <section className="">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-0">
-                {/* Left Column - Join the Cooperative */}
-                <div className="bg-paper-2 py-24 px-5 flex flex-col h-full relative overflow-hidden">
-                  {/* Background Logo */}
-                  <div className="absolute -left-40 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="/logo-line-orange.svg"
-                      alt=""
-                      width={400}
-                      height={400}
-                      className="w-[400px] h-[400px]"
-                    />
-                  </div>
-                  <div className="flex-grow relative z-10">
-                    <h3 className="text-h3 text-primary-orange mb-6">
-                      JOIN THE
-                      <br />
-                      COOPERATIVE.
-                    </h3>
-                    <p className="text-body text-text-standard mb-8">
-                      We are always open to workers that want to work together
-                      in building the tools that can bring us together and build
-                      a future after capital.
-                    </p>
-                  </div>
-                  <LiftedButton
-                    preset="primary"
-                    width="full"
-                    className="bg-primary-orange text-white"
-                    leftIcon={<HandPeaceIcon className="w-6 h-6" />}
-                  >
-                    <span>Contribute and join</span>
-                  </LiftedButton>
+        {/* Sixth Section - Cooperative and Services */}
+        <section>
+          <div className="max-w-[1280px] mx-auto">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Left Column - Join the Cooperative */}
+              <div className="bg-paper-2 py-24 px-5 flex flex-col h-full relative overflow-hidden">
+                {/* Background Logo */}
+                <div className="absolute -left-40 top-1/2 transform -translate-y-1/2">
+                  <Image
+                    src="/logo-line-orange.svg"
+                    alt=""
+                    width={400}
+                    height={400}
+                    className="w-[400px] h-[400px]"
+                  />
                 </div>
+                <div className="flex-grow relative z-10">
+                  <h3 className="text-h3 text-primary-orange mb-6">
+                    JOIN THE
+                    <br />
+                    COOPERATIVE.
+                  </h3>
+                  <p className="text-body text-text-standard mb-8">
+                    We are always open to workers that want to work together in
+                    building the tools that can bring us together and build a
+                    future after capital.
+                  </p>
+                </div>
+                <LiftedButton
+                  preset="primary"
+                  width="full"
+                  className="bg-primary-orange text-white"
+                  leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                >
+                  <span>Contribute and join</span>
+                </LiftedButton>
+              </div>
 
-                {/* Right Column - Build with You */}
-                <div className="bg-surface-brown py-24 px-5 flex flex-col h-full relative overflow-hidden">
-                  {/* Background Logo */}
-                  <div className="absolute -left-30 top-1/2 transform -translate-y-1/2">
-                    <Image
-                      src="/sourdough-systems-logo.svg"
-                      alt=""
-                      width={400}
-                      height={400}
-                      className="w-[400px] h-[400px]"
-                    />
-                  </div>
-                  <div className="flex-grow relative z-10">
-                    <h3 className="text-h3 text-paper-main mb-6">
-                      WE CAN BUILD
-                      <br />
-                      WITH YOU.
-                    </h3>
-                    <p className="text-body text-paper-main mb-8">
-                      Sourdough Systems is our organization where we offer our
-                      work to the world. We can build powerful digital tools.
-                    </p>
-                  </div>
-                  <LiftedButton
-                    preset="primary"
-                    width="full"
-                    className="bg-primary-orange text-white"
-                    rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                  >
-                    <span>Explore our services</span>
-                  </LiftedButton>
+              {/* Right Column - Build with You */}
+              <div className="bg-surface-brown py-24 px-5 flex flex-col h-full relative overflow-hidden">
+                {/* Background Logo */}
+                <div className="absolute -left-30 top-1/2 transform -translate-y-1/2">
+                  <Image
+                    src="/sourdough-systems-logo.svg"
+                    alt=""
+                    width={400}
+                    height={400}
+                    className="w-[400px] h-[400px]"
+                  />
                 </div>
+                <div className="flex-grow relative z-10">
+                  <h3 className="text-h3 text-paper-main mb-6">
+                    WE CAN BUILD
+                    <br />
+                    WITH YOU.
+                  </h3>
+                  <p className="text-body text-paper-main mb-8">
+                    Sourdough Systems is our organization where we offer our
+                    work to the world. We can build powerful digital tools.
+                  </p>
+                </div>
+                <LiftedButton
+                  preset="primary"
+                  width="full"
+                  className="bg-primary-orange text-white"
+                  rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                >
+                  <span>Explore our services</span>
+                </LiftedButton>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Seventh Section - Subscribe */}
-          <section className="bg-paper-main py-20 px-12">
+        {/* Seventh Section - Subscribe */}
+        <section className="bg-paper-main py-20">
+          <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Text */}
@@ -577,8 +586,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

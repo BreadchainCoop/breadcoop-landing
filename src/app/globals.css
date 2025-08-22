@@ -20,7 +20,7 @@
   --color-primary-jade: #286b63;
   --color-jade-0: #9cacc6;
   --color-jade-1: #72849d;
-  --color-jade-2: #404b5a;
+  --color-jade-2: #134a44;
   --color-primary-blue: #1c5bb9;
   --color-blue-0: #a8c3ea;
   --color-blue-1: #588ddb;
@@ -73,6 +73,9 @@
 
   .text-akz-bold {
     @apply font-akz font-[700] text-base;
+  }
+  .text-akz {
+    @apply font-akz font-[500] text-base;
   }
   .text-body-bold {
     @apply font-uni text-base font-[700];
