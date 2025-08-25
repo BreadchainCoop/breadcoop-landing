@@ -63,7 +63,11 @@ function SolidarityToolItem({
   );
 }
 
-export function Navbar() {
+interface NavbarProps {
+  static?: boolean;
+}
+
+export function Navbar({ static: isStatic = false }: NavbarProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -121,14 +125,30 @@ export function Navbar() {
 
   return (
     <>
+      {/* Full width wrapper for static navbar at top */}
+      {isStatic && (
+        <div
+          className={`w-full bg-paper-main  transition-all duration-300 ${
+            isScrolled ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <div className="h-[72px]"></div>
+        </div>
+      )}
+
+      {/* Single navbar that handles both static and dynamic modes */}
       <nav
-        className={`fixed max-w-[1200px] mx-auto top-2 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
-            : "bg-transparent px-6 py-4 border border-transparent shadow-none"
+        className={`max-w-[1200px] mx-auto z-50 transition-all duration-300 ${
+          isStatic
+            ? isScrolled
+              ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
+              : "absolute top-0 left-0 right-0 bg-transparent px-6 py-4"
+            : isScrolled
+            ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
+            : "fixed top-2 left-0 right-0 bg-transparent px-6 py-4 border border-transparent shadow-none"
         }`}
       >
-        <div className=" flex items-center justify-between">
+        <div className="flex items-center justify-between">
           {/* Logo and Brand */}
           <div className="flex items-center gap-3">
             <Image
@@ -140,7 +160,7 @@ export function Navbar() {
             />
             <span
               className={`hidden md:block text-text-standard text-akz-bold leading-none transition-opacity duration-300 ${
-                isScrolled ? " opacity-100" : " opacity-0"
+                isStatic || isScrolled ? "opacity-100" : "opacity-0"
               }`}
             >
               BREAD COOPERATIVE
@@ -150,7 +170,7 @@ export function Navbar() {
           {/* Desktop Navigation Links */}
           <div
             className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${
-              isScrolled ? "opacity-100" : "opacity-0"
+              isStatic || isScrolled ? "opacity-100" : "opacity-0"
             }`}
           >
             <div className="group relative" ref={dropdownRef}>
@@ -266,7 +286,7 @@ export function Navbar() {
           {/* Right side buttons */}
           <div
             className={`flex items-center gap-4 transition-opacity duration-300 ${
-              isScrolled ? "opacity-100" : "opacity-0"
+              isStatic || isScrolled ? "opacity-100" : "opacity-0"
             }`}
           >
             {/* Desktop: Visit App Button */}
@@ -485,8 +505,6 @@ export function Navbar() {
           </div>
         )}
       </nav>
-      {/* Spacer to prevent content from being hidden behind fixed navbar */}
-      {isScrolled && <div className="h-[72px]" />}
     </>
   );
 }

@@ -53,16 +53,16 @@
 
 @layer components {
   .text-h1 {
-    @apply font-akz font-[900] text-[7.3rem]  leading-[94px]  tracking-[-3%] uppercase;
+    @apply font-akz font-[900] text-[3rem] xl:text-[7.3rem] leading-[36px] xl:leading-[94px]  tracking-[-3%] uppercase;
   }
   .text-h2 {
-    @apply font-akz font-[900] text-[3rem] leading-[48px] tracking-tight;
+    @apply font-akz font-[900] text-[1.5rem] leading-[20px] xl:text-[3rem] xl:leading-[48px] xl:leading-[48px] tracking-tight;
   }
   .text-h3 {
-    @apply font-akz font-[900] text-[80px] leading-[63px] tracking-tighter;
+    @apply font-akz font-[900] text-[1.5rem] xl:text-[80px] leading-[24px] xl:leading-[63px] tracking-tighter;
   }
   .text-h4 {
-    @apply font-uni font-[700] text-[2rem];
+    @apply font-uni font-[700] text-[2rem] leading-[2rem];
   }
   .text-h5 {
     @apply font-uni font-[400] text-[1.5rem] leading-[24px];
