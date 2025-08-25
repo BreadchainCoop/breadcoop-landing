@@ -15,6 +15,61 @@ import {
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 
+// Stats Section Component
+function StatsSection() {
+  const stats = [
+    {
+      number: "450,000",
+      caption: "*1 $BREAD is always equal to 1 USD",
+      title: "$BREAD in existence funding the future after capital",
+    },
+    {
+      number: "6",
+      caption: "",
+      title: "Projects empowering each other",
+    },
+    {
+      number: "40,000",
+      caption: "",
+      title: "Total $BREAD distributed since launch",
+    },
+  ];
+
+  return (
+    <div className="space-y-12">
+      {stats.map((stat, index) => (
+        <div
+          key={index}
+          className={`grid xl:grid-cols-2 gap-12 items-center ${
+            index < stats.length - 1 ? "border-b border-orange-0 pb-12" : ""
+          }`}
+        >
+          <div className="text-center xl:text-right">
+            <h1 className="text-h1 text-surface-brown">{stat.number}</h1>
+            {stat.caption && (
+              <p className="text-caption text-text-standard pt-4">
+                {stat.caption}
+              </p>
+            )}
+          </div>
+          <div className="px-12">
+            <h5 className="text-h5 text-text-standard mb-8">{stat.title}</h5>
+            <LiftedButton
+              preset="stroke"
+              className="border border-surface-ink"
+              rightIcon={
+                <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
+              }
+            >
+              <span>View analytics</span>
+            </LiftedButton>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -190,73 +245,7 @@ export default function Home() {
               </p>
 
               {/* Stats Sections */}
-              <div className="space-y-12">
-                {/* First Stat */}
-                <div className="grid xl:grid-cols-2 gap-12 items-center border-b border-orange-0 pb-12">
-                  <div className="text-right">
-                    <h1 className="text-h1 text-surface-brown">450,000</h1>
-                    <p className="text-caption text-text-standard pt-4">
-                      *1 $BREAD is always equal to 1 USD
-                    </p>
-                  </div>
-                  <div className="px-12">
-                    <h5 className="text-h5 text-text-standard mb-8">
-                      $BREAD in existence funding the future after capital
-                    </h5>
-                    <LiftedButton
-                      preset="stroke"
-                      className="border border-surface-ink"
-                      rightIcon={
-                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-                      }
-                    >
-                      <span>View analytics</span>
-                    </LiftedButton>
-                  </div>
-                </div>
-
-                {/* Second Stat */}
-                <div className="grid xl:grid-cols-2 gap-12 items-center border-b border-orange-0 pb-12">
-                  <div className="text-right">
-                    <h1 className="text-h1 text-surface-brown">6</h1>
-                  </div>
-                  <div className="px-12">
-                    <h5 className="text-h5 text-text-standard mb-8">
-                      Projects empowering each other
-                    </h5>
-                    <LiftedButton
-                      preset="stroke"
-                      className="border border-surface-ink"
-                      rightIcon={
-                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-                      }
-                    >
-                      <span>View analytics</span>
-                    </LiftedButton>
-                  </div>
-                </div>
-
-                {/* Third Stat */}
-                <div className="grid xl:grid-cols-2 gap-12 items-center">
-                  <div className="text-right">
-                    <h1 className="text-h1 text-surface-brown">40,000</h1>
-                  </div>
-                  <div className="px-12">
-                    <h5 className="text-h5 text-text-standard mb-8">
-                      Total $BREAD distributed since launch
-                    </h5>
-                    <LiftedButton
-                      preset="stroke"
-                      className="border border-surface-ink"
-                      rightIcon={
-                        <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-                      }
-                    >
-                      <span>View analytics</span>
-                    </LiftedButton>
-                  </div>
-                </div>
-              </div>
+              <StatsSection />
             </div>
           </div>
         </section>
