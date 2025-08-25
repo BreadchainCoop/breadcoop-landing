@@ -88,9 +88,9 @@ export default function Home() {
             />
           </div>
           {/* Content Container */}
-          <div className="relative z-10 max-w-[1280px] mx-auto mdpx-12">
+          <div className="relative z-10 max-w-[1280px] mx-auto px-4 xl:px-12">
             {/* Content - Full width with proper positioning */}
-            <div className="w-full xl:px-6 ps-6 py-20">
+            <div className="w-full px-4 xl:px-6 py-20">
               <div className="max-w-7xl mx-auto">
                 {/* Title spans full width */}
                 <h1 className="text-h1 pt-4 ">
@@ -128,7 +128,7 @@ export default function Home() {
                   </div>
 
                   {/* Right column - Image for mobile */}
-                  <div className="col-span-1 relative   xl:hidden">
+                  <div className="col-span-1 relative xl:hidden">
                     <Image
                       src="/holding-baby.jpg"
                       alt="People caring for each other"
@@ -221,7 +221,7 @@ export default function Home() {
 
         {/* Third Section - Stats */}
         <section className="bg-paper-main py-20">
-          <div className="max-w-[1280px] mx-auto px-16">
+          <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="mb-8 -mt-8">
@@ -254,7 +254,7 @@ export default function Home() {
 
         {/* Fifth Section - $BREAD How It Works */}
         <section className="bg-paper-main py-20">
-          <div className="max-w-[1280px] mx-auto px-16">
+          <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
             <div className="max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-16">
