@@ -65,7 +65,7 @@
     @apply font-uni font-[700] text-[2rem] leading-[2rem];
   }
   .text-h5 {
-    @apply font-uni font-[400] text-[1.5rem] leading-[24px];
+    @apply font-uni font-[400] text-[1rem] xl:text-[1.5rem] xl:leading-[24px];
   }
   .text-body {
     @apply font-uni text-base;

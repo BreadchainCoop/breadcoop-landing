@@ -68,7 +68,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
           {/* First Row - Two Columns */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             {/* Left Column - Image */}
-            <div className="-mt-50">
+            <div className="hidden xl:block -mt-50">
               <Image
                 src="/hands-2.jpg"
                 alt="People working together"
@@ -80,7 +80,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
             {/* Right Column - Text and Bullet List */}
             <div>
-              <h2 className="text-h2 text-[48px] leading-[38px] xl:text-[80px] xl:leading-[63px] text-orange-2 mb-8">
+              <h2 className="text-h2 text-[48px] leading-[38px] xl:text-[80px] xl:leading-[63px] text-right xl:text-left text-orange-2 mb-8">
                 THIS IS WHAT SOLIDARITY LOOKS LIKE
               </h2>
               <ul className="text-paper-0 w-2/3 ms-6 list-disc">

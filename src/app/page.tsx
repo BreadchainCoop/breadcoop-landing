@@ -40,7 +40,7 @@ function StatsSection() {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className={`grid xl:grid-cols-2 gap-12 items-center ${
+          className={`grid xl:grid-cols-2 gap-2 xl:gap-12 items-center ${
             index < stats.length - 1 ? "border-b border-orange-0 pb-12" : ""
           }`}
         >
@@ -53,16 +53,20 @@ function StatsSection() {
             )}
           </div>
           <div className="px-12">
-            <h5 className="text-h5 text-text-standard mb-8">{stat.title}</h5>
-            <LiftedButton
-              preset="stroke"
-              className="border border-surface-ink"
-              rightIcon={
-                <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-              }
-            >
-              <span>View analytics</span>
-            </LiftedButton>
+            <h5 className="text-h5 text-text-standard text-center xl:text-left mb-8">
+              {stat.title}
+            </h5>
+            <div className="flex justify-center xl:justify-start">
+              <LiftedButton
+                preset="stroke"
+                className="border border-surface-ink"
+                rightIcon={
+                  <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
+                }
+              >
+                <span>View analytics</span>
+              </LiftedButton>
+            </div>
           </div>
         </div>
       ))}
@@ -91,7 +95,7 @@ export default function Home() {
           <div className="relative z-10 max-w-[1280px] mx-auto px-4 xl:px-12">
             {/* Content - Full width with proper positioning */}
             <div className="w-full px-4 xl:px-6 py-20">
-              <div className="max-w-7xl mx-auto">
+              <div className="max-w-[388px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
                 <h1 className="text-h1 pt-4 ">
                   WE BUILD THINGS FOR PEOPLE WHO CARE.
@@ -128,13 +132,13 @@ export default function Home() {
                   </div>
 
                   {/* Right column - Image for mobile */}
-                  <div className="col-span-1 relative xl:hidden">
+                  <div className="col-span-1 relative -mr-4 xl:hidden">
                     <Image
                       src="/holding-baby.jpg"
                       alt="People caring for each other"
                       width={300}
                       height={355}
-                      className="object-cover w-[300px] h-[355px] object-top rounded -mb-48 -mr-20"
+                      className="object-cover w-[300px] h-[355px] object-top rounded -mb-[114px] -mr-20"
                     />
                   </div>
                 </div>
@@ -155,9 +159,9 @@ export default function Home() {
         </section>
 
         {/* Second Section - Light Background */}
-        <section className="bg-paper-main py-20 xl:pt-76">
+        <section className="bg-paper-main pb-20 xl:pt-76">
           <div className="max-w-[1280px] relative z-20 mx-auto xl:px-16">
-            <div className="max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
+            <div className="max-w-[388px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
               <div className="text-right mb-8">
                 <h1 className="text-h1 text-primary-orange">
@@ -167,8 +171,8 @@ export default function Home() {
               </div>
 
               {/* Bold Left Aligned Text */}
-              <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-20">
-                <h2 className="text-h2 text-text-standard w-3/4 xl:w-2/3">
+              <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-20 relative z-10">
+                <h2 className="text-h2 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-2/3">
                   We are building real tools for people to use—right now.
                 </h2>
               </div>
@@ -220,22 +224,22 @@ export default function Home() {
         </section>
 
         {/* Third Section - Stats */}
-        <section className="bg-paper-main py-20">
+        <section className="bg-paper-main pb-20 xl:pt-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-[388px] xl:max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="mb-8 -mt-8">
                 <h1 className="text-h1 text-primary-orange mb-4">
                   REAL <br />
                   PEOPLE
                 </h1>
-                <h2 className="text-h2 text-text-standard w-3/4 -mt-12 text-right">
+                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 xl:-mt-12 text-right">
                   behind every number.
                 </h2>
               </div>
 
               {/* Mission statement paragraph */}
-              <p className="text-body text-text-standard mb-16 w-5/9">
+              <p className="text-body text-text-standard mb-16 xl:w-5/9">
                 Bread Cooperative is a collective federation of democratized
                 cooperative projects looking to advance a progressive vision for
                 power and tech and its effect on society. We aim to do this by
@@ -255,7 +259,7 @@ export default function Home() {
         {/* Fifth Section - $BREAD How It Works */}
         <section className="bg-paper-main py-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-[388px] xl:max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-16">
                 <h1 className="text-h1 text-primary-orange mb-4">
