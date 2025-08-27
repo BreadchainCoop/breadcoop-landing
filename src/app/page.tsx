@@ -74,6 +74,31 @@ function StatsSection() {
   );
 }
 
+// Chips Section Component
+function ChipsSection() {
+  return (
+    <div className="flex items-center justify-center gap-4 mb-4">
+      <div className="w-[150px] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
+        <span className="text-body text-text-standard flex items-center gap-2">
+          <Image
+            src="/logo.svg"
+            alt="$BREAD"
+            width={24}
+            height={24}
+            className="w-[24px] h-[24px] inline"
+          />
+          1 BREAD
+        </span>
+      </div>
+      <span className="text-body-bold text-text-standard">=</span>
+      <div className="w-[150px] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
+        <CurrencyCircleDollarIcon className="w-6 h-6 text-primary-orange" />
+        <span className="text-body text-text-standard">1 USD</span>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -105,10 +130,10 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 xl:gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
-                    <h3 className="text-h3 font-[400] text-[1.5rem] xl:text-[4rem] leading-[1.2] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
+                    <h2 className="text-h2 font-[400] text-[1.5rem] xl:text-[4rem] leading-[1.2] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
                       A worker collective building the crypto tools for
                       solidarity.
-                    </h3>
+                    </h2>
                     <div className="flex flex-col xl:flex-row gap-4 xl:gap-6">
                       <LiftedButton
                         className="w-full xl:w-[200px] h-[40px] xl:h-[56px] text-sm xl:text-base"
@@ -132,13 +157,13 @@ export default function Home() {
                   </div>
 
                   {/* Right column - Image for mobile */}
-                  <div className="col-span-1 relative -mr-4 xl:hidden">
+                  <div className="col-span-1 relative -mr-8 xl:hidden">
                     <Image
                       src="/holding-baby.jpg"
                       alt="People caring for each other"
                       width={300}
                       height={355}
-                      className="object-cover w-[300px] h-[355px] object-top rounded -mb-[114px] -mr-20"
+                      className="object-cover w-[300px] h-[355px] object-top rounded -mb-[114px]"
                     />
                   </div>
                 </div>
@@ -208,7 +233,7 @@ export default function Home() {
                   </LiftedButton>
                 </div>
 
-                {/* Right Column - Image */}
+                {/* Right Column - Image Desktop Only */}
                 <div className="hidden xl:block relative xl:-me-[112px]">
                   <Image
                     src="/hands.jpg"
@@ -261,13 +286,11 @@ export default function Home() {
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
             <div className="max-w-[388px] xl:max-w-7xl mx-auto">
               {/* Header */}
-              <div className="mb-16">
+              <div className="mb-8 xl:mb-16">
                 <h1 className="text-h1 text-primary-orange mb-4">
-                  $BREAD—HOW IT
-                  <br />
-                  WORKS
+                  $BREAD—HOW IT <br className="hidden xl:block" /> WORKS
                 </h1>
-                <h2 className="text-h2 text-text-standard  text-right me-12 -mt-36">
+                <h2 className="text-h2 text-text-standard  text-right me-12 -mt-5 xl:-mt-36">
                   The $BREAD we all <br />
                   share
                 </h2>
@@ -276,7 +299,7 @@ export default function Home() {
               {/* Two Column Layout */}
               <div className="grid xl:grid-cols-8 gap-12 items-start">
                 {/* Left Column - Text and Buttons */}
-                <div className="flex flex-col ps-8 xl:col-span-3">
+                <div className="flex flex-col xl:ps-8 xl:col-span-3">
                   <p className="text-body text-text-standard mb-6">
                     BREAD is digital money with built in solidarity — it is our
                     first proven solidarity primitive and the foundation of our
@@ -286,6 +309,11 @@ export default function Home() {
                     It is secured on the Gnosis Chain Network and is a digital
                     USD backed currency designed to share its profits.
                   </p>
+
+                  {/* Chips and Text - Mobile */}
+                  <div className="xl:hidden mb-6">
+                    <ChipsSection />
+                  </div>
 
                   {/* Stacked Buttons */}
                   <div className="flex flex-col gap-6">
@@ -306,7 +334,7 @@ export default function Home() {
                 </div>
 
                 {/* Right Column - SVG and Chips */}
-                <div className="relative xl:col-span-5">
+                <div className="hidden xl:block relative xl:col-span-5">
                   {/* Large SVG */}
                   <div className="flex justify-center mb-8">
                     <Image
@@ -318,31 +346,13 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* Chips and Text */}
-                  <div className="flex items-center justify-center gap-4 mb-4">
-                    <div className="border border-text-standard px-4 py-2 shadow-sm flex items-center gap-2">
-                      <span className="text-body text-text-standard flex items-center gap-2">
-                        <Image
-                          src="/logo.svg"
-                          alt="$BREAD"
-                          width={24}
-                          height={24}
-                          className="w-[24px] h-[24px] inline"
-                        />
-                        1 BREAD
-                      </span>
-                    </div>
-                    <span className="text-body-bold text-text-standard">=</span>
-                    <div className="border border-text-standard px-4 py-2 shadow-sm flex items-center gap-2">
-                      <CurrencyCircleDollarIcon className="w-6 h-6 text-primary-orange" />
-                      <span className="text-body text-text-standard">
-                        1 USD
-                      </span>
-                    </div>
+                  {/* Chips and Text - Desktop */}
+                  <div className="hidden xl:block">
+                    <ChipsSection />
                   </div>
 
                   {/* Forever Text */}
-                  <div className="text-right me-12">
+                  <div className="hidden xl:block text-right me-12">
                     <h5 className="text-h5 text-text-standard">Forever.</h5>
                   </div>
                 </div>

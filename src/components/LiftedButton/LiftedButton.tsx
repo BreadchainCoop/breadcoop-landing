@@ -39,7 +39,7 @@ export default function LiftedButton({
   preset = "primary",
   colorOverrides = {},
   offsetPx = 4,
-  durationMs = 500,
+  durationMs = 300,
   className = "",
   type = "button",
   width = "auto",

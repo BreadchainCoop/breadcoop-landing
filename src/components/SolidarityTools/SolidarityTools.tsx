@@ -63,7 +63,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-16 py-10">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-8 xl:px-16 py-10">
         <div className="max-w-7xl mx-auto">
           {/* First Row - Two Columns */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -83,7 +83,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
               <h2 className="text-h2 text-[48px] leading-[38px] xl:text-[80px] xl:leading-[63px] text-right xl:text-left text-orange-2 mb-8">
                 THIS IS WHAT SOLIDARITY LOOKS LIKE
               </h2>
-              <ul className="text-paper-0 w-2/3 ms-6 list-disc">
+              <ul className="text-paper-0 xl:w-2/3 ms-6 list-disc">
                 <li className="text-body">A community that never gives up</li>
                 <li className="text-body">Tools that are open to use</li>
                 <li className="text-body">
@@ -101,31 +101,35 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
           </div>
 
           {/* Second Row - Dynamic Columns */}
-          <div className={`grid gap-12 ${gridCols}`}>
-            {visibleColumns.map((column) => (
-              <div key={column.id} className="relative flex flex-col h-full">
-                {column.id === "savings" && <div className="flex-grow"></div>}
-                {column.id === "mutuals" && <div className="flex-grow"></div>}
+          <div className={`grid gap-12 ${gridCols} items-stretch`}>
+            {visibleColumns.map((column, index) => (
+              <div
+                key={column.id}
+                className={`relative xl:w-full flex flex-col h-full justify-between ${
+                  index % 2 === 1 ? "pl-24 xl:pl-0" : "pr-24 xl:pr-0"
+                }`}
+              >
+                <div>
+                  <h2 className={`text-h2 ${column.color} mb-4`}>
+                    {column.title}
+                  </h2>
+                  <p className="text-body text-white mb-6">
+                    {column.description}
+                  </p>
+                </div>
 
-                <h2 className={`text-h2 ${column.color} mb-4`}>
-                  {column.title}
-                </h2>
-                <p className="text-body text-white mb-6">
-                  {column.description}
-                </p>
-                {column.id === "savings" && <div className="mb-6"></div>}
-
-                <div className="w-[210px] h-[56px]">
+                <div className="">
                   <LiftedButton
                     rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
                     className={`${column.buttonClass} w-full h-full`}
+                    width="full"
                     colorOverrides={column.colorOverrides}
                   >
                     <span>Learn more</span>
                   </LiftedButton>
                 </div>
 
-                <div className="absolute -top-18 right-0 -z-10">
+                <div className="hidden xl:block absolute -top-18 right-0 -z-10">
                   <Image
                     src={column.logo}
                     alt="Logo"

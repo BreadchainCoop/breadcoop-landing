@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "../Button/Button";
 import {
   ArrowDownIcon,
@@ -32,10 +33,41 @@ function SolidarityToolItem({
   color,
   comingSoon,
 }: SolidarityToolItemProps) {
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!comingSoon) {
+      router.push(`/${id}`);
+    }
+  };
+
   return (
-    <Link href="#" className="block">
+    <Link
+      href={comingSoon ? "#" : `/${id}`}
+      className={`block ${comingSoon ? "pointer-events-none" : ""}`}
+      onClick={handleClick}
+    >
       <div
-        className={`group/${id} flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent hover:border-${color} relative cursor-pointer`}
+        className={`group flex py-1 px-[6px] hover:border-${color} items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer`}
+        onMouseEnter={
+          comingSoon
+            ? undefined
+            : (e) => {
+                e.currentTarget
+                  .querySelector(".arrow-icon")
+                  ?.classList.add("opacity-100");
+              }
+        }
+        onMouseLeave={
+          comingSoon
+            ? undefined
+            : (e) => {
+                e.currentTarget
+                  .querySelector(".arrow-icon")
+                  ?.classList.remove("opacity-100");
+              }
+        }
       >
         <Image
           src={logo}
@@ -56,7 +88,7 @@ function SolidarityToolItem({
           <div className="text-body text-surface-grey">{description}</div>
         </div>
         <ArrowRightIcon
-          className={`w-6 h-6 text-${color} opacity-0 group-hover/${id}:opacity-100 transition-opacity duration-300 absolute right-2`}
+          className={`arrow-icon text-${color} w-6 h-6 opacity-0 transition-opacity duration-300 absolute right-2`}
         />
       </div>
     </Link>
@@ -72,6 +104,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarHovered, setIsNavbarHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
@@ -128,7 +161,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
       {/* Full width wrapper for static navbar at top */}
       {isStatic && (
         <div
-          className={`w-full bg-paper-main  transition-all duration-300 ${
+          className={`w-full bg-paper-main transition-all duration-300 ${
             isScrolled ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -144,38 +177,49 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
               : "absolute top-0 left-0 right-0 bg-transparent px-6 py-4"
             : isScrolled
-            ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
-            : "fixed top-2 left-0 right-0 bg-transparent px-6 py-4 border border-transparent shadow-none"
+            ? "fixed top-2 left-0 right-0 bg-paper-main px-6  border border-paper-2 shadow-lg"
+            : isNavbarHovered
+            ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-0 border border-transparent shadow-none"
+            : "fixed top-2 left-0 right-0 bg-transparent px-6 py-0 border border-transparent shadow-none"
         }`}
+        onMouseEnter={() => setIsNavbarHovered(true)}
+        onMouseLeave={() => setIsNavbarHovered(false)}
       >
-        <div className="flex items-center justify-between">
+        <div className=" flex items-center justify-between">
           {/* Logo and Brand */}
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo.svg"
-              alt="Bread Cooperative Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8"
-            />
-            <span
-              className={`hidden md:block text-text-standard text-akz-bold leading-none transition-opacity duration-300 ${
-                isStatic || isScrolled ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              BREAD COOPERATIVE
-            </span>
+            <Link className="flex items-center gap-2" href="/">
+              <Image
+                src="/logo.svg"
+                alt="Bread Cooperative Logo"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
+
+              <span
+                className={`mt-1 hidden md:block text-text-standard text-akz-bold leading-none transition-opacity duration-300 ${
+                  isStatic || isScrolled || isNavbarHovered
+                    ? "opacity-100"
+                    : "opacity-0"
+                }`}
+              >
+                BREAD COOPERATIVE
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation Links */}
           <div
             className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${
-              isStatic || isScrolled ? "opacity-100" : "opacity-0"
+              isStatic || isScrolled || isNavbarHovered
+                ? "opacity-100"
+                : "opacity-0"
             }`}
           >
             <div className="group relative" ref={dropdownRef}>
               <div
-                className="flex items-center gap-1 text-text-standard hover:text-primary-orange cursor-pointer py-1"
+                className="flex items-center gap-1 text-text-standard hover:text-primary-orange cursor-pointer py-5"
                 onClick={toggleDropdown}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -190,7 +234,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
               {/* Dropdown Menu */}
               <div
-                className={`fixed top-[72px] left-1/2 transform -translate-x-1/2 md:w-[717px] lg:w-[917px] max-w-[917px] w-[65vw] bg-paper-main border border-primary-orange shadow-lg transition-all duration-200 z-40 p-4 ${
+                className={`fixed top-[74px] left-1/2 transform -translate-x-1/2 md:w-[717px] lg:w-[917px] max-w-[917px] w-[65vw] bg-paper-main border border-primary-orange shadow-lg transition-all duration-200 z-40 p-4 ${
                   showDropdown ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
                 onMouseEnter={() => setIsHovered(true)}
@@ -205,7 +249,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                     <div className="space-y-6  pe-6">
                       <SolidarityToolItem
-                        id="item1"
+                        id="solidarity-fund"
                         logo="/logo.svg"
                         title="Solidarity fund"
                         description="Funding post-capitalism."
@@ -213,7 +257,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       />
 
                       <SolidarityToolItem
-                        id="item2"
+                        id="savings"
                         logo="/logo-blue.svg"
                         title="Savings"
                         description="Save money together."
@@ -222,7 +266,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       />
 
                       <SolidarityToolItem
-                        id="item3"
+                        id="insurance"
                         logo="/logo-green.svg"
                         title="Insurance"
                         description="Save money together."
@@ -231,7 +275,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       />
 
                       <SolidarityToolItem
-                        id="item4"
+                        id="post-capitalist-idea"
                         logo="/logo-stroke.svg"
                         title="I have a post-capitalist idea..."
                         description="Have a better idea? Share it."
@@ -286,7 +330,9 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
           {/* Right side buttons */}
           <div
             className={`flex items-center gap-4 transition-opacity duration-300 ${
-              isStatic || isScrolled ? "opacity-100" : "opacity-0"
+              isStatic || isScrolled || isNavbarHovered
+                ? "opacity-100"
+                : "opacity-0"
             }`}
           >
             {/* Desktop: Visit App Button */}
@@ -505,6 +551,8 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
           </div>
         )}
       </nav>
+      {/* Spacer to prevent content from being hidden behind fixed navbar */}
+      {isScrolled && <div className="h-[72px]" />}
     </>
   );
 }
