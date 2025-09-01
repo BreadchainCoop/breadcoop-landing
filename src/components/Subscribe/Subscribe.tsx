@@ -23,6 +23,14 @@ export function Subscribe() {
             {/* Right Column - Subscription Form */}
             <div className="space-y-4">
               {/* todo replace w iframe <iframe src="https://paragraph.com/@breadcoop/embed?minimal=true" width="480" height="45" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe> */}
+              {/* <div className="w-full px-4 py-3 bg-paper-main border border-orange-2 rounded-none text-body text-surface-grey focus:outline-none focus:border-primary-orange -translate-x-1 -translate-y-1 w-full h-[75px]">
+                <iframe
+                  src="https://paragraph.com/@breadcoop/embed?minimal=true"
+                  width="100%"
+                  height="100%"
+                  style={{ background: "#fff" }}
+                />
+              </div> */}
               <input
                 type="email"
                 placeholder="your@email.com"

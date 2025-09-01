@@ -98,9 +98,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <LiftedButton
             preset="stroke"
             className="border border-surface-ink h-8"
-            rightIcon={
-              <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-            }
+            rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
           >
             <span>Website</span>
           </LiftedButton>
@@ -108,9 +106,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <LiftedButton
             preset="stroke"
             className="border border-surface-ink h-8"
-            rightIcon={
-              <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-            }
+            rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
           >
             <span>KarmaGAP</span>
           </LiftedButton>
@@ -127,20 +123,30 @@ export default function SolidarityFund() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-paper-main min-h-screen flex items-center">
+        <section className="relative bg-paper-main flex items-center">
           {/* Content Container */}
-          <div className="relative z-10 max-w-[1280px] mx-auto px-12 w-full">
-            <div className="w-full px-6 py-20">
+          <div className="relative max-w-[1280px] mx-auto xl:px-12 w-full">
+            <div className="w-full px-6 py-6 xl:py-20">
               <div className="max-w-7xl mx-auto">
                 {/* Overlapping Text Layout */}
-                <div className="relative mb-16">
+                <div className="relative xl:mb-16">
                   {/* H1 Text */}
-                  <h1 className="text-h1 text-primary-orange mb-4">
-                    SOLIDARITY FUND
+                  <h1 className="text-h1 text-primary-orange mb-4 relative z-10">
+                    THE SOLIDARITY FUND
                   </h1>
 
+                  <div className="block xl:hidden relative">
+                    <Image
+                      src="/hands.jpg"
+                      alt="Hands reaching towards each other"
+                      width={343}
+                      height={216}
+                      className="mx-auto object-cover ms-16 -mt-13 object-bottom-left w-[343px] h-[216px]"
+                    />
+                  </div>
+
                   {/* H2 Text - Overlapping */}
-                  <h2 className="text-h2 text-text-standard -mt-8 ml-8">
+                  <h2 className="text-h2 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-8 xl:ml-8">
                     Funding post-capitalism together
                   </h2>
                 </div>
@@ -157,7 +163,8 @@ export default function SolidarityFund() {
                     </p>
                     <LiftedButton
                       className="w-[200px] h-[56px] bg-primary-orange text-white"
-                      rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                      rightIcon={<ArrowUpRightIcon />}
+                      width="full"
                     >
                       <span>Visit app</span>
                     </LiftedButton>
@@ -170,7 +177,7 @@ export default function SolidarityFund() {
                       alt="Hands reaching towards each other in solidarity"
                       width={600}
                       height={400}
-                      className="object-cover w-full h-[400px] object-bottom-left"
+                      className="hidden xl:block object-cover w-full h-[400px] object-bottom-left"
                     />
                   </div>
                 </div>
@@ -236,16 +243,19 @@ export default function SolidarityFund() {
               </p>
 
               {/* Buttons */}
-              <div className="flex gap-6 mb-16">
+              <div className="xl:flex-row gap-6 mb-16">
                 <LiftedButton
-                  className="w-[200px] h-[56px] bg-primary-orange text-white"
-                  rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                  className="bg-primary-orange xl:mt-0 text-white"
+                  rightIcon={<ArrowUpRightIcon />}
+                  width="full"
                 >
                   <span>Visit app</span>
                 </LiftedButton>
+                <span className="block xl:hidden h-8"></span>
                 <LiftedButton
                   preset="secondary"
-                  rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                  width="full"
+                  rightIcon={<ArrowUpRightIcon />}
                 >
                   <span>Learn more about $BREAD</span>
                 </LiftedButton>

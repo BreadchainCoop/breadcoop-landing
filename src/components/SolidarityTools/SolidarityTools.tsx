@@ -120,8 +120,8 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
                 <div className="">
                   <LiftedButton
-                    rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                    className={`${column.buttonClass} w-full h-full`}
+                    rightIcon={<ArrowUpRightIcon />}
+                    className={`${column.buttonClass}`}
                     width="full"
                     colorOverrides={column.colorOverrides}
                   >

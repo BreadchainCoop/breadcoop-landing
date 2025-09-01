@@ -8,6 +8,21 @@ import {
   colorsToStyleVars,
 } from "./LiftedButtonPresets";
 
+// Helper function to clone React element and add classes
+const cloneWithClasses = (
+  element: React.ReactNode,
+  additionalClasses: string
+): React.ReactNode => {
+  if (React.isValidElement(element)) {
+    const existingClassName = (element.props as any).className || "";
+    const newClassName = `${existingClassName} ${additionalClasses}`.trim();
+    return React.cloneElement(element as React.ReactElement<any>, {
+      className: newClassName,
+    });
+  }
+  return element;
+};
+
 // Boilerplate for typesafe inputs
 export type LiftedButtonProps = {
   children: React.ReactNode;
@@ -58,7 +73,7 @@ export default function LiftedButton({
   const baseClassNames = [
     "relative z-10 inline-flex items-center justify-center gap-[8px]",
     "text-body text-[16px]",
-    "px-[32px] py-[11px]",
+    "px-[32px] h-14",
     width === "full" ? "w-full" : "",
   ];
 
@@ -104,16 +119,22 @@ export default function LiftedButton({
       {/* Main button */}
       <button type={type} className={classNames.join(" ")} {...rest}>
         {leftIcon ? (
-          <span className="shrink-0 py-[5px]" aria-hidden>
-            {leftIcon}
+          <span
+            className="shrink-0 py-[5px] flex items-center justify-center"
+            aria-hidden
+          >
+            {cloneWithClasses(leftIcon, "w-6 h-6")}
           </span>
         ) : null}
         <span className="whitespace-nowrap leading-none p-[5px]">
           {children}
         </span>
         {rightIcon ? (
-          <span className="shrink-0 py-[5px]" aria-hidden>
-            {rightIcon}
+          <span
+            className="shrink-0 py-[5px] flex items-center justify-center"
+            aria-hidden
+          >
+            {cloneWithClasses(rightIcon, "w-6 h-6")}
           </span>
         ) : null}
       </button>

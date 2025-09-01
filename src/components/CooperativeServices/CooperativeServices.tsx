@@ -72,7 +72,7 @@ export function CooperativeServices() {
               preset="primary"
               width="full"
               className="bg-primary-orange text-white"
-              rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+              rightIcon={<ArrowUpRightIcon />}
             >
               <span>Explore our services</span>
             </LiftedButton>

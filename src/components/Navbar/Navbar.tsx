@@ -174,13 +174,13 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
         className={`max-w-[1200px] mx-auto z-50 transition-all duration-300 ${
           isStatic
             ? isScrolled
-              ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
+              ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
               : "absolute top-0 left-0 right-0 bg-transparent px-6 py-4"
             : isScrolled
-            ? "fixed top-2 left-0 right-0 bg-paper-main px-6  border border-paper-2 shadow-lg"
+            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 xl:py-0 border border-paper-2 shadow-lg"
             : isNavbarHovered
-            ? "fixed top-2 left-0 right-0 bg-paper-main px-6 py-0 border border-transparent shadow-none"
-            : "fixed top-2 left-0 right-0 bg-transparent px-6 py-0 border border-transparent shadow-none"
+            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 xl:py-0 border border-paper-2 shadow-lg"
+            : "fixed xl:top-2 top-0 left-0 right-0 bg-transparent px-6 py-2 xl:py-0 border border-transparent shadow-none"
         }`}
         onMouseEnter={() => setIsNavbarHovered(true)}
         onMouseLeave={() => setIsNavbarHovered(false)}
@@ -339,7 +339,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             <div className="hidden md:block mt-1">
               <LiftedButton
                 preset="primary"
-                rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                rightIcon={<ArrowUpRightIcon />}
                 className="!py-2"
               >
                 <span>Visit app</span>
@@ -348,13 +348,13 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
             {/* Mobile: Visit App Button */}
             <div className="md:hidden">
-              <Button
-                variant="primary"
-                className="bg-primary-orange flex items-center gap-2"
+              <LiftedButton
+                preset="primary"
+                rightIcon={<ArrowUpRightIcon />}
+                className="bg-primary-orange h-[48px] flex items-center gap-2"
               >
                 <span>Visit app</span>
-                <ArrowUpRightIcon className="w-6 h-6" />
-              </Button>
+              </LiftedButton>
             </div>
 
             {/* Mobile: Hamburger Menu */}
@@ -373,7 +373,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-paper-main z-50 md:hidden">
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between p-6 border-b border-paper-2">
+            <div className="flex items-center justify-between py-2 px-6 border border-paper-2">
               <Image
                 src="/logo.svg"
                 alt="Bread Cooperative Logo"
@@ -384,8 +384,8 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               <div className="flex items-center gap-4">
                 <LiftedButton
                   preset="primary"
-                  rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
-                  className="flex items-center gap-2"
+                  rightIcon={<ArrowUpRightIcon />}
+                  className="flex items-center gap-2 h-[48px]"
                 >
                   <span>Visit app</span>
                 </LiftedButton>

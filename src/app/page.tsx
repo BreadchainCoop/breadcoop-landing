@@ -59,10 +59,8 @@ function StatsSection() {
             <div className="flex justify-center xl:justify-start">
               <LiftedButton
                 preset="stroke"
-                className="border border-surface-ink"
-                rightIcon={
-                  <ArrowUpRightIcon className="text-primary-orange w-6 h-6" />
-                }
+                className="border border-surface-ink h-[32px]"
+                rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
               >
                 <span>View analytics</span>
               </LiftedButton>
@@ -136,10 +134,8 @@ export default function Home() {
                     </h2>
                     <div className="flex flex-col xl:flex-row gap-4 xl:gap-6">
                       <LiftedButton
-                        className="w-full xl:w-[200px] h-[40px] xl:h-[56px] text-sm xl:text-base"
-                        rightIcon={
-                          <ArrowUpRightIcon className="w-4 h-4 xl:w-6 xl:h-6" />
-                        }
+                        className="w-full xl:w-[200px]"
+                        rightIcon={<ArrowUpRightIcon />}
                       >
                         <span>Visit app</span>
                       </LiftedButton>
@@ -148,7 +144,7 @@ export default function Home() {
                         <LiftedButton
                           preset="secondary"
                           className="w-[200px] h-[56px]"
-                          rightIcon={<ArrowRightIcon className="w-6 h-6" />}
+                          rightIcon={<ArrowRightIcon />}
                         >
                           <span>Our tools</span>
                         </LiftedButton>
@@ -226,7 +222,7 @@ export default function Home() {
                     forge solidarity between individuals and collectives.
                   </p>
                   <LiftedButton
-                    rightIcon={<ArrowUpRightIcon className="w-4 h-4" />}
+                    rightIcon={<ArrowUpRightIcon />}
                     className="w-full bg-primary-orange text-white flex items-center gap-2"
                   >
                     <span>Our manifest</span>
@@ -326,7 +322,7 @@ export default function Home() {
                     <LiftedButton
                       preset="secondary"
                       className="w-full"
-                      leftIcon={<BookOpenIcon className="w-6 h-6" />}
+                      leftIcon={<BookOpenIcon />}
                     >
                       <span>Read more</span>
                     </LiftedButton>
