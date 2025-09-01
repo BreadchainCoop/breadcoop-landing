@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { akzidenz, univers } from "./fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Content from "./Content";
 
 export const metadata: Metadata = {
   title: "Bread Cooperative",
@@ -72,7 +73,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-roboto bg-paper-main text-text-standard antialiased">
-        {children}
+        <Content>{children}</Content>
       </body>
     </html>
   );
