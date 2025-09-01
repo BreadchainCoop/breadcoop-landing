@@ -11,7 +11,6 @@ import {
   ArrowRightIcon,
   BookOpenIcon,
   CurrencyCircleDollarIcon,
-  HandPeaceIcon,
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 

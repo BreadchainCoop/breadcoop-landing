@@ -14,8 +14,10 @@ const cloneWithClasses = (
   additionalClasses: string
 ): React.ReactNode => {
   if (React.isValidElement(element)) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const existingClassName = (element.props as any).className || "";
     const newClassName = `${existingClassName} ${additionalClasses}`.trim();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return React.cloneElement(element as React.ReactElement<any>, {
       className: newClassName,
     });

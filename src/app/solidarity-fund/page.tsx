@@ -8,7 +8,6 @@ import { Subscribe } from "@/components/Subscribe/Subscribe";
 import { SolidarityTools } from "@/components/SolidarityTools/SolidarityTools";
 import { ArrowUpRightIcon, UserPlusIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
-import Link from "next/link";
 
 // Project data interface
 interface Project {
