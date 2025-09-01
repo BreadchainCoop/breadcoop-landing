@@ -34,7 +34,7 @@ export type LiftedButtonProps = {
   offsetPx?: number;
   durationMs?: number;
   className?: string;
-  width?: "full" | "auto";
+  width?: "full" | "auto" | "mobile-full";
 } & React.ComponentPropsWithoutRef<"button">;
 
 /**
@@ -75,6 +75,7 @@ export default function LiftedButton({
     "text-body text-[16px]",
     "px-[32px] h-14",
     width === "full" ? "w-full" : "",
+    width === "mobile-full" ? "w-full md:w-auto" : "",
   ];
 
   const activeClassNames = [
@@ -106,6 +107,8 @@ export default function LiftedButton({
       className={[
         width === "full"
           ? "relative block select-none align-middle"
+          : width === "mobile-full"
+          ? "relative block md:inline-block select-none align-middle"
           : "relative inline-block select-none align-middle",
         "group", // allows us to inherit hover activity on this parent in the children
       ].join(" ")}

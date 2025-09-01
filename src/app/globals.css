@@ -62,7 +62,7 @@
     @apply font-akz font-[900] text-[3rem] xl:text-[80px] leading-[36px] xl:leading-[63px] tracking-tighter;
   }
   .text-h4 {
-    @apply font-uni font-[700] text-[2rem] leading-[2rem];
+    @apply font-uni font-[700] text-[24px] xl:text-[2rem] leading-[24px] xl:leading-[2rem];
   }
   .text-h5 {
     @apply font-uni font-[400] text-[1rem] xl:text-[1.5rem] xl:leading-[24px];

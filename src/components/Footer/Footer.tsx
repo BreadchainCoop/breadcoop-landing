@@ -4,10 +4,8 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   YoutubeLogoIcon,
-  ChatCircleIcon,
+  DiscordLogoIcon,
   XLogoIcon,
-  ShieldIcon,
-  NotebookIcon,
   EnvelopeSimpleIcon,
   ArrowUpRightIcon,
 } from "@phosphor-icons/react/ssr";
@@ -35,12 +33,12 @@ function FooterLink({
 
 export function Footer() {
   return (
-    <footer className="bg-primary-orange py-12">
+    <footer className="bg-primary-orange px-4 py-12">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
           {/* Logo and Tagline */}
-          <div className="md:col-span-2 max-w-[311px]">
-            <div className="flex items-center gap-3 mb-4">
+          <div className="md:col-span-2 xl:max-w-[311px]">
+            <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
               <Image
                 src="/logo-white.svg"
                 alt="Bread Cooperative Logo"
@@ -52,16 +50,45 @@ export function Footer() {
                 BREAD COOPERATIVE
               </span>
             </div>
-            <p className="text-white font-univers mb-6">Solidarity forever.</p>
+            <p className="text-white font-univers mb-6 text-center md:text-left">
+              Solidarity forever.
+            </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-4">
-              <YoutubeLogoIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
-              <LinkedinLogoIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
-              <GithubLogoIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
-              <ChatCircleIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
-              <XLogoIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
-              <ShieldIcon className="w-5 h-5 text-surface-ink hover:text-paper-0 cursor-pointer" />
+            <div className="flex items-center gap-5 sm:gap-2 xl:gap-4">
+              <a href="#" className="block">
+                <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
+              </a>
+              <a href="#" className="block">
+                <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
+              </a>
+              <a href="#" className="block">
+                <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
+              </a>
+              <a href="#" className="block">
+                <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
+              </a>
+              <a href="#" className="block">
+                <XLogoIcon className="w-6 h-6 text-surface-ink" />
+              </a>
+              <a href="#" className="block">
+                <Image
+                  src="/paragraph.png"
+                  alt="Paragraph icon"
+                  width={24}
+                  height={24}
+                  className="p-[3px] w-6 h-6 text-surface-ink"
+                />
+              </a>
+              <a href="#" className="block">
+                <Image
+                  src="/mirror-icon.png"
+                  alt="Mirror icon"
+                  width={24}
+                  height={24}
+                  className="p-[3px] w-6 h-6 text-surface-ink"
+                />
+              </a>
             </div>
           </div>
 

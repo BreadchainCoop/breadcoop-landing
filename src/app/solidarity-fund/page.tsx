@@ -73,43 +73,94 @@ interface ProjectCardProps {
 function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="flex flex-col h-full">
-      {/* Project Image */}
-      <div className="w-full aspect-square mb-4 border border-paper-2 bg-white flex items-center justify-center">
-        <Image
-          src={project.image}
-          alt={`${project.name} logo`}
-          width={180}
-          height={180}
-          className="object-contain"
-        />
+      {/* Mobile Layout - Two Columns */}
+      <div className="xl:hidden grid grid-cols-2 gap-4 items-start">
+        {/* First Column - Logo Image */}
+        <div className=" w-[104px] h-[104px] xl:w-full xl:h-full aspect-square border border-paper-2 bg-white flex items-center justify-center">
+          <Image
+            src={project.image}
+            alt={`${project.name} logo`}
+            width={80}
+            height={80}
+            className="object-contain w-20 h-20"
+          />
+        </div>
+
+        {/* Second Column - Name and Buttons */}
+        <div className="flex flex-col justify-end  w-[104px] h-[104px] xl:h-full">
+          <h4 className="text-h4 text-text-standard font-bold mb-4 xl:mb-2">
+            {project.name}
+          </h4>
+          <p className="hidden xl:block text-body text-text-standard mb-4 text-sm">
+            {project.description}
+          </p>
+
+          {/* Buttons */}
+          <div className="space-y-[1px] xl:space-y-2">
+            <LiftedButton
+              preset="stroke"
+              className="border border-surface-ink h-8 text-sm  h-[32px]"
+              rightIcon={
+                <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
+              }
+            >
+              <span>Website</span>
+            </LiftedButton>
+            <div className="hidden xl:block">
+              <LiftedButton
+                preset="stroke"
+                className="border border-surface-ink h-8 text-sm"
+                rightIcon={
+                  <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
+                }
+              >
+                <span>KarmaGAP</span>
+              </LiftedButton>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Project Info */}
-      <div className="flex flex-col flex-1">
-        <h4 className="text-h4 text-text-standard font-bold mb-2">
-          {project.name}
-        </h4>
-        <p className="text-body text-text-standard mb-4 flex-1">
-          {project.description}
-        </p>
+      {/* Desktop Layout - Original Single Column */}
+      <div className="hidden xl:flex flex-col h-full">
+        {/* Project Image */}
+        <div className="w-full aspect-square mb-4 border border-paper-2 bg-white flex items-center justify-center">
+          <Image
+            src={project.image}
+            alt={`${project.name} logo`}
+            width={180}
+            height={180}
+            className="object-contain"
+          />
+        </div>
 
-        {/* Buttons */}
-        <div className="mt-8">
-          <LiftedButton
-            preset="stroke"
-            className="border border-surface-ink h-8"
-            rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
-          >
-            <span>Website</span>
-          </LiftedButton>
-          <div className="h-4"></div>
-          <LiftedButton
-            preset="stroke"
-            className="border border-surface-ink h-8"
-            rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
-          >
-            <span>KarmaGAP</span>
-          </LiftedButton>
+        {/* Project Info */}
+        <div className="flex flex-col flex-1">
+          <h4 className="text-h4 text-text-standard font-bold mb-2">
+            {project.name}
+          </h4>
+          <p className="text-body text-text-standard mb-4 flex-1">
+            {project.description}
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-8">
+            <LiftedButton
+              preset="stroke"
+              className="border border-surface-ink h-8"
+              rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+            >
+              <span>Website</span>
+            </LiftedButton>
+            <div className="h-4"></div>
+            <LiftedButton
+              preset="stroke"
+              className="border border-surface-ink h-8"
+              rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+            >
+              <span>KarmaGAP</span>
+            </LiftedButton>
+          </div>
         </div>
       </div>
     </div>
@@ -118,7 +169,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 
 export default function SolidarityFund() {
   return (
-    <div className="min-h-screen bg-paper-main flex flex-col">
+    <div className="min-h-screen overflow-x-hidden bg-paper-main flex flex-col">
       <Navbar static={true} />
 
       <main className="flex-1">
@@ -222,47 +273,60 @@ export default function SolidarityFund() {
         </section>
 
         {/* How It Works Section */}
-        <section className="bg-paper-main py-20">
+        <section className="bg-paper-main xl:py-20">
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-8">
-                <h2 className="text-h3 text-primary-orange">HOW IT WORKS</h2>
-                <h3 className="text-h2 text-text-standard -mt-8 ms-[80px] text-right w-3/4 ">
-                  Work together to fund <br />
+                <h2 className="text-h3 text-primary-orange">
+                  HOW IT <br className="block xl:hidden" /> WORKS
+                </h2>
+                <h3 className="text-h2 text-text-standard -mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
+                  Work together to fund <br className="hidden xl:block" />
                   what matters most.
                 </h3>
               </div>
 
               {/* Body Text */}
-              <p className="text-body text-text-standard mb-8 max-w-2xl">
+              <p className="text-body text-text-standard xl:mb-8 max-w-2xl">
                 Some sample copy for a little introduction to the token etc etc.
                 Breadchain Cooperative is a collective federation of
                 decentralized cooperative projects looking to advance a
                 progressive vision for blockchain and its effect on society.
               </p>
 
+              {/* Solidarity Diagram Mobile */}
+              <div className="block md:hidden flex mb-4 justify-center">
+                <Image
+                  src="/solidarity-diagram-vertical.png"
+                  alt="BREAD Solidarity Fund flowchart showing how users stake xDAI and $BREAD, which generates yield distributed equally and through voting to various projects"
+                  width={800}
+                  height={600}
+                  className="object-contain w-full max-w-4xl"
+                />
+              </div>
+
               {/* Buttons */}
-              <div className="xl:flex-row gap-6 mb-16">
+              <div className="block md:flex gap-6 mb-16">
                 <LiftedButton
                   className="bg-primary-orange xl:mt-0 text-white"
                   rightIcon={<ArrowUpRightIcon />}
-                  width="full"
+                  width="mobile-full"
                 >
                   <span>Visit app</span>
                 </LiftedButton>
                 <span className="block xl:hidden h-8"></span>
                 <LiftedButton
                   preset="secondary"
-                  width="full"
+                  width="mobile-full"
                   rightIcon={<ArrowUpRightIcon />}
                 >
                   <span>Learn more about $BREAD</span>
                 </LiftedButton>
               </div>
 
-              {/* Solidarity Diagram */}
-              <div className="flex justify-center">
+              {/* Solidarity Diagram Desktop */}
+              <div className="hidden md:block flex justify-center">
                 <Image
                   src="/solidarity-diagram.png"
                   alt="BREAD Solidarity Fund flowchart showing how users stake xDAI and $BREAD, which generates yield distributed equally and through voting to various projects"
@@ -276,7 +340,7 @@ export default function SolidarityFund() {
         </section>
 
         {/* Projects Section */}
-        <section className="bg-paper-main py-20">
+        <section className="bg-paper-main py-4 xl:py-20">
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
@@ -292,20 +356,21 @@ export default function SolidarityFund() {
               </div>
 
               {/* Projects Grid */}
-              <div className="grid grid-cols-5 gap-8 mb-16">
+              <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 mb-16">
                 {projects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
 
               {/* Call to Action */}
-              <div className="text-center">
+              <div className="text-left xl:text-center">
                 <p className="text-body text-text-standard mb-8">
                   Each project is carefully selected and held to the core values
                   and mission of the Bread Cooperative network.
                 </p>
                 <LiftedButton
                   className="bg-primary-orange text-white"
+                  width="mobile-full"
                   leftIcon={<UserPlusIcon className="w-6 h-6" />}
                 >
                   <span>Become a member project</span>
