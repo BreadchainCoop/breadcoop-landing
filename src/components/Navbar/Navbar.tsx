@@ -48,7 +48,17 @@ function SolidarityToolItem({
       onClick={handleClick}
     >
       <div
-        className={`group flex py-1 px-[6px] hover:border-${color} items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer`}
+        className={`group flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer ${
+          color === "primary-orange"
+            ? "hover:border-primary-orange"
+            : color === "primary-blue"
+            ? "hover:border-primary-blue"
+            : color === "primary-jade"
+            ? "hover:border-primary-jade"
+            : color === "surface-ink"
+            ? "hover:border-surface-ink"
+            : ""
+        }`}
         onMouseEnter={
           comingSoon
             ? undefined
