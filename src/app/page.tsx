@@ -13,22 +13,30 @@ import {
   CurrencyCircleDollarIcon,
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
+import { useBreadTvl } from "@/hooks/use-bread-tvl";
+import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
+import { useTotalBread } from "@/hooks/use-total-bread";
+import { formatSupply } from "@/util/formatter";
 
 // Stats Section Component
 function StatsSection() {
+  const breadTvl = useBreadTvl();
+  const projects = useBreadchainProjects();
+  const totalBread = useTotalBread();
+
   const stats = [
     {
-      number: "450,000",
+      number: breadTvl.data ? formatSupply(breadTvl.data) : "-",
       caption: "*1 $BREAD is always equal to 1 USD",
       title: "$BREAD in existence funding the future after capital",
     },
     {
-      number: "6",
+      number: projects.data ? projects.data.length : "-",
       caption: "",
       title: "Projects empowering each other",
     },
     {
-      number: "40,000",
+      number: totalBread.data ? formatSupply(totalBread.data) : "-",
       caption: "",
       title: "Total $BREAD distributed since launch",
     },

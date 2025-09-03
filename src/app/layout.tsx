@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { akzidenz, univers } from "./fonts";
 import "./globals.css";
+import Content from "./Content";
 
 export const metadata: Metadata = {
   title: "Bread Cooperative",
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${akzidenz.variable} ${univers.variable}`}>
       <body className="font-roboto bg-paper-main text-text-standard antialiased">
-        {children}
+        <Content>{children}</Content>
       </body>
     </html>
   );
