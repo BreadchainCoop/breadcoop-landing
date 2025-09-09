@@ -56,8 +56,7 @@ const projects: Project[] = [
   {
     id: "regen-coordination",
     name: "Regen Coordination",
-    description:
-      "(TBD) Global network driving the Regenerative Finance movement.",
+    description: "Supporting regenerative initiatives globally.",
     image: "/banner_refidao.png",
     websiteUrl: "#",
     karmagapUrl: "#",
@@ -181,42 +180,46 @@ export default function SolidarityFund() {
                 {/* Overlapping Text Layout */}
                 <div className="relative xl:mb-16">
                   {/* H1 Text */}
-                  <h1 className="text-h1 text-primary-orange mb-4 relative z-10">
-                    THE SOLIDARITY FUND
+                  <h1 className="text-h1 uppercase text-primary-orange mb-4">
+                    The <br /> solidarity fund
                   </h1>
 
                   <div className="block xl:hidden relative">
                     <Image
                       src="/hands.jpg"
                       alt="Hands reaching towards each other"
-                      width={343}
-                      height={216}
-                      className="mx-auto object-cover ms-16 -mt-13 object-bottom-left w-[343px] h-[216px]"
+                      width={836}
+                      height={562}
+                      className="mx-auto object-cover ms-16 -mt-13 object-bottom-left w-[836px] h-[562px]"
                     />
                   </div>
 
                   {/* H2 Text - Overlapping */}
-                  <h2 className="text-h2 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-8 xl:ml-8">
-                    Funding post-capitalism together
+                  <h2 className="text-h2 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
+                    Give without giving.*
                   </h2>
                 </div>
 
                 {/* Body Text and Button */}
                 <div className="grid md:grid-cols-2 gap-12 items-start">
                   {/* Left column - Text and button */}
-                  <div>
-                    <p className="text-body text-text-standard mb-8 max-w-[519px]">
-                      A shared fund for funding community projects. Known for
-                      helping BERKO and funding the local labor capital. Join us
-                      in building a future where communities support each other
-                      through mutual aid and solidarity.
+                  <div className="xl:max-w-[386px]">
+                    <p className="text-body text-text-standard mb-8 ">
+                      The fund supporting work that matters.
+                      <br />
+                      <br /> Mint $BREAD and vote for the future you wish to
+                      see. This is what a real democratic economy can look like.
+                    </p>
+                    <p className="text-caption text-text-standard mb-8">
+                      *This is a community fund, not an investment vehicle.
+                      Built for solidarity, not speculation
                     </p>
                     <LiftedButton
                       className="w-[200px] h-[56px] bg-primary-orange text-white"
                       rightIcon={<ArrowUpRightIcon />}
                       width="full"
                     >
-                      <span>Visit app</span>
+                      <span>Visit solidarity fund</span>
                     </LiftedButton>
                   </div>
 
@@ -236,41 +239,6 @@ export default function SolidarityFund() {
           </div>
         </section>
 
-        {/* Impact Statistics Section */}
-        <section className="bg-paper-main py-2">
-          <div className="max-w-[1280px] mx-auto px-12">
-            <div className="max-w-7xl mx-auto">
-              {/* Section Title */}
-              <h2 className="text-h2 text-text-standard text-center mb-16">
-                The impact of solidarity
-              </h2>
-
-              {/* Statistics Grid */}
-              <div className="grid md:grid-cols-3 gap-12 mb-20">
-                <div className="text-center flex flex-col">
-                  <div className="text-h1 flex text-primary-orange mb-4 items-end justify-center">
-                    50,000{" "}
-                    <span className="text-h5 text-primary-orange">USD</span>
-                  </div>
-                  <div className="text-h5 text-text-standard">
-                    Funded annually
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-primary-orange mb-4">6</div>
-                  <p className="text-h5 text-text-standard">
-                    Projects supported
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-primary-orange mb-4">478</div>
-                  <div className="text-h5 text-text-standard">Users</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* How It Works Section */}
         <section className="bg-paper-main xl:py-20">
           <div className="max-w-[1280px] mx-auto px-12">
@@ -281,17 +249,20 @@ export default function SolidarityFund() {
                   HOW IT <br className="block xl:hidden" /> WORKS
                 </h2>
                 <h3 className="text-h2 text-text-standard -mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
-                  Work together to fund <br className="hidden xl:block" />
+                  Come together to fund <br className="hidden xl:block" />
                   what matters most.
                 </h3>
               </div>
 
               {/* Body Text */}
-              <p className="text-body text-text-standard xl:mb-8 max-w-2xl">
-                Some sample copy for a little introduction to the token etc etc.
-                Breadchain Cooperative is a collective federation of
-                decentralized cooperative projects looking to advance a
-                progressive vision for blockchain and its effect on society.
+              <p className="text-body text-text-standard xl:mb-8 xl:max-w-[386px]">
+                What you know as minting, we call baking.
+                <br />
+                <br />
+                Baking $BREAD is your first step into our solidarity network.
+                Your funds generate yield, and you decide which member
+                organisation receives it. The more $BREAD baked, the greater our
+                capacity to address the needs of real people, everywhere.
               </p>
 
               {/* Solidarity Diagram Mobile */}
@@ -312,7 +283,7 @@ export default function SolidarityFund() {
                   rightIcon={<ArrowUpRightIcon />}
                   width="mobile-full"
                 >
-                  <span>Visit app</span>
+                  <span>Visit solidarity fund</span>
                 </LiftedButton>
                 <span className="block xl:hidden h-8"></span>
                 <LiftedButton
@@ -327,30 +298,81 @@ export default function SolidarityFund() {
               {/* Solidarity Diagram Desktop */}
               <div className="hidden md:block flex justify-center">
                 <Image
-                  src="/solidarity-diagram.png"
+                  src="/solidarity-diagram.svg"
                   alt="BREAD Solidarity Fund flowchart showing how users stake xDAI and $BREAD, which generates yield distributed equally and through voting to various projects"
                   width={800}
                   height={600}
-                  className="object-contain w-full max-w-4xl"
+                  className="object-contain w-full xl:-mt-40"
                 />
               </div>
             </div>
           </div>
         </section>
+        {/* Impact Statistics Section */}
+        <section className="bg-paper-main py-2">
+          <div className="max-w-[1280px] mx-auto px-12">
+            <div className="max-w-7xl mx-auto">
+              {/* Section Title */}
+              <h2 className="text-h2 text-text-standard text-center mb-16">
+                The impact of solidarity
+              </h2>
 
+              {/* Statistics Grid */}
+              <div className="grid md:grid-cols-3 gap-12 mb-10">
+                <div className="text-center text-text-standard flex flex-col">
+                  <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
+                    50,000 <span className="text-h5 ">USD</span>
+                  </div>
+                  <div className="text-h5 text-text-standard">
+                    Total distributed
+                    <p className="text-caption text-text-standard">
+                      Since the launch of the fund
+                    </p>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-h1 text-surface-brown mb-4">6</div>
+                  <p className="text-h5 text-text-standard">
+                    Projects supported
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-h1 text-surface-brown mb-4">450,000</div>
+                  <div className="text-h5 text-text-standard">
+                    $BREAD in existence
+                    <p className="text-caption text-text-standard">
+                      * 1 $BREAD is always equal to 1 USD
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <a href={"#"} target="_blank" rel="noopener noreferrer">
+                  <LiftedButton
+                    preset="stroke"
+                    className="border border-surface-ink h-[32px]"
+                    rightIcon={
+                      <ArrowUpRightIcon className="text-primary-orange" />
+                    }
+                  >
+                    <span>View analytics</span>
+                  </LiftedButton>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Projects Section */}
-        <section className="bg-paper-main py-4 xl:py-20">
+        <section className="bg-paper-main py-4 xl:py-25">
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-16">
-                <h2 className="text-h3 text-primary-orange text-right">
-                  POST-CAPITALIST
-                  <br />
-                  PROJECTS WE FUND
+                <h2 className="text-h3 uppercase text-primary-orange text-right">
+                  The bread solidarity <br /> fund network
                 </h2>
                 <h3 className="text-h2 text-text-standard ms-12 -mt-7">
-                  A network of friends
+                  A community of friends
                 </h3>
               </div>
 
@@ -365,15 +387,24 @@ export default function SolidarityFund() {
               <div className="text-left xl:text-center">
                 <p className="text-body text-text-standard mb-8">
                   Each project is carefully selected and held to the core values
-                  and mission of the Bread Cooperative network.
+                  and mission of the Bread Cooperative Solidarity Fund network.
                 </p>
-                <LiftedButton
-                  className="bg-primary-orange text-white"
-                  width="mobile-full"
-                  leftIcon={<UserPlusIcon className="w-6 h-6" />}
-                >
-                  <span>Become a member project</span>
-                </LiftedButton>
+                  <div className="flex flex-col xl:flex-row gap-4">
+                    <LiftedButton
+                      preset="primary"
+                      width="mobile-full"
+                      leftIcon={<UserPlusIcon />}
+                    >
+                      <span>Become a member project</span>
+                    </LiftedButton>
+                    <LiftedButton
+                      preset="secondary"
+                      width="mobile-full"
+                      rightIcon={<ArrowUpRightIcon />}
+                    >
+                      <span>Project requirements</span>
+                    </LiftedButton>
+                  </div>
                 <p className="text-caption mt-4 text-text-standard">
                   *Member projects are carefully selected. Sign ups are not
                   guaranteed memberships

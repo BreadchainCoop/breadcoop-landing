@@ -95,9 +95,7 @@ export default function LiftedButton({
     "group-active:translate-x-0 group-active:translate-y-0",
   ];
 
-  const disabledClassNames = [
-    "bg-[var(--color-surface-grey)] text-[var(--color-background)] opacity-50",
-  ];
+  const disabledClassNames = ["bg-[var(--color-surface-grey)]  opacity-50"];
 
   const classNames = baseClassNames.concat(
     disabled ? disabledClassNames : activeClassNames

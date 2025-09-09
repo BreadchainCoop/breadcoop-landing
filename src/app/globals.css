@@ -53,7 +53,7 @@
 
 @layer components {
   .text-h1 {
-    @apply font-akz font-[900] text-[3rem] xl:text-[7.3rem] leading-[36px] xl:leading-[94px]  tracking-[-3%] uppercase;
+    @apply font-akz font-[900] text-[3rem] xl:text-[7rem] leading-[36px] xl:leading-[94px]  tracking-[-3%] uppercase;
   }
   .text-h2 {
     @apply font-akz font-[900] text-[1.5rem] leading-[20px] xl:text-[3rem] xl:leading-[48px] xl:leading-[48px] tracking-tight;

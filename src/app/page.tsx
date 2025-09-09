@@ -18,19 +18,25 @@ import Image from "next/image";
 function StatsSection() {
   const stats = [
     {
-      number: "450,000",
-      caption: "*1 $BREAD is always equal to 1 USD",
-      title: "$BREAD in existence funding the future after capital",
+      number: "100K+",
+      caption: "",
+      title: "People in our network",
+      buttonText: "",
+      buttonLink: "",
     },
     {
       number: "6",
       caption: "",
       title: "Projects empowering each other",
+      buttonText: "View projects",
+      buttonLink: "",
     },
     {
-      number: "40,000",
+      number: "$40,000",
       caption: "",
-      title: "Total $BREAD distributed since launch",
+      title: "Total distributed towards solidarity since launch",
+      buttonText: "View analytics",
+      buttonLink: "https://dune.com/breadchain_cooperative/breadchain",
     },
   ];
 
@@ -55,15 +61,37 @@ function StatsSection() {
             <h5 className="text-h5 text-text-standard text-center xl:text-left mb-8">
               {stat.title}
             </h5>
-            <div className="flex justify-center xl:justify-start">
-              <LiftedButton
-                preset="stroke"
-                className="border border-surface-ink h-[32px]"
-                rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
-              >
-                <span>View analytics</span>
-              </LiftedButton>
-            </div>
+            {stat.buttonText && (
+              <div className="flex justify-center xl:justify-start">
+                {stat.buttonLink ? (
+                  <a
+                    href={stat.buttonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LiftedButton
+                      preset="stroke"
+                      className="border border-surface-ink h-[32px]"
+                      rightIcon={
+                        <ArrowUpRightIcon className="text-primary-orange" />
+                      }
+                    >
+                      <span>{stat.buttonText}</span>
+                    </LiftedButton>
+                  </a>
+                ) : (
+                  <LiftedButton
+                    preset="stroke"
+                    className="border border-surface-ink h-[32px]"
+                    rightIcon={
+                      <ArrowUpRightIcon className="text-primary-orange" />
+                    }
+                  >
+                    <span>{stat.buttonText}</span>
+                  </LiftedButton>
+                )}
+              </div>
+            )}
           </div>
         </div>
       ))}
@@ -116,11 +144,11 @@ export default function Home() {
           {/* Content Container */}
           <div className="relative z-10 max-w-[1280px] mx-auto px-4 xl:px-12">
             {/* Content - Full width with proper positioning */}
-            <div className="w-full px-4 xl:px-6 py-20">
+            <div className="w-full px-4 xl:px-4 py-20">
               <div className="max-w-[388px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
-                <h1 className="text-h1 pt-4 ">
-                  WE BUILD THINGS FOR PEOPLE WHO CARE.
+                <h1 className="text-h1 pt-4 uppercase">
+                  Financial tools today. Solidarity forever.
                 </h1>
 
                 {/* Two column layout for content and image */}
@@ -128,8 +156,8 @@ export default function Home() {
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
                     <h2 className="text-h2 font-[400] text-[1.5rem] xl:text-[4rem] leading-[1.2] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
-                      A worker collective building the crypto tools for
-                      solidarity.
+                      We are a worker collective building technology to go far,
+                      together.
                     </h2>
                     <div className="flex flex-col xl:flex-row gap-4 xl:gap-6">
                       <LiftedButton
@@ -184,16 +212,17 @@ export default function Home() {
             <div className="max-w-[388px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
               <div className="text-right mb-8">
-                <h1 className="text-h1 text-primary-orange">
-                  TECH-POWERED
-                  <br />& OWNED BY WORKERS
+                <h1 className="text-h1 uppercase text-primary-orange">
+                  Powered &
+                  <br />
+                  owned by workers
                 </h1>
               </div>
 
               {/* Bold Left Aligned Text */}
-              <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-20 relative z-10">
-                <h2 className="text-h2 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-2/3">
-                  We are building real tools for people to use—right now.
+              <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-18 relative z-10">
+                <h2 className="text-h2 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
+                  We're here to show what a worker-owned future can look like
                 </h2>
               </div>
               <div className="block xl:hidden relative">
@@ -213,18 +242,16 @@ export default function Home() {
                     The most powerful mission is the one where you act.
                   </h4>
                   <p className="text-body text-text-standard pt-4 xl:pt-0 mb-8">
-                    Bread Cooperative is a collective federation of
-                    decentralized cooperative projects looking to advance a
-                    progressive vision for power and tech and its effect on
-                    society. We aim to do this by building and utilizing what we
-                    call solidarity primitives — development tools which help to
-                    forge solidarity between individuals and collectives.
+                    Bread Cooperative builds tools that put working people
+                    first. We want to put in place a future where technology
+                    serves as a means of empowerment, not a tool for fear and
+                    control.
                   </p>
                   <LiftedButton
                     rightIcon={<ArrowUpRightIcon />}
                     className="w-full bg-primary-orange text-white flex items-center gap-2"
                   >
-                    <span>Our manifest</span>
+                    <span>Our manifesto</span>
                   </LiftedButton>
                 </div>
 
@@ -244,29 +271,19 @@ export default function Home() {
         </section>
 
         {/* Third Section - Stats */}
-        <section className="bg-paper-main pb-20 xl:pt-20">
+        <section className="bg-paper-main pb-20 xl:pb-50 xl:pt-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
             <div className="max-w-[388px] xl:max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="mb-8 -mt-8">
-                <h1 className="text-h1 text-primary-orange mb-4">
-                  REAL <br />
-                  PEOPLE
+                <h1 className="text-h1 uppercase text-primary-orange mb-4">
+                  A global <br />
+                  community
                 </h1>
-                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 xl:-mt-12 text-right">
-                  behind every number.
+                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 xl:-mt-12 xl:ml-4 text-right">
+                  United by solidarity
                 </h2>
               </div>
-
-              {/* Mission statement paragraph */}
-              <p className="text-body text-text-standard mb-16 xl:w-5/9">
-                Bread Cooperative is a collective federation of democratized
-                cooperative projects looking to advance a progressive vision for
-                power and tech and its effect on society. We aim to do this by
-                building and utilizing educational solidarity practices —
-                development roadmap to help to forge solidarity between
-                individuals and collectives.
-              </p>
 
               {/* Stats Sections */}
               <StatsSection />
@@ -282,13 +299,14 @@ export default function Home() {
             <div className="max-w-[388px] xl:max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-8 xl:mb-16">
-                <h1 className="text-h1 text-primary-orange mb-4">
-                  $BREAD—HOW IT <br className="hidden xl:block" /> WORKS
+                <h1 className="text-h1 uppercase text-primary-orange mb-4">
+                  $Bread&mdash;How it <br className="hidden xl:block" /> works
                 </h1>
-                <h2 className="text-h2 text-text-standard  text-right me-12 -mt-5 xl:-mt-36">
-                  The $BREAD we all <br />
-                  share
-                </h2>
+                <div className="flex justify-end">
+                  <h2 className="text-h2 text-text-standard xl:w-2/3 text-right me-12 -mt-5 xl:pl-18 xl:-mt-36">
+                    Spreading support and solidarity
+                  </h2>
+                </div>
               </div>
 
               {/* Two Column Layout */}
@@ -296,13 +314,13 @@ export default function Home() {
                 {/* Left Column - Text and Buttons */}
                 <div className="flex flex-col xl:ps-8 xl:col-span-3">
                   <p className="text-body text-text-standard mb-6">
-                    BREAD is digital money with built in solidarity — it is our
-                    first proven solidarity primitive and the foundation of our
-                    tools.
+                    $BREAD reflects the solidarity in our community. Anyone can
+                    bake $BREAD. All $BREAD holders contribute to the future we
+                    can put in place. Digital money, built for mutual aid.
                   </p>
                   <p className="text-body text-text-standard mb-8">
-                    It is secured on the Gnosis Chain Network and is a digital
-                    USD backed currency designed to share its profits.
+                    $BREAD is our engine for a worker-owned future built on
+                    resilient infrastructure.
                   </p>
 
                   {/* Chips and Text - Mobile */}

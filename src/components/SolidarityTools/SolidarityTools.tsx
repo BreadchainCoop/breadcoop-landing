@@ -15,16 +15,17 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
       id: "solidarity-fund",
       title: "Solidarity Fund",
       description:
-        "A shared fund for funding community projects. Known for helping BERKO and funding the local labor capital.",
+        "Community coming together to fund what matters to us. Bake $BREAD and support projects you believe in.",
       color: "text-orange-2",
       buttonClass: "bg-primary-orange text-white",
       logo: "/logo-line-orange.svg",
       show: !hiddenColumns.includes("solidarity-fund"),
+      comingSoon: false,
     },
     {
-      id: "savings",
-      title: "Savings",
-      description: "Save for your next purchase together with your friends.",
+      id: "stacks",
+      title: "Stacks",
+      description: "Financial goals. Achieved together.",
       color: "text-primary-blue",
       buttonClass: "",
       colorOverrides: {
@@ -32,13 +33,14 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
         hoverBg: "--color-blue-2",
       },
       logo: "/logo-line-blue.svg",
-      show: !hiddenColumns.includes("savings"),
+      show: !hiddenColumns.includes("stacks"),
+      comingSoon: true,
     },
     {
-      id: "mutuals",
-      title: "Mutuals",
+      id: "safety-net",
+      title: "Safety Net",
       description:
-        "Save for each other for when times are rough. Both money together and your in-return in case something.",
+        "Collective support guides us through crisis. Build emergency funds with people you trust.",
       color: "text-primary-jade",
       buttonClass: "",
       colorOverrides: {
@@ -46,7 +48,8 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
         hoverBg: "--color-jade-2",
       },
       logo: "/logo-line-green.svg",
-      show: !hiddenColumns.includes("mutuals"),
+      show: !hiddenColumns.includes("safety-net"),
+      comingSoon: true,
     },
   ];
 
@@ -80,23 +83,14 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
             {/* Right Column - Text and Bullet List */}
             <div>
-              <h2 className="text-h2 text-[48px] leading-[38px] xl:text-[80px] xl:leading-[63px] text-right xl:text-left text-orange-2 mb-8">
+              <h2 className="text-h2 text-right xl:text-left text-orange-2 mb-8">
                 THIS IS WHAT SOLIDARITY LOOKS LIKE
               </h2>
-              <ul className="text-paper-0 xl:w-2/3 ms-6 list-disc">
-                <li className="text-body">A community that never gives up</li>
-                <li className="text-body">Tools that are open to use</li>
-                <li className="text-body">
-                  A way to be of service but also to keep building a compelling
-                  user experience
-                </li>
-                <li className="text-body">
-                  The way to save money together with others
-                </li>
-                <li className="text-body">
-                  Cover of health (often with BERKO) for when times are rough.
-                </li>
-              </ul>
+              <p className="w-2/3 pe-7">
+                Mutual aid that works. Savings that grow together. Emergency
+                funds controlled by the community. Real financial tools that put
+                people before profit. Support your friends with $BREAD.
+              </p>
             </div>
           </div>
 
@@ -122,10 +116,12 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
                   <LiftedButton
                     rightIcon={<ArrowUpRightIcon />}
                     className={`${column.buttonClass}`}
-                    width="full"
+                    disabled={column.comingSoon}
                     colorOverrides={column.colorOverrides}
                   >
-                    <span>Learn more</span>
+                    <span>
+                      {column.comingSoon ? "Coming soon" : "Learn more"}
+                    </span>
                   </LiftedButton>
                 </div>
 

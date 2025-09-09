@@ -29,9 +29,9 @@ export function CooperativeServices() {
                   COOPERATIVE.
                 </h3>
                 <p className="text-body text-text-standard mb-8">
-                  We are always open to workers that want to work together in
-                  building the tools that can bring us together and build a
-                  future after capital.
+                  Bring your skills, your questions, and your perspective. We're
+                  stronger when people from all walks of life unite for a common
+                  cause.
                 </p>
               </div>
               <LiftedButton
@@ -40,7 +40,7 @@ export function CooperativeServices() {
                 className="bg-primary-orange text-white"
                 leftIcon={<HandPeaceIcon className="w-6 h-6" />}
               >
-                <span>Contribute and join</span>
+                <span>Sign up to contribute</span>
               </LiftedButton>
             </div>
           </div>
@@ -64,8 +64,8 @@ export function CooperativeServices() {
                 WITH YOU.
               </h3>
               <p className="text-body text-paper-main mb-8">
-                Sourdough Systems is our organization where we offer our work to
-                the world. We can build powerful digital tools.
+                Sourdough Systems is our full service web3 development studio
+                where we build applications with others.
               </p>
             </div>
             <LiftedButton
