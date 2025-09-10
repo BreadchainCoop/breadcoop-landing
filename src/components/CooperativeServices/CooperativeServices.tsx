@@ -29,9 +29,9 @@ export function CooperativeServices() {
                   COOPERATIVE.
                 </h3>
                 <p className="text-body text-text-standard mb-8">
-                  Bring your skills, your questions, and your perspective. We're
-                  stronger when people from all walks of life unite for a common
-                  cause.
+                  Bring your skills, your questions, and your perspective.
+                  We&apos;re stronger when people from all walks of life unite
+                  for a common cause.
                 </p>
               </div>
               <LiftedButton

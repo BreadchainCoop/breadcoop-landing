@@ -233,7 +233,8 @@ export default function Home() {
               {/* Bold Left Aligned Text */}
               <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-18 relative z-10">
                 <h2 className="text-h2 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
-                  We're here to show what a worker-owned future can look like
+                  We&apos;re here to show what a worker-owned future can look
+                  like
                 </h2>
               </div>
               <div className="block md:hidden relative">
