@@ -56,7 +56,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
   // Filter to only show visible columns
   const visibleColumns = allColumns.filter((column) => column.show);
   const gridCols =
-    visibleColumns.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
+    visibleColumns.length === 3 ? "xl:grid-cols-3" : "xl:grid-cols-2";
 
   return (
     <section className="relative bg-surface-ink">
@@ -69,9 +69,9 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
       <div className="relative z-10 max-w-[1280px] mx-auto px-8 xl:px-16 py-10">
         <div className="max-w-7xl mx-auto">
           {/* First Row - Two Columns */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-10 xl:mb-20">
             {/* Left Column - Image */}
-            <div className="hidden xl:block -mt-50">
+            <div className="hidden md:block md:-mt-40 xl:-mt-50">
               <Image
                 src="/hands-2.jpg"
                 alt="People working together"
@@ -83,10 +83,10 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
             {/* Right Column - Text and Bullet List */}
             <div>
-              <h2 className="text-h2 text-right xl:text-left text-orange-2 mb-8">
+              <h3 className="text-h3 text-right md:text-left  xl:text-right xl:text-left text-orange-2 mb-8">
                 THIS IS WHAT SOLIDARITY LOOKS LIKE
-              </h2>
-              <p className="w-2/3 pe-7">
+              </h3>
+              <p className="xl:w-2/3 pe-7">
                 Mutual aid that works. Savings that grow together. Emergency
                 funds controlled by the community. Real financial tools that put
                 people before profit. Support your friends with $BREAD.
@@ -95,13 +95,15 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
           </div>
 
           {/* Second Row - Dynamic Columns */}
-          <div className={`grid gap-12 ${gridCols} items-stretch`}>
+          <div
+            className={`md:max-w-[700px] mx-auto xl:max-w-7xl md:mt-42 xl:mt-0 grid gap-12 ${gridCols} items-stretch`}
+          >
             {visibleColumns.map((column, index) => (
               <div
                 key={column.id}
-                className={`relative xl:w-full flex flex-col h-full justify-between ${
+                className={`relative xl:w-full md:w-[340px] flex flex-col h-full justify-between ${
                   index % 2 === 1 ? "pl-24 xl:pl-0" : "pr-24 xl:pr-0"
-                }`}
+                } ${index % 2 === 1 ? "md:ml-auto" : ""}`}
               >
                 <div>
                   <h2 className={`text-h2 ${column.color} mb-4`}>
@@ -125,7 +127,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
                   </LiftedButton>
                 </div>
 
-                <div className="hidden xl:block absolute -top-18 right-0 -z-10">
+                <div className="hidden md:block absolute -top-18 right-0 -z-10">
                   <Image
                     src={column.logo}
                     alt="Logo"

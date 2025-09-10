@@ -45,12 +45,14 @@ function StatsSection() {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className={`grid xl:grid-cols-2 gap-2 xl:gap-12 items-center ${
-            index < stats.length - 1 ? "border-b border-orange-0 pb-12" : ""
+          className={`grid md:grid-cols-2 gap-2 md:gap-12 items-center ${
+            index < stats.length - 1 ? "border-b border-orange-0" : ""
           }`}
         >
-          <div className="text-center xl:text-right">
-            <h1 className="text-h1 text-surface-brown">{stat.number}</h1>
+          <div className="text-center md:text-right">
+            <h1 className="text-h1 md:pb-12  text-surface-brown">
+              {stat.number}
+            </h1>
             {stat.caption && (
               <p className="text-caption text-text-standard pt-4">
                 {stat.caption}
@@ -58,11 +60,11 @@ function StatsSection() {
             )}
           </div>
           <div className="px-12">
-            <h5 className="text-h5 text-text-standard text-center xl:text-left mb-8">
+            <h5 className="text-h5 text-text-standard text-center md:text-left mb-8">
               {stat.title}
             </h5>
             {stat.buttonText && (
-              <div className="flex justify-center xl:justify-start">
+              <div className="flex justify-center pb-12 md:justify-start">
                 {stat.buttonLink ? (
                   <a
                     href={stat.buttonLink}
@@ -145,7 +147,7 @@ export default function Home() {
           <div className="relative z-10 max-w-[1280px] mx-auto px-4 xl:px-12">
             {/* Content - Full width with proper positioning */}
             <div className="w-full px-4 xl:px-4 py-20">
-              <div className="max-w-[388px] xl:max-w-7xl mx-auto">
+              <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
                 <h1 className="text-h1 pt-4 uppercase">
                   Financial tools today. Solidarity forever.
@@ -155,38 +157,47 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 xl:gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
-                    <h2 className="text-h2 font-[400] text-[1.5rem] xl:text-[4rem] leading-[1.2] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
+                    <h2 className="text-h2 font-[400] xl:text-[4rem] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
                       We are a worker collective building technology to go far,
                       together.
                     </h2>
-                    <div className="flex flex-col xl:flex-row gap-4 xl:gap-6">
+                    <div className="flex flex-col md:flex-row gap-4 xl:gap-6">
                       <LiftedButton
-                        className="w-full xl:w-[200px]"
+                        className="w-full md:w-[200px]"
                         rightIcon={<ArrowUpRightIcon />}
                       >
                         <span>Visit app</span>
                       </LiftedButton>
 
-                      <div className="hidden xl:block">
-                        <LiftedButton
-                          preset="secondary"
-                          className="w-[200px] h-[56px]"
-                          rightIcon={<ArrowRightIcon />}
-                        >
-                          <span>Our tools</span>
-                        </LiftedButton>
-                      </div>
+                      <LiftedButton
+                        preset="secondary"
+                        className="w-full md:w-[200px] h-[56px]"
+                        rightIcon={<ArrowRightIcon />}
+                      >
+                        <span>Our tools</span>
+                      </LiftedButton>
                     </div>
                   </div>
 
                   {/* Right column - Image for mobile */}
-                  <div className="col-span-1 relative -mr-8 xl:hidden">
+                  <div className="col-span-1 relative -mr-8 md:hidden">
                     <Image
                       src="/holding-baby.jpg"
                       alt="People caring for each other"
                       width={300}
                       height={355}
                       className="object-cover w-[300px] h-[355px] object-top rounded -mb-[114px]"
+                    />
+                  </div>
+
+                  {/* Right column - Image for tablet */}
+                  <div className="col-span-1 relative ml-12 hidden md:block xl:hidden">
+                    <Image
+                      src="/holding-baby.jpg"
+                      alt="People caring for each other"
+                      width={400}
+                      height={455}
+                      className="object-cover w-[400px] h-[455px] object-top rounded -mb-[214px]"
                     />
                   </div>
                 </div>
@@ -207,9 +218,9 @@ export default function Home() {
         </section>
 
         {/* Second Section - Light Background */}
-        <section className="bg-paper-main pb-20 xl:pt-76">
+        <section className="bg-paper-main pb-20 md:pt-45 xl:pt-76">
           <div className="max-w-[1280px] relative z-20 mx-auto xl:px-16">
-            <div className="max-w-[388px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
+            <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
               <div className="text-right mb-8">
                 <h1 className="text-h1 uppercase text-primary-orange">
@@ -225,7 +236,7 @@ export default function Home() {
                   We're here to show what a worker-owned future can look like
                 </h2>
               </div>
-              <div className="block xl:hidden relative">
+              <div className="block md:hidden relative">
                 <Image
                   src="/hands.jpg"
                   alt="Hands reaching towards each other"
@@ -235,10 +246,10 @@ export default function Home() {
                 />
               </div>
               {/* Content Section with Two Columns */}
-              <div className="grid xl:grid-cols-2 gap-12  xl:pt-20 items-start">
+              <div className="grid md:grid-cols-2 gap-12  xl:pt-20 items-start">
                 {/* Left Column - Content */}
-                <div className="flex flex-col w-full pe-12">
-                  <h4 className="hidden xl:block text-h4 text-text-standard mb-6">
+                <div className="flex flex-col w-full pr-12 md:pr-0 md:pt-12 xl:pt-12 xl:pt-0">
+                  <h4 className="hidden md:block text-h4 text-text-standard mb-6">
                     The most powerful mission is the one where you act.
                   </h4>
                   <p className="text-body text-text-standard pt-4 xl:pt-0 mb-8">
@@ -265,6 +276,17 @@ export default function Home() {
                     className="object-cover object-bottom-left w-full h-[412px]"
                   />
                 </div>
+
+                {/* Right Column - Image Tablet Only */}
+                <div className="hidden md:block xl:hidden mt-18 relative">
+                  <Image
+                    src="/hands.jpg"
+                    alt="Hands reaching towards each other"
+                    width={373}
+                    height={220}
+                    className="object-cover object-bottom-left w-full h-[220px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -273,14 +295,14 @@ export default function Home() {
         {/* Third Section - Stats */}
         <section className="bg-paper-main pb-20 xl:pb-50 xl:pt-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
-            <div className="max-w-[388px] xl:max-w-7xl mx-auto">
+            <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
               {/* Header with overlapping text */}
-              <div className="mb-8 -mt-8">
+              <div className="mb-8 md:mb-16 -mt-8">
                 <h1 className="text-h1 uppercase text-primary-orange mb-4">
                   A global <br />
                   community
                 </h1>
-                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 xl:-mt-12 xl:ml-4 text-right">
+                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 md:-mt-9 xl:-mt-12 xl:ml-4 text-right">
                   United by solidarity
                 </h2>
               </div>
@@ -296,7 +318,7 @@ export default function Home() {
         {/* Fifth Section - $BREAD How It Works */}
         <section className="bg-paper-main py-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
-            <div className="max-w-[388px] xl:max-w-7xl mx-auto">
+            <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-8 xl:mb-16">
                 <h1 className="text-h1 uppercase text-primary-orange mb-4">
@@ -310,9 +332,9 @@ export default function Home() {
               </div>
 
               {/* Two Column Layout */}
-              <div className="grid xl:grid-cols-8 gap-12 items-start">
+              <div className="grid md:grid-cols-8 md:gap-1 xl:gap-12 items-start">
                 {/* Left Column - Text and Buttons */}
-                <div className="flex flex-col xl:ps-8 xl:col-span-3">
+                <div className="flex flex-col md:ps-8 md:col-span-3">
                   <p className="text-body text-text-standard mb-6">
                     $BREAD reflects the solidarity in our community. Anyone can
                     bake $BREAD. All $BREAD holders contribute to the future we
@@ -324,7 +346,7 @@ export default function Home() {
                   </p>
 
                   {/* Chips and Text - Mobile */}
-                  <div className="xl:hidden mb-6">
+                  <div className="md:hidden mb-6">
                     <ChipsSection />
                   </div>
 
@@ -347,7 +369,7 @@ export default function Home() {
                 </div>
 
                 {/* Right Column - SVG and Chips */}
-                <div className="hidden xl:block relative xl:col-span-5">
+                <div className="hidden md:block relative md:col-span-5">
                   {/* Large SVG */}
                   <div className="flex justify-center mb-8">
                     <Image
@@ -360,12 +382,12 @@ export default function Home() {
                   </div>
 
                   {/* Chips and Text - Desktop */}
-                  <div className="hidden xl:block">
+                  <div className="hidden md:mt-18 xl:mt-0 md:block">
                     <ChipsSection />
                   </div>
 
                   {/* Forever Text */}
-                  <div className="hidden xl:block text-right me-12">
+                  <div className="hidden md:block text-right me-12">
                     <h5 className="text-h5 text-text-standard">Forever.</h5>
                   </div>
                 </div>

@@ -34,10 +34,61 @@ function FooterLink({
 export function Footer() {
   return (
     <footer className="bg-primary-orange px-4 py-12">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
-          {/* Logo and Tagline */}
-          <div className="md:col-span-2 xl:max-w-[311px]">
+      <div className="max-w-[1280px] md:max-w-[768px] mx-auto px-6">
+        {/* Top Row - Logo, Name, and Social Icons (Tablet Layout) */}
+        <div className="md:flex md:items-center md:justify-between md:mb-8 xl:hidden">
+          <div className="flex items-center gap-3 mb-4 md:mb-0 justify-center md:justify-start">
+            <Image
+              src="/logo-white.svg"
+              alt="Bread Cooperative Logo"
+              width={24}
+              height={24}
+              className="w-6 h-6"
+            />
+            <span className="font-akzidenz mt-1 font-bold text-[24px] text-white">
+              BREAD COOPERATIVE
+            </span>
+          </div>
+          <div className="flex items-center gap-5 sm:gap-2 justify-center md:justify-end">
+            <a href="#" className="block">
+              <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
+            </a>
+            <a href="#" className="block">
+              <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
+            </a>
+            <a href="#" className="block">
+              <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
+            </a>
+            <a href="#" className="block">
+              <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
+            </a>
+            <a href="#" className="block">
+              <XLogoIcon className="w-6 h-6 text-surface-ink" />
+            </a>
+            <a href="#" className="block">
+              <Image
+                src="/paragraph.png"
+                alt="Paragraph icon"
+                width={24}
+                height={24}
+                className="p-[3px] w-6 h-6 text-surface-ink"
+              />
+            </a>
+            <a href="#" className="block">
+              <Image
+                src="/mirror-icon.png"
+                alt="Mirror icon"
+                width={24}
+                height={24}
+                className="p-[3px] w-6 h-6 text-surface-ink"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+          {/* Logo and Tagline (Desktop Layout) */}
+          <div className="hidden xl:block xl:col-span-2 xl:max-w-[311px]">
             <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
               <Image
                 src="/logo-white.svg"

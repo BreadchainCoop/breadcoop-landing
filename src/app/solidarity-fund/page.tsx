@@ -384,27 +384,27 @@ export default function SolidarityFund() {
               </div>
 
               {/* Call to Action */}
-              <div className="text-left xl:text-center">
+              <div className="text-left xl:text-left max-w-2xl mx-auto">
                 <p className="text-body text-text-standard mb-8">
                   Each project is carefully selected and held to the core values
                   and mission of the Bread Cooperative Solidarity Fund network.
                 </p>
-                  <div className="flex flex-col xl:flex-row gap-4">
-                    <LiftedButton
-                      preset="primary"
-                      width="mobile-full"
-                      leftIcon={<UserPlusIcon />}
-                    >
-                      <span>Become a member project</span>
-                    </LiftedButton>
-                    <LiftedButton
-                      preset="secondary"
-                      width="mobile-full"
-                      rightIcon={<ArrowUpRightIcon />}
-                    >
-                      <span>Project requirements</span>
-                    </LiftedButton>
-                  </div>
+                <div className="flex flex-col xl:flex-row gap-4 justify-center">
+                  <LiftedButton
+                    preset="primary"
+                    width="mobile-full"
+                    leftIcon={<UserPlusIcon />}
+                  >
+                    <span>Become a member project</span>
+                  </LiftedButton>
+                  <LiftedButton
+                    preset="secondary"
+                    width="mobile-full"
+                    rightIcon={<ArrowUpRightIcon />}
+                  >
+                    <span>Project requirements</span>
+                  </LiftedButton>
+                </div>
                 <p className="text-caption mt-4 text-text-standard">
                   *Member projects are carefully selected. Sign ups are not
                   guaranteed memberships
