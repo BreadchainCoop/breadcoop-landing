@@ -106,7 +106,7 @@ function StatsSection() {
 function ChipsSection() {
   return (
     <div className="flex items-center justify-center gap-4 mb-4">
-      <div className="w-[150px] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
+      <div className="w-[40%] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
         <span className="text-body text-text-standard flex items-center gap-2">
           <Image
             src="/logo.svg"
@@ -119,7 +119,7 @@ function ChipsSection() {
         </span>
       </div>
       <span className="text-body-bold text-text-standard">=</span>
-      <div className="w-[150px] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
+      <div className="w-[40%] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
         <CurrencyCircleDollarIcon className="w-6 h-6 text-primary-orange" />
         <span className="text-body text-text-standard">1 USD</span>
       </div>
@@ -175,15 +175,16 @@ export default function Home() {
                           <span>Visit app</span>
                         </LiftedButton>
                       </a>
-
-                      <LiftedButton
-                        preset="secondary"
-                        className="w-full md:w-[200px] h-[56px]"
-                        rightIcon={<ArrowRightIcon />}
-                        scrollTo="solidarity-tools"
-                      >
-                        <span>Our tools</span>
-                      </LiftedButton>
+                      <div className="hidden md:block">
+                        <LiftedButton
+                          preset="secondary"
+                          className="w-full md:w-[200px] h-[56px]"
+                          rightIcon={<ArrowRightIcon />}
+                          scrollTo="solidarity-tools"
+                        >
+                          <span>Our tools</span>
+                        </LiftedButton>
+                      </div>
                     </div>
                   </div>
 
@@ -329,7 +330,7 @@ export default function Home() {
         {/* Fifth Section - $BREAD How It Works */}
         <section className="bg-paper-main py-20">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-16">
-            <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
+            <div className="max-w-[360px] md:max-w-[768px] xl:max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-8 xl:mb-16">
                 <h1 className="text-h1 uppercase text-primary-orange mb-4">
@@ -357,7 +358,7 @@ export default function Home() {
                   </p>
 
                   {/* Chips and Text - Mobile */}
-                  <div className="md:hidden mb-6">
+                  <div className="md:hidden mb-6 -ml-1">
                     <ChipsSection />
                   </div>
 

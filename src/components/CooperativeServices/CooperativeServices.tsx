@@ -21,7 +21,7 @@ export function CooperativeServices() {
                 className="w-[400px] h-[400px]"
               />
             </div>
-            <div className="xl:max-w-[640px] mx-auto">
+            <div className="max-w-[360px] md:max-w-[640px] xl:max-w-[640px] mx-auto flex flex-col h-full">
               <div className="flex-grow relative z-10">
                 <h3 className="text-h3 text-primary-orange mb-6">
                   JOIN THE
@@ -34,14 +34,16 @@ export function CooperativeServices() {
                   for a common cause.
                 </p>
               </div>
-              <LiftedButton
-                preset="primary"
-                width="full"
-                className="bg-primary-orange text-white"
-                leftIcon={<HandPeaceIcon className="w-6 h-6" />}
-              >
-                <span>Sign up to contribute</span>
-              </LiftedButton>
+              <div className="mt-auto">
+                <LiftedButton
+                  preset="primary"
+                  width="full"
+                  className="bg-primary-orange text-white"
+                  leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                >
+                  <span>Sign up to contribute</span>
+                </LiftedButton>
+              </div>
             </div>
           </div>
 
@@ -57,25 +59,29 @@ export function CooperativeServices() {
                 className="w-[400px] h-[400px]"
               />
             </div>
-            <div className="flex-grow relative z-10">
-              <h3 className="text-h3 text-paper-main mb-6">
-                WE CAN BUILD
-                <br />
-                WITH YOU.
-              </h3>
-              <p className="text-body text-paper-main mb-8">
-                Sourdough Systems is our full service web3 development studio
-                where we build applications with others.
-              </p>
+            <div className="max-w-[360px] md:max-w-[640px] xl:max-w-[640px] mx-auto flex flex-col h-full">
+              <div className="flex-grow relative z-10">
+                <h3 className="text-h3 text-paper-main mb-6">
+                  WE CAN BUILD
+                  <br />
+                  WITH YOU.
+                </h3>
+                <p className="text-body text-paper-main mb-8">
+                  Sourdough Systems is our full service web3 development studio
+                  where we build applications with others.
+                </p>
+              </div>
+              <div className="mt-auto">
+                <LiftedButton
+                  preset="primary"
+                  width="full"
+                  className="bg-primary-orange text-white"
+                  rightIcon={<ArrowUpRightIcon />}
+                >
+                  <span>Explore our services</span>
+                </LiftedButton>
+              </div>
             </div>
-            <LiftedButton
-              preset="primary"
-              width="full"
-              className="bg-primary-orange text-white"
-              rightIcon={<ArrowUpRightIcon />}
-            >
-              <span>Explore our services</span>
-            </LiftedButton>
           </div>
         </div>
       </div>
