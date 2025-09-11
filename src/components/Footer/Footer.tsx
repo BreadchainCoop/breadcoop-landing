@@ -9,6 +9,56 @@ import {
   EnvelopeSimpleIcon,
   ArrowUpRightIcon,
 } from "@phosphor-icons/react/ssr";
+import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
+import { LINKS } from "@/constants/links";
+
+// Social Icons Component
+function SocialIcons({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`flex items-center gap-5 sm:gap-2 pb-6 md:pb-0 ${className}`}
+    >
+      <a href="#" className="block">
+        <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
+      </a>
+      <a href="#" className="block">
+        <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
+      </a>
+      <a
+        href={LINKS.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
+      </a>
+      <a href="#" className="block">
+        <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
+      </a>
+      <a href="#" className="block">
+        <XLogoIcon className="w-6 h-6 text-surface-ink" />
+      </a>
+      <a href="#" className="block">
+        <Image
+          src="/paragraph.png"
+          alt="Paragraph icon"
+          width={24}
+          height={24}
+          className="p-[3px] w-6 h-6 text-surface-ink"
+        />
+      </a>
+      <a href="#" className="block">
+        <Image
+          src="/mirror-icon.png"
+          alt="Mirror icon"
+          width={24}
+          height={24}
+          className="p-[3px] w-6 h-6 text-surface-ink"
+        />
+      </a>
+    </div>
+  );
+}
 
 // Reusable Footer Link Component
 function FooterLink({
@@ -23,6 +73,8 @@ function FooterLink({
   return (
     <Link
       href={href}
+      target={isExternal ? "_blank" : "_self"}
+      rel={isExternal ? "noopener noreferrer" : ""}
       className="text-surface-ink hover:text-paper-0 font-univers flex items-center gap-2"
     >
       {children}
@@ -34,9 +86,9 @@ function FooterLink({
 export function Footer() {
   return (
     <footer className="bg-primary-orange px-4 py-12">
-      <div className="max-w-[1280px] md:max-w-[768px] mx-auto px-6">
+      <div className="md:max-w-[1280px] mx-auto px-6">
         {/* Top Row - Logo, Name, and Social Icons (Tablet Layout) */}
-        <div className="md:flex md:items-center md:justify-between md:mb-8 xl:hidden">
+        <div className="max-w-[318px] md:max-w-[1280px] mx-auto md:flex md:items-center md:justify-between md:mb-8 xl:hidden">
           <div className="flex items-center gap-3 mb-4 md:mb-0 justify-center md:justify-start">
             <Image
               src="/logo-white.svg"
@@ -49,44 +101,12 @@ export function Footer() {
               BREAD COOPERATIVE
             </span>
           </div>
-          <div className="flex items-center gap-5 sm:gap-2 justify-center md:justify-end">
-            <a href="#" className="block">
-              <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
-            </a>
-            <a href="#" className="block">
-              <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
-            </a>
-            <a href="#" className="block">
-              <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
-            </a>
-            <a href="#" className="block">
-              <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
-            </a>
-            <a href="#" className="block">
-              <XLogoIcon className="w-6 h-6 text-surface-ink" />
-            </a>
-            <a href="#" className="block">
-              <Image
-                src="/paragraph.png"
-                alt="Paragraph icon"
-                width={24}
-                height={24}
-                className="p-[3px] w-6 h-6 text-surface-ink"
-              />
-            </a>
-            <a href="#" className="block">
-              <Image
-                src="/mirror-icon.png"
-                alt="Mirror icon"
-                width={24}
-                height={24}
-                className="p-[3px] w-6 h-6 text-surface-ink"
-              />
-            </a>
+          <div className="justify-center md:justify-end">
+            <SocialIcons />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+        <div className="max-w-[318px] md:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
           {/* Logo and Tagline (Desktop Layout) */}
           <div className="hidden xl:block xl:col-span-2 xl:max-w-[311px]">
             <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
@@ -95,9 +115,9 @@ export function Footer() {
                 alt="Bread Cooperative Logo"
                 width={24}
                 height={24}
-                className="w-6 h-6"
+                className="w-6 h-6 mb-1"
               />
-              <span className="font-akzidenz mt-1 font-bold text-[24px] text-white">
+              <span className="font-akzidenz font-bold text-[24px] text-white">
                 BREAD COOPERATIVE
               </span>
             </div>
@@ -106,40 +126,8 @@ export function Footer() {
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-5 sm:gap-2 xl:gap-4">
-              <a href="#" className="block">
-                <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
-              </a>
-              <a href="#" className="block">
-                <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
-              </a>
-              <a href="#" className="block">
-                <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
-              </a>
-              <a href="#" className="block">
-                <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
-              </a>
-              <a href="#" className="block">
-                <XLogoIcon className="w-6 h-6 text-surface-ink" />
-              </a>
-              <a href="#" className="block">
-                <Image
-                  src="/paragraph.png"
-                  alt="Paragraph icon"
-                  width={24}
-                  height={24}
-                  className="p-[3px] w-6 h-6 text-surface-ink"
-                />
-              </a>
-              <a href="#" className="block">
-                <Image
-                  src="/mirror-icon.png"
-                  alt="Mirror icon"
-                  width={24}
-                  height={24}
-                  className="p-[3px] w-6 h-6 text-surface-ink"
-                />
-              </a>
+            <div className="mb-4">
+              <SocialIcons className="xl:gap-4" />
             </div>
           </div>
 
@@ -170,20 +158,13 @@ export function Footer() {
               Solidarity tools
             </h3>
             <ul className="space-y-3">
-              <li>
-                <FooterLink href="#">Solidarity Funds</FooterLink>
-              </li>
-              <li>
-                <FooterLink href="#">Savings</FooterLink>
-              </li>
-              <li>
-                <FooterLink href="#">Insurance</FooterLink>
-              </li>
-              <li>
-                <FooterLink href="#" isExternal>
-                  Analytics
-                </FooterLink>
-              </li>
+              {SOLIDARITY_TOOLS.map((tool) => (
+                <li key={tool.id}>
+                  <FooterLink href="#" isExternal={!tool.comingSoon}>
+                    {tool.title}
+                  </FooterLink>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -204,12 +185,12 @@ export function Footer() {
             <h3 className="font-univers text-white text-lg mb-4">Support us</h3>
             <ul className="space-y-3">
               <li>
-                <FooterLink href="#" isExternal>
+                <FooterLink href={LINKS.giveth} isExternal>
                   Donate in crypto
                 </FooterLink>
               </li>
               <li>
-                <FooterLink href="#" isExternal>
+                <FooterLink href={LINKS.openCollective} isExternal>
                   Donate in fiat
                 </FooterLink>
               </li>

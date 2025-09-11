@@ -6,6 +6,7 @@ import { LiftedButton } from "@/components/LiftedButton";
 import { CooperativeServices } from "@/components/CooperativeServices/CooperativeServices";
 import { Subscribe } from "@/components/Subscribe/Subscribe";
 import { SolidarityTools } from "@/components/SolidarityTools/SolidarityTools";
+import { LINKS } from "@/constants/links";
 import {
   ArrowUpRightIcon,
   ArrowRightIcon,
@@ -36,7 +37,7 @@ function StatsSection() {
       caption: "",
       title: "Total distributed towards solidarity since launch",
       buttonText: "View analytics",
-      buttonLink: "https://dune.com/breadchain_cooperative/breadchain",
+      buttonLink: LINKS.dashboard,
     },
   ];
 
@@ -162,17 +163,24 @@ export default function Home() {
                       together.
                     </h2>
                     <div className="flex flex-col md:flex-row gap-4 xl:gap-6">
-                      <LiftedButton
-                        className="w-full md:w-[200px]"
-                        rightIcon={<ArrowUpRightIcon />}
+                      <a
+                        href={LINKS.solidarityFund}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <span>Visit app</span>
-                      </LiftedButton>
+                        <LiftedButton
+                          className="w-full md:w-[200px]"
+                          rightIcon={<ArrowUpRightIcon />}
+                        >
+                          <span>Visit app</span>
+                        </LiftedButton>
+                      </a>
 
                       <LiftedButton
                         preset="secondary"
                         className="w-full md:w-[200px] h-[56px]"
                         rightIcon={<ArrowRightIcon />}
+                        scrollTo="solidarity-tools"
                       >
                         <span>Our tools</span>
                       </LiftedButton>
@@ -314,7 +322,9 @@ export default function Home() {
           </div>
         </section>
 
-        <SolidarityTools />
+        <section id="solidarity-tools">
+          <SolidarityTools />
+        </section>
 
         {/* Fifth Section - $BREAD How It Works */}
         <section className="bg-paper-main py-20">

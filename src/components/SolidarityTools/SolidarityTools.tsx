@@ -3,58 +3,16 @@
 import { LiftedButton } from "@/components/LiftedButton";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
+import Link from "next/link";
+import { getVisibleSolidarityTools } from "@/constants/solidarityTools";
 
 interface SolidarityToolsProps {
   hiddenColumns?: string[];
 }
 
 export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
-  // Define all available columns
-  const allColumns = [
-    {
-      id: "solidarity-fund",
-      title: "Solidarity Fund",
-      description:
-        "Community coming together to fund what matters to us. Bake $BREAD and support projects you believe in.",
-      color: "text-orange-2",
-      buttonClass: "bg-primary-orange text-white",
-      logo: "/logo-line-orange.svg",
-      show: !hiddenColumns.includes("solidarity-fund"),
-      comingSoon: false,
-    },
-    {
-      id: "stacks",
-      title: "Stacks",
-      description: "Financial goals. Achieved together.",
-      color: "text-primary-blue",
-      buttonClass: "",
-      colorOverrides: {
-        bg: "--color-primary-blue",
-        hoverBg: "--color-blue-2",
-      },
-      logo: "/logo-line-blue.svg",
-      show: !hiddenColumns.includes("stacks"),
-      comingSoon: true,
-    },
-    {
-      id: "safety-net",
-      title: "Safety Net",
-      description:
-        "Collective support guides us through crisis. Build emergency funds with people you trust.",
-      color: "text-primary-jade",
-      buttonClass: "",
-      colorOverrides: {
-        bg: "--color-primary-jade",
-        hoverBg: "--color-jade-2",
-      },
-      logo: "/logo-line-green.svg",
-      show: !hiddenColumns.includes("safety-net"),
-      comingSoon: true,
-    },
-  ];
-
-  // Filter to only show visible columns
-  const visibleColumns = allColumns.filter((column) => column.show);
+  // Get visible columns from constants
+  const visibleColumns = getVisibleSolidarityTools(hiddenColumns);
   const gridCols =
     visibleColumns.length === 3 ? "xl:grid-cols-3" : "xl:grid-cols-2";
 
@@ -115,16 +73,26 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
                 </div>
 
                 <div className="">
-                  <LiftedButton
-                    rightIcon={<ArrowUpRightIcon />}
-                    className={`${column.buttonClass}`}
-                    disabled={column.comingSoon}
-                    colorOverrides={column.colorOverrides}
-                  >
-                    <span>
-                      {column.comingSoon ? "Coming soon" : "Learn more"}
-                    </span>
-                  </LiftedButton>
+                  {column.comingSoon ? (
+                    <LiftedButton
+                      rightIcon={<ArrowUpRightIcon />}
+                      className={`${column.buttonClass}`}
+                      disabled={column.comingSoon}
+                      colorOverrides={column.colorOverrides}
+                    >
+                      <span>Coming soon</span>
+                    </LiftedButton>
+                  ) : (
+                    <Link href={`/${column.id}`}>
+                      <LiftedButton
+                        rightIcon={<ArrowUpRightIcon />}
+                        className={`${column.buttonClass}`}
+                        colorOverrides={column.colorOverrides}
+                      >
+                        <span>Learn more</span>
+                      </LiftedButton>
+                    </Link>
+                  )}
                 </div>
 
                 <div className="hidden md:block absolute -top-18 right-0 -z-10">

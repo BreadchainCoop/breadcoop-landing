@@ -2,6 +2,7 @@
 
 import { LiftedButton } from "@/components/LiftedButton";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
+import { LINKS } from "@/constants/links";
 
 export function Subscribe() {
   return (
@@ -21,14 +22,20 @@ export function Subscribe() {
 
             {/* Right Column - Subscription Form */}
             <div className="space-y-4">
-              <LiftedButton
-                preset="primary"
-                width="full"
-                className="bg-primary-orange text-white"
-                rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+              <a
+                href={LINKS.newsletter}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span>Subscribe to our newsletter</span>
-              </LiftedButton>
+                <LiftedButton
+                  preset="primary"
+                  width="full"
+                  className="bg-primary-orange text-white"
+                  rightIcon={<ArrowUpRightIcon className="w-6 h-6" />}
+                >
+                  <span>Subscribe to our newsletter</span>
+                </LiftedButton>
+              </a>
             </div>
           </div>
         </div>

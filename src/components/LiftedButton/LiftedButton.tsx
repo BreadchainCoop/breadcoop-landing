@@ -37,6 +37,7 @@ export type LiftedButtonProps = {
   durationMs?: number;
   className?: string;
   width?: "full" | "auto" | "mobile-full";
+  scrollTo?: string; // Element ID to scroll to
 } & React.ComponentPropsWithoutRef<"button">;
 
 /**
@@ -60,6 +61,7 @@ export default function LiftedButton({
   className = "",
   type = "button",
   width = "auto",
+  scrollTo,
   ...rest // Add extra props to apply to the button
 }: LiftedButtonProps) {
   // Turn out inputs into CSS variables for use with tailwind.
@@ -76,6 +78,7 @@ export default function LiftedButton({
     "relative z-10 inline-flex items-center justify-center gap-[8px]",
     "text-body text-[16px]",
     "px-[32px] h-14",
+    disabled ? "cursor-not-allowed" : "cursor-pointer",
     width === "full" ? "w-full" : "",
     width === "mobile-full" ? "w-full md:w-auto" : "",
   ];
@@ -102,6 +105,21 @@ export default function LiftedButton({
   );
   classNames.push(className);
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // If scrollTo is provided, handle smooth scrolling
+    if (scrollTo) {
+      e.preventDefault();
+      document.getElementById(scrollTo)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
+    // Call the original onClick handler if provided
+    if (rest.onClick) {
+      rest.onClick(e);
+    }
+  };
+
   return (
     <span
       className={[
@@ -120,7 +138,12 @@ export default function LiftedButton({
       )}
 
       {/* Main button */}
-      <button type={type} className={classNames.join(" ")} {...rest}>
+      <button
+        type={type}
+        className={classNames.join(" ")}
+        onClick={handleClick}
+        {...rest}
+      >
         {leftIcon ? (
           <span
             className="shrink-0 py-[5px] flex items-center justify-center"

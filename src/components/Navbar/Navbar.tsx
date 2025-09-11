@@ -13,22 +13,28 @@ import {
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
 import { LiftedButton } from "@/components/LiftedButton";
+import { SOLIDARITY_TOOLS, SolidarityTool } from "@/constants/solidarityTools";
 
 // Solidarity Tool Item Component
 interface SolidarityToolItemProps {
   id: string;
   logo: string;
   title: string;
-  description: string;
+  shortDescription: string;
   color: string;
   comingSoon?: boolean;
+  buttonClass?: string;
+  colorOverrides?: {
+    bg: string;
+    hoverBg: string;
+  };
 }
 
 function SolidarityToolItem({
   id,
   logo,
   title,
-  description,
+  shortDescription,
   color,
   comingSoon,
 }: SolidarityToolItemProps) {
@@ -94,7 +100,7 @@ function SolidarityToolItem({
               </div>
             )}
           </div>
-          <div className="text-body text-surface-grey">{description}</div>
+          <div className="text-body text-surface-grey">{shortDescription}</div>
         </div>
         <ArrowRightIcon
           className={`arrow-icon text-${color} w-6 h-6 opacity-0 transition-opacity duration-300 absolute right-2`}
@@ -257,37 +263,14 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </h4>
 
                     <div className="space-y-6  pe-6">
-                      <SolidarityToolItem
-                        id="solidarity-fund"
-                        logo="/logo.svg"
-                        title="Solidarity fund"
-                        description="Funding post-capitalism."
-                        color="primary-orange"
-                      />
-
-                      <SolidarityToolItem
-                        id="savings"
-                        logo="/logo-blue.svg"
-                        title="Savings"
-                        description="Save money together."
-                        color="primary-blue"
-                        comingSoon={true}
-                      />
-
-                      <SolidarityToolItem
-                        id="insurance"
-                        logo="/logo-green.svg"
-                        title="Insurance"
-                        description="Save money together."
-                        color="primary-jade"
-                        comingSoon={true}
-                      />
-
+                      {SOLIDARITY_TOOLS.map((tool) => (
+                        <SolidarityToolItem key={tool.id} {...tool} />
+                      ))}
                       <SolidarityToolItem
                         id="post-capitalist-idea"
                         logo="/logo-stroke.svg"
                         title="I have a post-capitalist idea..."
-                        description="Have a better idea? Share it."
+                        shortDescription="Have a better idea? Share it."
                         color="surface-ink"
                       />
                     </div>
@@ -448,91 +431,32 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </h4>
 
                     <div className="space-y-4">
-                      {/* Item 1 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="text-body-bold text-text-standard">
-                            Solidarity fund
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Funding post-capitalism.
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Item 2 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-blue.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <div className="text-body-bold text-text-standard">
-                              Savings
+                      {SOLIDARITY_TOOLS.map((tool) => (
+                        <div key={tool.id} className="flex items-center gap-4">
+                          <Image
+                            src={tool.logo}
+                            alt="Logo"
+                            width={32}
+                            height={32}
+                            className="w-8 h-8 flex-shrink-0"
+                          />
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <div className="text-body-bold text-text-standard">
+                                {tool.title}
+                              </div>
+                              {tool.comingSoon && (
+                                <div className="text-body-bold text-primary-orange text-xs">
+                                  Coming soon
+                                </div>
+                              )}
                             </div>
-                            <div className="text-body-bold text-primary-orange text-xs">
-                              Coming soon
+                            <div className="text-body text-surface-grey">
+                              {tool.description}
                             </div>
                           </div>
-                          <div className="text-body text-surface-grey">
-                            Save money together.
-                          </div>
                         </div>
-                      </div>
-
-                      {/* Item 3 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-green.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <div className="text-body-bold text-text-standard">
-                              Insurance
-                            </div>
-                            <div className="text-body-bold text-primary-orange text-xs">
-                              Coming soon
-                            </div>
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Save money together.
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Item 4 */}
-                      <div className="flex items-center gap-4">
-                        <Image
-                          src="/logo-stroke.svg"
-                          alt="Logo"
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 flex-shrink-0"
-                        />
-                        <div>
-                          <div className="text-body-bold text-text-standard">
-                            I have a post-capitalist idea...
-                          </div>
-                          <div className="text-body text-surface-grey">
-                            Have a better idea? Share it.
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 )}
