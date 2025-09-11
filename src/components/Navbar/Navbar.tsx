@@ -28,6 +28,7 @@ interface SolidarityToolItemProps {
     bg: string;
     hoverBg: string;
   };
+  onNavigate?: () => void; // Callback for when navigation occurs
 }
 
 function SolidarityToolItem({
@@ -37,13 +38,18 @@ function SolidarityToolItem({
   shortDescription,
   color,
   comingSoon,
+  onNavigate,
 }: SolidarityToolItemProps) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
     if (!comingSoon) {
-      router.push(`/${id}`);
+      // Call the navigation callback if provided (for mobile menu closing)
+      if (onNavigate) {
+        onNavigate();
+      }
+      // Don't prevent default - let the Link component handle navigation
+      // router.push(`/${id}`);
     }
   };
 
@@ -118,6 +124,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavbarHovered, setIsNavbarHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -170,6 +177,22 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Handle body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Prevent body scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore body scroll
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -363,7 +386,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-paper-main z-50 md:hidden">
+          <div className="fixed inset-0 bg-paper-main z-50 md:hidden overflow-y-auto">
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between py-2 px-6 border border-paper-2">
               <Image
@@ -412,55 +435,43 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               <div className="space-y-4 p-2 ">
                 <div
                   className="flex items-center gap-2 cursor-pointer"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
                 >
                   <span className="text-body text-text-standard hover:text-primary-orange">
                     Solidarity tools
                   </span>
-                  {isDropdownOpen ? (
+                  {isMobileDropdownOpen ? (
                     <ArrowUpIcon className="w-4 h-4 text-text-standard" />
                   ) : (
                     <ArrowDownIcon className="w-4 h-4 text-text-standard" />
                   )}
                 </div>
 
-                {isDropdownOpen && (
+                {isMobileDropdownOpen && (
                   <div className="pl-4 space-y-4">
-                    <h4 className="text-h4 uppercase text-surface-grey mb-4">
+                    <h4 className="font-akz uppercase font-[500] text-surface-grey-2 mb-4">
                       BREAD SOLIDARITY TOOLS
                     </h4>
 
                     <div className="space-y-4">
                       {SOLIDARITY_TOOLS.map((tool) => (
-                        <div key={tool.id} className="flex items-center gap-4">
-                          <Image
-                            src={tool.logo}
-                            alt="Logo"
-                            width={32}
-                            height={32}
-                            className="w-8 h-8 flex-shrink-0"
-                          />
-                          <div>
-                            <div className="flex items-center gap-2">
-                              <div className="text-body-bold text-text-standard">
-                                {tool.title}
-                              </div>
-                              {tool.comingSoon && (
-                                <div className="text-body-bold text-primary-orange text-xs">
-                                  Coming soon
-                                </div>
-                              )}
-                            </div>
-                            <div className="text-body text-surface-grey">
-                              {tool.description}
-                            </div>
-                          </div>
-                        </div>
+                        <SolidarityToolItem
+                          key={tool.id}
+                          {...tool}
+                          onNavigate={() => setIsMobileMenuOpen(false)}
+                        />
                       ))}
+                      <SolidarityToolItem
+                        id="post-capitalist-idea"
+                        logo="/logo-stroke.svg"
+                        title="I have a post-capitalist idea..."
+                        shortDescription="Have a better idea? Share it."
+                        color="surface-ink"
+                        onNavigate={() => setIsMobileMenuOpen(false)}
+                      />
                     </div>
                   </div>
                 )}
-
                 <Link
                   href="#"
                   className="block text-body text-text-standard hover:text-primary-orange"

@@ -45,10 +45,10 @@ function SocialIcons({ className = "" }: { className?: string }) {
           className="p-[3px] w-6 h-6 text-surface-ink"
         />
       </a>
-      <a href="#" className="block">
+      <a href={LINKS.farcaster} className="block">
         <Image
-          src="/mirror-icon.png"
-          alt="Mirror icon"
+          src="/farcaster-icon.png"
+          alt="Farcaser icon"
           width={24}
           height={24}
           className="p-[3px] w-6 h-6 text-surface-ink"
