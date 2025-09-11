@@ -10,7 +10,7 @@ export function CooperativeServices() {
       <div className="w-full mx-auto">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left Column - Join the Cooperative */}
-          <div className="bg-paper-2 py-6 xl:py-24 px-5 flex flex-col h-full relative overflow-hidden">
+          <div className="bg-paper-2 py-6 xl:py-24 px-4 flex flex-col h-full relative overflow-hidden">
             {/* Background Logo */}
             <div className="absolute -left-40 top-1/2 transform -translate-y-1/2">
               <Image
@@ -26,7 +26,7 @@ export function CooperativeServices() {
                 <h3 className="text-h3 text-primary-orange mb-6">
                   JOIN THE
                   <br />
-                  COOPERATIVE.
+                  COOPERATIVE<span className="hidden md:inline">.</span>
                 </h3>
                 <p className="text-body text-text-standard mb-8">
                   Bring your skills, your questions, and your perspective.
@@ -48,7 +48,7 @@ export function CooperativeServices() {
           </div>
 
           {/* Right Column - Build with You */}
-          <div className="bg-surface-brown py-6 xl:py-24 px-5 xl:px-8 2xl:px-12 flex flex-col h-full relative overflow-hidden">
+          <div className="bg-surface-brown py-6 xl:py-24 px-4 xl:px-8 2xl:px-12 flex flex-col h-full relative overflow-hidden">
             {/* Background Logo */}
             <div className="absolute -left-30 top-1/2 transform -translate-y-1/2">
               <Image
@@ -64,7 +64,7 @@ export function CooperativeServices() {
                 <h3 className="text-h3 text-paper-main mb-6">
                   WE CAN BUILD
                   <br />
-                  WITH YOU.
+                  WITH YOU<span className="hidden md:inline">.</span>
                 </h3>
                 <p className="text-body text-paper-main mb-8">
                   Sourdough Systems is our full service web3 development studio

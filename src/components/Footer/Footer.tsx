@@ -15,9 +15,7 @@ import { LINKS } from "@/constants/links";
 // Social Icons Component
 function SocialIcons({ className = "" }: { className?: string }) {
   return (
-    <div
-      className={`flex items-center gap-5 sm:gap-2 pb-6 md:pb-0 ${className}`}
-    >
+    <div className={`flex items-center gap-5 pb-6 md:pb-0 ${className}`}>
       <a href="#" className="block">
         <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
@@ -86,20 +84,25 @@ function FooterLink({
 export function Footer() {
   return (
     <footer className="bg-primary-orange px-4 py-12">
-      <div className="md:max-w-[1280px] mx-auto px-6">
+      <div className="md:max-w-[1280px] mx-auto ">
         {/* Top Row - Logo, Name, and Social Icons (Tablet Layout) */}
         <div className="max-w-[318px] md:max-w-[1280px] mx-auto md:flex md:items-center md:justify-between md:mb-8 xl:hidden">
-          <div className="flex items-center gap-3 mb-4 md:mb-0 justify-center md:justify-start">
-            <Image
-              src="/logo-white.svg"
-              alt="Bread Cooperative Logo"
-              width={24}
-              height={24}
-              className="w-6 h-6"
-            />
-            <span className="font-akzidenz mt-1 font-bold text-[24px] text-white">
-              BREAD COOPERATIVE
-            </span>
+          <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
+            <div className="flex items-center gap-3 mb-2">
+              <Image
+                src="/logo-white.svg"
+                alt="Bread Cooperative Logo"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <span className="font-akzidenz mt-1 font-bold text-[24px] text-white">
+                BREAD COOPERATIVE
+              </span>
+            </div>
+            <p className="text-white font-univers text-center md:text-left">
+              Solidarity forever.
+            </p>
           </div>
           <div className="justify-center md:justify-end">
             <SocialIcons />
@@ -109,7 +112,7 @@ export function Footer() {
         <div className="max-w-[318px] md:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
           {/* Logo and Tagline (Desktop Layout) */}
           <div className="hidden xl:block xl:col-span-2 xl:max-w-[311px]">
-            <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+            <div className="flex items-center gap-3 mb-2 justify-center md:justify-start">
               <Image
                 src="/logo-white.svg"
                 alt="Bread Cooperative Logo"
