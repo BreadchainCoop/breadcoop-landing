@@ -300,10 +300,20 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                   </div>
 
                   {/* Second Column - Orange box */}
-                  <div className="w-1/3 bg-primary-orange relative">
+                  <div className="w-1/3 bg-primary-orange relative overflow-hidden">
+                    <div className="absolute -left-15 opacity-20 top-1/2 transform -translate-y-1/2">
+                      <Image
+                        src="/logo-line-orange.svg"
+                        alt=""
+                        width={400}
+                        height={400}
+                        className="w-[400px] h-[400px]"
+                      />
+                    </div>
                     <div className="absolute top-4 right-4">
                       <ArrowUpRightIcon className="w-6 h-6 text-text-standard" />
                     </div>
+
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="text-h2 leading-[48px] text-white">
                         What is $BREAD?

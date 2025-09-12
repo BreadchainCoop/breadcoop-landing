@@ -10,6 +10,7 @@ export interface SolidarityTool {
     hoverBg: string;
   };
   logo: string;
+  lineLogo: string;
   comingSoon: boolean;
 }
 
@@ -23,6 +24,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     color: "primary-orange",
     buttonClass: "bg-primary-orange text-white",
     logo: "/logo.svg",
+    lineLogo: "/logo-line-orange.svg",
     comingSoon: false,
   },
   {
@@ -37,6 +39,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
       hoverBg: "--color-blue-2",
     },
     logo: "/logo-blue.svg",
+    lineLogo: "/logo-line-blue.svg",
     comingSoon: true,
   },
   {
@@ -52,6 +55,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
       hoverBg: "--color-jade-2",
     },
     logo: "/logo-green.svg",
+    lineLogo: "/logo-line-green.svg",
     comingSoon: true,
   },
 ];

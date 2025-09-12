@@ -57,10 +57,10 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
             {/* Right Column - Text and Bullet List */}
             <div>
-              <h3 className="text-h3 text-right md:text-left  xl:text-right xl:text-left text-orange-2 mb-8">
+              <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 mb-8">
                 THIS IS WHAT SOLIDARITY LOOKS LIKE
               </h3>
-              <p className="xl:w-2/3 pe-7">
+              <p className="xl:w-2/3 pe-7 text-white">
                 Mutual aid that works. Savings that grow together. Emergency
                 funds controlled by the community. Real financial tools that put
                 people before profit. Support your friends with $BREAD.
@@ -117,7 +117,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
                 <div className="hidden md:block absolute -top-18 right-0 -z-10">
                   <Image
-                    src={column.logo}
+                    src={column.lineLogo}
                     alt="Logo"
                     width={140}
                     height={140}

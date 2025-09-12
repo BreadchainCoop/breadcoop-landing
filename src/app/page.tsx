@@ -150,7 +150,7 @@ export default function Home() {
             <div className="w-full px-4 xl:px-4 py-20">
               <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
-                <h1 className="text-h1 pt-4 uppercase">
+                <h1 className="text-h1 pt-4 uppercase text-white">
                   Financial tools today. Solidarity forever.
                 </h1>
 

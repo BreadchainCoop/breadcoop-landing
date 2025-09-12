@@ -15,7 +15,9 @@ import { LINKS } from "@/constants/links";
 // Social Icons Component
 function SocialIcons({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-5 pb-6 md:pb-0 ${className}`}>
+    <div
+      className={`flex items-center justify-center md:justify-start gap-5 pb-6 md:pb-0 ${className}`}
+    >
       <a href="#" className="block">
         <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
