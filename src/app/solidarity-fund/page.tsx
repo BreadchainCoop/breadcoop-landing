@@ -22,14 +22,6 @@ interface Project {
 // Project data
 const projects: Project[] = [
   {
-    id: "labordao",
-    name: "LaborDAO",
-    description: "A DAO for workers organizing in web3 and beyond.",
-    image: "/banner_labordao.png",
-    websiteUrl: "#",
-    karmagapUrl: "#",
-  },
-  {
     id: "crypto-commons",
     name: "Crypto Commons Association",
     description: "Organizations focused on new cultural inquiries.",
@@ -71,21 +63,21 @@ interface ProjectCardProps {
 function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="flex flex-col h-full">
-      {/* Mobile Layout - Two Columns */}
-      <div className="xl:hidden grid grid-cols-2 gap-4 items-start">
+      {/* Mobile Layout - Three Columns */}
+      <div className="lg:hidden grid grid-cols-3 gap-4 items-start">
         {/* First Column - Logo Image */}
-        <div className=" w-[104px] h-[104px] xl:w-full xl:h-full aspect-square border border-paper-2 bg-white flex items-center justify-center">
+        <div className="w-[104px] h-[104px] xl:w-full xl:h-full aspect-square border border-paper-2 bg-white flex items-center justify-center">
           <Image
             src={project.image}
             alt={`${project.name} logo`}
             width={80}
             height={80}
-            className="object-contain w-20 h-20"
+            className="object-contain w-20 h-20 grayscale"
           />
         </div>
 
         {/* Second Column - Name and Buttons */}
-        <div className="flex flex-col justify-end  w-[104px] h-[104px] xl:h-full">
+        <div className="col-span-2 flex flex-col justify-end xl:h-full h-[104px]">
           <h4 className="text-h4 text-text-standard font-bold mb-4 xl:mb-2">
             {project.name}
           </h4>
@@ -94,20 +86,20 @@ function ProjectCard({ project }: ProjectCardProps) {
           </p>
 
           {/* Buttons */}
-          <div className="space-y-[1px] xl:space-y-2">
+          <div className="space-y-[1px] md:space-y-2">
             <LiftedButton
               preset="stroke"
-              className="border border-surface-ink h-8 text-sm  h-[32px]"
+              className="border border-surface-ink  h-[32px] text-sm  h-[32px]"
               rightIcon={
                 <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
               }
             >
               <span>Website</span>
             </LiftedButton>
-            <div className="hidden xl:block">
+            <div className="hidden md:block">
               <LiftedButton
                 preset="stroke"
-                className="border border-surface-ink h-8 text-sm"
+                className="border border-surface-ink  h-[32px] text-sm"
                 rightIcon={
                   <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
                 }
@@ -120,7 +112,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Desktop Layout - Original Single Column */}
-      <div className="hidden xl:flex flex-col h-full">
+      <div className="hidden lg:flex flex-col h-full">
         {/* Project Image */}
         <div className="w-full aspect-square mb-4 border border-paper-2 bg-white flex items-center justify-center">
           <Image
@@ -128,7 +120,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             alt={`${project.name} logo`}
             width={180}
             height={180}
-            className="object-contain"
+            className="object-contain grayscale"
           />
         </div>
 
@@ -145,7 +137,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <div className="mt-8">
             <LiftedButton
               preset="stroke"
-              className="border border-surface-ink h-8"
+              className="border border-surface-ink  h-[32px]"
               rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
             >
               <span>Website</span>
@@ -153,7 +145,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             <div className="h-4"></div>
             <LiftedButton
               preset="stroke"
-              className="border border-surface-ink h-8"
+              className="border border-surface-ink  h-[32px]"
               rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
             >
               <span>KarmaGAP</span>
@@ -178,32 +170,34 @@ export default function SolidarityFund() {
             <div className="w-full px-6 py-6 xl:py-20">
               <div className="max-w-7xl mx-auto">
                 {/* Overlapping Text Layout */}
-                <div className="relative xl:mb-16">
+                <div className="xl:mb-16">
                   {/* H1 Text */}
-                  <h1 className="text-h1 uppercase text-primary-orange mb-4">
-                    The <br /> solidarity fund
-                  </h1>
-
-                  <div className="block xl:hidden relative">
-                    <Image
-                      src="/hands.jpg"
-                      alt="Hands reaching towards each other"
-                      width={836}
-                      height={562}
-                      className="mx-auto object-cover ms-16 -mt-13 object-bottom-left w-[836px] h-[562px]"
-                    />
+                  <div className="relative z-20">
+                    {" "}
+                    <h1 className="text-h1 relative z-20 uppercase text-primary-orange mb-6">
+                      The <br /> solidarity <br className="block md:hidden" />{" "}
+                      fund
+                    </h1>
+                    <div className="block md:hidden relative">
+                      <Image
+                        src="/hands.jpg"
+                        alt="Hands reaching towards each other"
+                        width={304}
+                        height={184}
+                        className="ml-auto object-cover z-10 -mr-12 -mt-13 object-bottom-left w-[304px] h-[184px]"
+                      />
+                    </div>
+                    {/* H2 Text - Overlapping */}
+                    <h2 className="text-h2 relative z-30 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
+                      Give without giving.*
+                    </h2>
                   </div>
-
-                  {/* H2 Text - Overlapping */}
-                  <h2 className="text-h2 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
-                    Give without giving.*
-                  </h2>
                 </div>
 
                 {/* Body Text and Button */}
-                <div className="grid md:grid-cols-2 gap-12 items-start">
-                  {/* Left column - Text and button */}
-                  <div className="xl:max-w-[386px]">
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 xl:gap-12 items-start">
+                  {/* Left column - Text and button (1/3) */}
+                  <div className="xl:col-span-1 xl:max-w-[386px] md:col-span-1">
                     <p className="text-body text-text-standard mb-8 ">
                       The fund supporting work that matters.
                       <br />
@@ -223,15 +217,26 @@ export default function SolidarityFund() {
                     </LiftedButton>
                   </div>
 
-                  {/* Right column - Image */}
-                  <div className="relative">
-                    <Image
-                      src="/hands.jpg"
-                      alt="Hands reaching towards each other in solidarity"
-                      width={600}
-                      height={400}
-                      className="hidden xl:block object-cover w-full h-[400px] object-bottom-left"
-                    />
+                  {/* Right column - Image (2/3) */}
+                  <div className="xl:col-span-2 relative z-10 md:col-span-1">
+                    <div className="hidden xl:block">
+                      <Image
+                        src="/hands.jpg"
+                        alt="Hands reaching towards each other in solidarity"
+                        width={836}
+                        height={562}
+                        className=" object-cover w-[836px] h-[562px] -mt-32 ml-22 object-bottom-left "
+                      />
+                    </div>
+                    <div className="hidden md:block xl:hidden">
+                      <Image
+                        src="/hands.jpg"
+                        alt="Hands reaching towards each other in solidarity"
+                        width={532}
+                        height={358}
+                        className=" ml-auto object-cover w-[532px] h-[358px]  -mt-42 object-bottom-left "
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -239,8 +244,63 @@ export default function SolidarityFund() {
           </div>
         </section>
 
+        {/* Impact Statistics Section */}
+        <section className="bg-paper-main py-2 mt-16 xl:mt-0">
+          <div className="max-w-[1280px] mx-auto px-12">
+            <div className="max-w-7xl mx-auto">
+              {/* Section Title */}
+              <h2 className="text-h2 text-text-standard text-center mb-16">
+                The impact of solidarity
+              </h2>
+
+              {/* Statistics Grid */}
+              <div className="grid md:grid-cols-3 gap-12 mb-10">
+                <div className="text-center text-text-standard flex flex-col">
+                  <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
+                    50,000 <span className="text-h5 ">USD</span>
+                  </div>
+                  <div className="text-h5 text-text-standard">
+                    Total distributed
+                    <p className="text-caption text-text-standard">
+                      Since the launch of the fund
+                    </p>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-h1 text-surface-brown mb-4">6</div>
+                  <p className="text-h5 text-text-standard">
+                    Projects supported
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-h1 text-surface-brown mb-4">450,000</div>
+                  <div className="text-h5 text-text-standard">
+                    $BREAD in existence
+                    <p className="text-caption text-text-standard">
+                      * 1 $BREAD is always equal to 1 USD
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <a href={"#"} target="_blank" rel="noopener noreferrer">
+                  <LiftedButton
+                    preset="stroke"
+                    className="border border-surface-ink h-[32px]"
+                    rightIcon={
+                      <ArrowUpRightIcon className="text-primary-orange" />
+                    }
+                  >
+                    <span>View analytics</span>
+                  </LiftedButton>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* How It Works Section */}
-        <section className="bg-paper-main xl:py-20">
+        <section className="bg-paper-main mt-16 xl:mt-0 xl:py-20">
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
@@ -308,76 +368,37 @@ export default function SolidarityFund() {
             </div>
           </div>
         </section>
-        {/* Impact Statistics Section */}
-        <section className="bg-paper-main py-2">
-          <div className="max-w-[1280px] mx-auto px-12">
-            <div className="max-w-7xl mx-auto">
-              {/* Section Title */}
-              <h2 className="text-h2 text-text-standard text-center mb-16">
-                The impact of solidarity
-              </h2>
 
-              {/* Statistics Grid */}
-              <div className="grid md:grid-cols-3 gap-12 mb-10">
-                <div className="text-center text-text-standard flex flex-col">
-                  <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
-                    50,000 <span className="text-h5 ">USD</span>
-                  </div>
-                  <div className="text-h5 text-text-standard">
-                    Total distributed
-                    <p className="text-caption text-text-standard">
-                      Since the launch of the fund
-                    </p>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-surface-brown mb-4">6</div>
-                  <p className="text-h5 text-text-standard">
-                    Projects supported
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-surface-brown mb-4">450,000</div>
-                  <div className="text-h5 text-text-standard">
-                    $BREAD in existence
-                    <p className="text-caption text-text-standard">
-                      * 1 $BREAD is always equal to 1 USD
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <a href={"#"} target="_blank" rel="noopener noreferrer">
-                  <LiftedButton
-                    preset="stroke"
-                    className="border border-surface-ink h-[32px]"
-                    rightIcon={
-                      <ArrowUpRightIcon className="text-primary-orange" />
-                    }
-                  >
-                    <span>View analytics</span>
-                  </LiftedButton>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
         {/* Projects Section */}
-        <section className="bg-paper-main py-4 xl:py-25">
-          <div className="max-w-[1280px] mx-auto px-12">
+        <section className="bg-paper-main py-4 md:py-25">
+          <div className="max-w-[1280px] mx-auto px-4 xl:px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-16">
                 <h2 className="text-h3 uppercase text-primary-orange text-right">
                   The bread solidarity <br /> fund network
                 </h2>
-                <h3 className="text-h2 text-text-standard ms-12 -mt-7">
+                <h3 className="text-h2 text-text-standard ms-12 xl:-mt-7">
                   A community of friends
                 </h3>
               </div>
 
               {/* Projects Grid */}
-              <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 mb-16">
+              <div
+                className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ${
+                  projects.length === 1
+                    ? "lg:grid-cols-1"
+                    : projects.length === 2
+                    ? "lg:grid-cols-2"
+                    : projects.length === 3
+                    ? "lg:grid-cols-3"
+                    : projects.length === 4
+                    ? "lg:grid-cols-4"
+                    : projects.length === 5
+                    ? "lg:grid-cols-5"
+                    : "lg:grid-cols-6"
+                }`}
+              >
                 {projects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
@@ -415,7 +436,7 @@ export default function SolidarityFund() {
         </section>
         {/* Solidarity Tools Section */}
         <SolidarityTools hiddenColumns={["solidarity-fund"]} />
-        <div className="bg-paper-main h-24"></div>
+        <div className="block md:hidden bg-paper-main h-24"></div>
 
         {/* Cooperative and Services Section */}
         <CooperativeServices />

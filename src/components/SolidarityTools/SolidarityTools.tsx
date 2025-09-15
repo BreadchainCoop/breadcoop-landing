@@ -44,28 +44,50 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
         <div className="max-w-7xl mx-auto">
           {/* First Row - Two Columns */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-10 xl:mb-20">
-            {/* Left Column - Image */}
-            <div className="hidden md:block md:-mt-40 xl:-mt-50">
-              <Image
-                src="/hands-2.jpg"
-                alt="People working together"
-                width={600}
-                height={400}
-                className="object-cover w-full h-auto"
-              />
-            </div>
+            {/* Left Column - Image (hidden when there are hidden columns) */}
+            {hiddenColumns.length === 0 && (
+              <div className="hidden md:block md:-mt-40 xl:-mt-50">
+                <Image
+                  src="/hands-2.jpg"
+                  alt="People working together"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+            )}
 
-            {/* Right Column - Text and Bullet List */}
-            <div>
-              <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 mb-8">
-                THIS IS WHAT SOLIDARITY LOOKS LIKE
-              </h3>
-              <p className="xl:w-2/3 pe-7 text-white">
-                Mutual aid that works. Savings that grow together. Emergency
-                funds controlled by the community. Real financial tools that put
-                people before profit. Support your friends with $BREAD.
-              </p>
-            </div>
+            {/* Text Columns */}
+            {hiddenColumns.length > 0 ? (
+              <>
+                {/* H3 Column */}
+                <div>
+                  <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 xl:mb-8">
+                    OUR OTHER SOLIDARITY TOOLS
+                  </h3>
+                </div>
+                {/* P Column */}
+                <div>
+                  <p className="xl:w-2/3 pe-7 text-white">
+                    Mutual aid that works. Savings that grow together. Emergency
+                    funds controlled by the community. Real financial tools that
+                    put people before profit. Support your friends with $BREAD.
+                  </p>
+                </div>
+              </>
+            ) : (
+              /* Right Column - Text and Bullet List (original layout) */
+              <div>
+                <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 mb-8">
+                  THIS IS WHAT SOLIDARITY LOOKS LIKE
+                </h3>
+                <p className="xl:w-2/3 pe-7 text-white">
+                  Mutual aid that works. Savings that grow together. Emergency
+                  funds controlled by the community. Real financial tools that
+                  put people before profit. Support your friends with $BREAD.
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Second Row - Dynamic Columns */}

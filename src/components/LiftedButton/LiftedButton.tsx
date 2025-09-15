@@ -80,7 +80,7 @@ export default function LiftedButton({
     "px-[32px] h-14",
     disabled ? "cursor-not-allowed" : "cursor-pointer",
     width === "full" ? "w-full" : "",
-    width === "mobile-full" ? "w-full md:w-auto" : "",
+    width === "mobile-full" ? "w-full xl:w-auto" : "",
   ];
 
   const activeClassNames = [
