@@ -150,7 +150,7 @@ export default function Home() {
             <div className="w-full px-4 xl:px-4 py-20">
               <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
-                <h1 className="text-h1 pt-4 uppercase text-white">
+                <h1 className="text-h1 pt-4 uppercase text-paper-main">
                   Financial tools today. Solidarity forever.
                 </h1>
 
@@ -158,7 +158,7 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 xl:gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
-                    <h2 className="text-h2 font-[400] xl:text-[4rem] xl:leading-[64px] text-white my-4 xl:my-8 max-w-full xl:max-w-[519px]">
+                    <h2 className="text-h2 font-[400] xl:text-[4rem] xl:leading-[64px] text-paper-main my-4 xl:my-8 max-w-full xl:max-w-[519px]">
                       We are a worker collective building technology to go far,
                       together.
                     </h2>
@@ -225,14 +225,26 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        <section className="relative ">
+          <div>
+            <div className="hidden md:block absolute top-0 left-0">
+              <Image
+                src="/logo-filled-orange-alt.svg"
+                alt=""
+                width={660}
+                height={660}
+                className="w-[330px] h-[330px] xl:w-[660px] xl:h-[660px]"
+              />
+            </div>
+          </div>
+        </section>
         {/* Second Section - Light Background */}
         <section className="bg-paper-main pb-20 md:pt-45 xl:pt-76">
           <div className="max-w-[1280px] relative z-20 mx-auto xl:px-16">
             <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
-              <div className="text-right mb-8">
-                <h1 className="text-h1 uppercase text-primary-orange">
+              <div className="text-right mb-8 relative">
+                <h1 className="text-h1 uppercase text-primary-orange relative z-10">
                   Powered &
                   <br />
                   owned by workers

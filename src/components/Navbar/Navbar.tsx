@@ -300,7 +300,12 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                   </div>
 
                   {/* Second Column - Orange box */}
-                  <div className="w-1/3 bg-primary-orange relative overflow-hidden">
+                  <Link
+                    href="https://docs.breadcoop.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-1/3 bg-primary-orange relative overflow-hidden group/orange block"
+                  >
                     <div className="absolute -left-15 opacity-20 top-1/2 transform -translate-y-1/2">
                       <Image
                         src="/logo-line-orange.svg"
@@ -311,7 +316,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       />
                     </div>
                     <div className="absolute top-4 right-4">
-                      <ArrowUpRightIcon className="w-6 h-6 text-text-standard" />
+                      <ArrowUpRightIcon className="w-6 h-6 group-hover/orange:text-orange-0 text-text-standard" />
                     </div>
 
                     <div className="absolute bottom-6 left-6 right-6">
@@ -319,15 +324,12 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                         What is $BREAD?
                       </div>
                       <div className="mt-4">
-                        <Link
-                          href="#"
-                          className="text-body text-primary-blue underline"
-                        >
+                        <span className="text-body text-primary-blue underline">
                           Read more in our documentation
-                        </Link>
+                        </span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
