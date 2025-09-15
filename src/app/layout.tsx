@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { akzidenz, univers } from "./fonts";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Bread Cooperative",
@@ -43,6 +44,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${akzidenz.variable} ${univers.variable}`}>
+      <head>
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""}
+        />
+      </head>
       <body className="font-roboto bg-paper-main text-text-standard antialiased">
         {children}
       </body>

@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@next/third-parties": "^15.5.3",
     "@phosphor-icons/react": "^2.1.10",
     "clsx": "^2.1.1",
     "next": "15.4.6",
