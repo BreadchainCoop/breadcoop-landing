@@ -370,7 +370,7 @@ export default function SolidarityFund() {
         </section>
 
         {/* Projects Section */}
-        <section className="bg-paper-main py-4 md:py-25">
+        <section id="projects" className="bg-paper-main py-4 md:py-25">
           <div className="max-w-[1280px] mx-auto px-4 xl:px-12">
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}

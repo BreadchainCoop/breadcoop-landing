@@ -14,6 +14,7 @@ import {
   CurrencyCircleDollarIcon,
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
+import Link from "next/link";
 
 // Stats Section Component
 function StatsSection() {
@@ -30,7 +31,7 @@ function StatsSection() {
       caption: "",
       title: "Projects empowering each other",
       buttonText: "View projects",
-      buttonLink: "",
+      buttonLink: "/solidarity-fund#projects",
     },
     {
       number: "$40,000",
@@ -69,8 +70,9 @@ function StatsSection() {
                 {stat.buttonLink ? (
                   <a
                     href={stat.buttonLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(stat.buttonLink.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                   >
                     <LiftedButton
                       preset="stroke"
@@ -376,12 +378,15 @@ export default function Home() {
 
                   {/* Stacked Buttons */}
                   <div className="flex flex-col gap-6">
-                    <LiftedButton
-                      preset="primary"
-                      className="w-full bg-primary-orange text-white"
-                    >
-                      <span>Get $BREAD</span>
-                    </LiftedButton>
+                    <Link href={LINKS.solidarityFund} target="_blank">
+                      <LiftedButton
+                        preset="primary"
+                        width="full"
+                        className="bg-primary-orange text-white"
+                      >
+                        <span>Get $BREAD</span>
+                      </LiftedButton>
+                    </Link>
                     <LiftedButton
                       preset="secondary"
                       className="w-full"

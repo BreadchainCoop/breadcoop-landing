@@ -32,13 +32,13 @@ function SocialIcons({ className = "" }: { className?: string }) {
       >
         <GithubLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
-      <a href="#" className="block">
+      <a href={LINKS.discord} className="block">
         <DiscordLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
-      <a href="#" className="block">
+      <a href={LINKS.twitter} className="block">
         <XLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
-      <a href="#" className="block">
+      <a href={LINKS.newsletter} className="block">
         <Image
           src="/paragraph.png"
           alt="Paragraph icon"
@@ -146,10 +146,10 @@ export function Footer() {
                 <FooterLink href="#">About us</FooterLink>
               </li>
               <li>
-                <FooterLink href="#">Documentation</FooterLink>
+                <FooterLink href={LINKS.docs}>Documentation</FooterLink>
               </li>
               <li>
-                <FooterLink href="#">Blog</FooterLink>
+                <FooterLink href={LINKS.newsletter}>Blog</FooterLink>
               </li>
               <li>
                 <FooterLink href="#">Contribute</FooterLink>
@@ -165,7 +165,10 @@ export function Footer() {
             <ul className="space-y-3">
               {SOLIDARITY_TOOLS.map((tool) => (
                 <li key={tool.id}>
-                  <FooterLink href="#" isExternal={!tool.comingSoon}>
+                  <FooterLink
+                    href={tool.webLink || ""}
+                    isExternal={!tool.comingSoon}
+                  >
                     {tool.title}
                   </FooterLink>
                 </li>

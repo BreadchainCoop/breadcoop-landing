@@ -1,8 +1,10 @@
 "use client";
 
 import { LiftedButton } from "@/components/LiftedButton";
+import { LINKS } from "@/constants/links";
 import { ArrowUpRightIcon, HandPeaceIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
+import Link from "next/link";
 
 export function CooperativeServices() {
   return (
@@ -72,14 +74,16 @@ export function CooperativeServices() {
                 </p>
               </div>
               <div className="mt-auto">
-                <LiftedButton
-                  preset="primary"
-                  width="full"
-                  className="bg-primary-orange text-white"
-                  rightIcon={<ArrowUpRightIcon />}
-                >
-                  <span>Explore our services</span>
-                </LiftedButton>
+                <Link target="_blank" href={LINKS.sourdoughSystems}>
+                  <LiftedButton
+                    preset="primary"
+                    width="full"
+                    className="bg-primary-orange text-white"
+                    rightIcon={<ArrowUpRightIcon />}
+                  >
+                    <span>Explore our services</span>
+                  </LiftedButton>
+                </Link>
               </div>
             </div>
           </div>

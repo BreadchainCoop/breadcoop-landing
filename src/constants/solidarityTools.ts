@@ -1,3 +1,5 @@
+import { LINKS } from "./links";
+
 export interface SolidarityTool {
   id: string;
   title: string;
@@ -11,6 +13,7 @@ export interface SolidarityTool {
   };
   logo: string;
   lineLogo: string;
+  webLink?: string;
   comingSoon: boolean;
 }
 
@@ -25,6 +28,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     buttonClass: "bg-primary-orange text-white",
     logo: "/logo.svg",
     lineLogo: "/logo-line-orange.svg",
+    webLink: LINKS.solidarityFund,
     comingSoon: false,
   },
   {

@@ -13,7 +13,8 @@ import {
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
 import { LiftedButton } from "@/components/LiftedButton";
-import { SOLIDARITY_TOOLS, SolidarityTool } from "@/constants/solidarityTools";
+import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
+import { LINKS } from "@/constants/links";
 
 // Solidarity Tool Item Component
 interface SolidarityToolItemProps {
@@ -60,15 +61,15 @@ function SolidarityToolItem({
       onClick={handleClick}
     >
       <div
-        className={`group flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer ${
+        className={`border-primary-orange group flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer ${
           color === "primary-orange"
-            ? "hover:border-primary-orange"
+            ? "active:border-primary-orange hover:border-primary-orange"
             : color === "primary-blue"
-            ? "hover:border-primary-blue"
+            ? "active:border-primary-blue hover:border-primary-blue"
             : color === "primary-jade"
-            ? "hover:border-primary-jade"
+            ? "active:border-primary-jade hover:border-primary-jade"
             : color === "surface-ink"
-            ? "hover:border-surface-ink"
+            ? "active:border-surface-ink hover:border-surface-ink"
             : ""
         }`}
         onMouseEnter={
@@ -301,7 +302,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                   {/* Second Column - Orange box */}
                   <Link
-                    href="https://docs.breadcoop.org"
+                    href={LINKS.docs}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-1/3 bg-primary-orange relative overflow-hidden group/orange block"
@@ -335,13 +336,15 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             </div>
 
             <Link
-              href="#"
+              href={LINKS.docs}
+              target="_blank"
               className="text-body text-text-standard hover:text-primary-orange"
             >
               Docs
             </Link>
             <Link
-              href="#"
+              href={LINKS.newsletter}
+              target="_blank"
               className="text-body text-text-standard hover:text-primary-orange"
             >
               Blog
@@ -364,13 +367,15 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
           >
             {/* Desktop: Visit App Button */}
             <div className="hidden md:block mt-1">
-              <LiftedButton
-                preset="primary"
-                rightIcon={<ArrowUpRightIcon />}
-                className="!py-2"
-              >
-                <span>Visit app</span>
-              </LiftedButton>
+              <Link href={LINKS.solidarityFund} target="_blank">
+                <LiftedButton
+                  preset="primary"
+                  rightIcon={<ArrowUpRightIcon />}
+                  className="!py-2"
+                >
+                  <span>Visit app</span>
+                </LiftedButton>
+              </Link>
             </div>
 
             {/* Mobile: Visit App Button */}
