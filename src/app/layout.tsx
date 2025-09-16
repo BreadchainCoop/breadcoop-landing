@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Bread Cooperative",
     images: [
       {
-        url: "https://bread.coop/images/preview.png",
+        url: "https://bread.coop/preview.png",
         width: 800,
         height: 600,
         alt: "Bread Cooperative",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bread Cooperative",
     description: "Solidarity forever.",
-    images: ["https://bread.coop/images/preview.png"],
+    images: ["https://bread.coop/preview.png"],
   },
   icons: {
     icon: [
