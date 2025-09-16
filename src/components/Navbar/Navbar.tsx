@@ -302,7 +302,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                   {/* Second Column - Orange box */}
                   <Link
-                    href={LINKS.docs}
+                    href={LINKS.docs + "/what-is-bread"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-1/3 bg-primary-orange relative overflow-hidden group/orange block"
@@ -438,7 +438,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                   What is $BREAD?
                 </div>
                 <Link
-                  href="#"
+                  href={LINKS.docs + "/what-is-bread"}
                   className="text-body text-primary-blue underline"
                 >
                   Read more in our documentation
