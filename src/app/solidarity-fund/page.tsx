@@ -29,7 +29,7 @@ const projects: Project[] = [
     description: "Organizations focused on new cultural inquiries.",
     image: "/banner_cca.png",
     websiteUrl: "https://www.crypto-commons.org/",
-    karmagapUrl: "#",
+    karmagapUrl: "https://gap.karmahq.xyz/project/crypto-commons-association",
   },
   {
     id: "symbiota",
@@ -37,7 +37,7 @@ const projects: Project[] = [
     description: "Organizations dedicated to cultural innovation.",
     image: "/banner_symbiota.png",
     websiteUrl: "https://symbiota.coop/",
-    karmagapUrl: "#",
+    karmagapUrl: "https://gap.karmahq.xyz/project/symbiota",
   },
   {
     id: "citizen-wallet",
@@ -45,7 +45,8 @@ const projects: Project[] = [
     description: "Open source tools for Web3 community currencies.",
     image: "/banner_citizenwallet.png",
     websiteUrl: "https://citizenwallet.xyz/",
-    karmagapUrl: "#",
+    karmagapUrl:
+      "https://gap.karmahq.xyz/project/citizen-wallet---an-open-source-wallet-with-account-abstraction-for-your-community-1",
   },
   {
     id: "regen-coordination",
@@ -53,7 +54,7 @@ const projects: Project[] = [
     description: "Supporting regenerative initiatives globally.",
     image: "/banner_refidao.png",
     websiteUrl: "https://www.regencoordination.xyz/",
-    karmagapUrl: "#",
+    karmagapUrl: "https://gap.karmahq.xyz/community/regen-coordination",
   },
 ];
 

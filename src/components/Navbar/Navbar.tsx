@@ -29,6 +29,7 @@ interface SolidarityToolItemProps {
     bg: string;
     hoverBg: string;
   };
+  linkOverride?: string; // Override the default link behavior
   onNavigate?: () => void; // Callback for when navigation occurs
 }
 
@@ -39,6 +40,7 @@ function SolidarityToolItem({
   shortDescription,
   color,
   comingSoon,
+  linkOverride,
   onNavigate,
 }: SolidarityToolItemProps) {
   const router = useRouter();
@@ -54,11 +56,17 @@ function SolidarityToolItem({
     }
   };
 
+  // Determine the href based on linkOverride, comingSoon, or default behavior
+  const href = comingSoon ? "#" : linkOverride || `/${id}`;
+
   return (
     <Link
-      href={comingSoon ? "#" : `/${id}`}
+      href={href}
       className={`block ${comingSoon ? "pointer-events-none" : ""}`}
       onClick={handleClick}
+      {...(linkOverride && !comingSoon
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
     >
       <div
         className={`border-primary-orange group flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer ${
@@ -296,6 +304,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                         title="I have a post-capitalist idea..."
                         shortDescription="Have a better idea? Share it."
                         color="surface-ink"
+                        linkOverride={LINKS.postCapitalistIdea}
                       />
                     </div>
                   </div>
@@ -478,14 +487,16 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                           onNavigate={() => setIsMobileMenuOpen(false)}
                         />
                       ))}
-                      <SolidarityToolItem
-                        id="post-capitalist-idea"
-                        logo="/logo-stroke.svg"
-                        title="I have a post-capitalist idea..."
-                        shortDescription="Have a better idea? Share it."
-                        color="surface-ink"
-                        onNavigate={() => setIsMobileMenuOpen(false)}
-                      />
+                      <Link href={LINKS.postCapitalistIdea} target="_blank">
+                        <SolidarityToolItem
+                          id="post-capitalist-idea"
+                          logo="/logo-stroke.svg"
+                          title="I have a post-capitalist idea..."
+                          shortDescription="Have a better idea? Share it."
+                          color="surface-ink"
+                          onNavigate={() => setIsMobileMenuOpen(false)}
+                        />
+                      </Link>
                     </div>
                   </div>
                 )}

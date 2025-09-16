@@ -12,6 +12,7 @@ export const LINKS = {
     "https://drive.google.com/file/d/165MheWS-8CZ9MnBHxDkdHrICeYj0n-De/view",
   newsletter: "http://paragraph.com/@breadcoop",
   openCollective: "https://opencollective.com/breadchain-cooperative",
+  postCapitalistIdea: "https://form.typeform.com/to/opwqWG8j",
   projectApplicationForm: "https://forms.gle/DeTETFxCxZbKRCzS7",
   solidarityFund: "https://app.breadchain.xyz",
   sourdoughSystems: "https://www.sourdough.systems/",

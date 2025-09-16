@@ -6,6 +6,28 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 export const metadata: Metadata = {
   title: "Bread Cooperative",
   description: "Solidarity forever.",
+  openGraph: {
+    title: "Bread Cooperative",
+    description: "Solidarity forever.",
+    url: "https://bread.coop/",
+    siteName: "Bread Cooperative",
+    images: [
+      {
+        url: "https://bread.coop/images/preview.png",
+        width: 800,
+        height: 600,
+        alt: "Bread Cooperative",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bread Cooperative",
+    description: "Solidarity forever.",
+    images: ["https://bread.coop/images/preview.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
