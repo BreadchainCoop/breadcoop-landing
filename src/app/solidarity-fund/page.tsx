@@ -26,7 +26,7 @@ const projects: Project[] = [
     name: "Crypto Commons Association",
     description: "Organizations focused on new cultural inquiries.",
     image: "/banner_cca.png",
-    websiteUrl: "#",
+    websiteUrl: "https://www.crypto-commons.org/",
     karmagapUrl: "#",
   },
   {
@@ -34,7 +34,7 @@ const projects: Project[] = [
     name: "Symbiota",
     description: "Organizations dedicated to cultural innovation.",
     image: "/banner_symbiota.png",
-    websiteUrl: "#",
+    websiteUrl: "https://symbiota.coop/",
     karmagapUrl: "#",
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
     name: "Citizen Wallet",
     description: "Open source tools for Web3 community currencies.",
     image: "/banner_citizenwallet.png",
-    websiteUrl: "#",
+    websiteUrl: "https://citizenwallet.xyz/",
     karmagapUrl: "#",
   },
   {
@@ -50,7 +50,7 @@ const projects: Project[] = [
     name: "Regen Coordination",
     description: "Supporting regenerative initiatives globally.",
     image: "/banner_refidao.png",
-    websiteUrl: "#",
+    websiteUrl: "https://www.regencoordination.xyz/",
     karmagapUrl: "#",
   },
 ];

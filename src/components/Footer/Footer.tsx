@@ -18,10 +18,10 @@ function SocialIcons({ className = "" }: { className?: string }) {
     <div
       className={`flex items-center justify-center md:justify-start gap-5 pb-6 md:pb-0 ${className}`}
     >
-      <a href="#" className="block">
+      <a href={LINKS.youtube} className="block">
         <YoutubeLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
-      <a href="#" className="block">
+      <a href={LINKS.linkedin} className="block">
         <LinkedinLogoIcon className="w-6 h-6 text-surface-ink" />
       </a>
       <a
@@ -70,6 +70,16 @@ function FooterLink({
   children: React.ReactNode;
   isExternal?: boolean;
 }) {
+  const isDisabled = !href || href.trim() === "";
+
+  if (isDisabled) {
+    return (
+      <span className="text-surface-ink font-univers flex items-center gap-2 opacity-50 ">
+        {children}
+      </span>
+    );
+  }
+
   return (
     <Link
       href={href}
@@ -143,9 +153,6 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <FooterLink href="#">About us</FooterLink>
-              </li>
-              <li>
                 <FooterLink href={LINKS.docs}>Documentation</FooterLink>
               </li>
               <li>
@@ -213,8 +220,9 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-4 text-sm">
             <span className="text-white font-univers">All Rights Reserved</span>
-            <span className="text-white">|</span>
-            <Link
+            {/* TODO: Add terms and conditions and privacy policy #10 */}
+            {/* <span className="text-white">|</span> */}
+            {/* <Link
               href="#"
               className="text-orange-0 hover:text-paper-0 font-univers"
             >
@@ -226,7 +234,7 @@ export function Footer() {
               className="text-orange-0 hover:text-paper-0 font-univers"
             >
               Privacy Policy
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
