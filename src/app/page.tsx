@@ -33,14 +33,14 @@ function StatsSection() {
       buttonLink: "",
     },
     {
-      number: projects.data ? projects.data.length : "-",
+      number: projects.data ? projects.data.length : projects.error ? 8 : "...",
       caption: "",
       title: "Projects empowering each other",
       buttonText: "View projects",
       buttonLink: "/solidarity-fund#projects",
     },
     {
-      number: totalBread.data ? formatSupply(totalBread.data) : "-",
+      number: totalBread.data ? formatSupply(totalBread.data) : totalBread.error ? "43,000+" : "...",
       caption: "",
       title: "Total distributed towards solidarity since launch",
       buttonText: "View analytics",
