@@ -5,7 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Bread Cooperative",
-  description: "Solidarity forever.",
+  description: "Tools for today. Solidarity forever.",
   openGraph: {
     title: "Bread Cooperative",
     description: "Tools for today. Solidarity forever.",
