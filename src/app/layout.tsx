@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Solidarity forever.",
   openGraph: {
     title: "Bread Cooperative",
-    description: "Solidarity forever.",
+    description: "Tools for today. Solidarity forever.",
     url: "https://bread.coop/",
     siteName: "Bread Cooperative",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bread Cooperative",
-    description: "Solidarity forever.",
+    description: "Tools for today. Solidarity forever.",
     images: ["https://bread.coop/preview.png"],
   },
   icons: {
