@@ -350,7 +350,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               Blog
             </Link>
             <Link
-              href="#"
+              href={LINKS.contributorForm}
               className="text-body text-text-standard hover:text-primary-orange"
             >
               Contribute
@@ -502,7 +502,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                   Blog
                 </Link>
                 <Link
-                  href="#"
+                  href={LINKS.contributorForm}
                   className="block text-body text-text-standard hover:text-primary-orange"
                 >
                   Contribute

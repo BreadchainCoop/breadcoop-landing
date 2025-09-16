@@ -37,14 +37,20 @@ export function CooperativeServices() {
                 </p>
               </div>
               <div className="mt-auto">
-                <LiftedButton
-                  preset="primary"
-                  width="full"
-                  className="bg-primary-orange text-white"
-                  leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                <Link
+                  href={LINKS.contributorForm}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span>Sign up to contribute</span>
-                </LiftedButton>
+                  <LiftedButton
+                    preset="primary"
+                    width="full"
+                    className="bg-primary-orange text-white"
+                    leftIcon={<HandPeaceIcon className="w-6 h-6" />}
+                  >
+                    <span>Sign up to contribute</span>
+                  </LiftedButton>
+                </Link>
               </div>
             </div>
           </div>

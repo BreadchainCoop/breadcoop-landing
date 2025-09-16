@@ -8,6 +8,8 @@ import { Subscribe } from "@/components/Subscribe/Subscribe";
 import { SolidarityTools } from "@/components/SolidarityTools/SolidarityTools";
 import { ArrowUpRightIcon, UserPlusIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
+import Link from "next/link";
+import { LINKS } from "@/constants/links";
 
 // Project data interface
 interface Project {
@@ -87,15 +89,21 @@ function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Buttons */}
           <div className="space-y-[1px] md:space-y-2">
-            <LiftedButton
-              preset="stroke"
-              className="border border-surface-ink  h-[32px] text-sm  h-[32px]"
-              rightIcon={
-                <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
-              }
+            <Link
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>Website</span>
-            </LiftedButton>
+              <LiftedButton
+                preset="stroke"
+                className="border border-surface-ink  h-[32px] text-sm  h-[32px]"
+                rightIcon={
+                  <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
+                }
+              >
+                <span>Website</span>
+              </LiftedButton>
+            </Link>
             <div className="hidden md:block">
               <LiftedButton
                 preset="stroke"
@@ -135,13 +143,19 @@ function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Buttons */}
           <div className="mt-8">
-            <LiftedButton
-              preset="stroke"
-              className="border border-surface-ink  h-[32px]"
-              rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+            <Link
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>Website</span>
-            </LiftedButton>
+              <LiftedButton
+                preset="stroke"
+                className="border border-surface-ink  h-[32px]"
+                rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+              >
+                <span>Website</span>
+              </LiftedButton>
+            </Link>
             <div className="h-4"></div>
             <LiftedButton
               preset="stroke"
@@ -208,13 +222,19 @@ export default function SolidarityFund() {
                       *This is a community fund, not an investment vehicle.
                       Built for solidarity, not speculation
                     </p>
-                    <LiftedButton
-                      className="w-[200px] h-[56px] bg-primary-orange text-white"
-                      rightIcon={<ArrowUpRightIcon />}
-                      width="full"
+                    <Link
+                      href={LINKS.solidarityFund}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <span>Visit solidarity fund</span>
-                    </LiftedButton>
+                      <LiftedButton
+                        className="w-[200px] h-[56px] bg-primary-orange text-white"
+                        rightIcon={<ArrowUpRightIcon />}
+                        width="full"
+                      >
+                        <span>Visit solidarity fund</span>
+                      </LiftedButton>
+                    </Link>
                   </div>
 
                   {/* Right column - Image (2/3) */}
@@ -283,7 +303,11 @@ export default function SolidarityFund() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <a href={"#"} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={LINKS.dashboard}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <LiftedButton
                     preset="stroke"
                     className="border border-surface-ink h-[32px]"
@@ -338,21 +362,33 @@ export default function SolidarityFund() {
 
               {/* Buttons */}
               <div className="block md:flex gap-6 mb-16">
-                <LiftedButton
-                  className="bg-primary-orange xl:mt-0 text-white"
-                  rightIcon={<ArrowUpRightIcon />}
-                  width="mobile-full"
+                <Link
+                  href={LINKS.solidarityFund}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span>Visit solidarity fund</span>
-                </LiftedButton>
+                  <LiftedButton
+                    className="bg-primary-orange xl:mt-0 text-white"
+                    rightIcon={<ArrowUpRightIcon />}
+                    width="mobile-full"
+                  >
+                    <span>Visit solidarity fund</span>
+                  </LiftedButton>
+                </Link>
                 <span className="block xl:hidden h-8"></span>
-                <LiftedButton
-                  preset="secondary"
-                  width="mobile-full"
-                  rightIcon={<ArrowUpRightIcon />}
+                <Link
+                  href={LINKS.docs + "/what-is-bread"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span>Learn more about $BREAD</span>
-                </LiftedButton>
+                  <LiftedButton
+                    preset="secondary"
+                    width="mobile-full"
+                    rightIcon={<ArrowUpRightIcon />}
+                  >
+                    <span>Learn more about $BREAD</span>
+                  </LiftedButton>
+                </Link>
               </div>
 
               {/* Solidarity Diagram Desktop */}
@@ -411,20 +447,35 @@ export default function SolidarityFund() {
                   and mission of the Bread Cooperative Solidarity Fund network.
                 </p>
                 <div className="flex flex-col xl:flex-row gap-4 justify-center">
-                  <LiftedButton
-                    preset="primary"
-                    width="mobile-full"
-                    leftIcon={<UserPlusIcon />}
+                  <Link
+                    href={LINKS.projectApplicationForm}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <span>Become a member project</span>
-                  </LiftedButton>
-                  <LiftedButton
-                    preset="secondary"
-                    width="mobile-full"
-                    rightIcon={<ArrowUpRightIcon />}
+                    <LiftedButton
+                      preset="primary"
+                      width="mobile-full"
+                      leftIcon={<UserPlusIcon />}
+                    >
+                      <span>Become a member project</span>
+                    </LiftedButton>
+                  </Link>
+                  <Link
+                    href={
+                      LINKS.docs +
+                      "/documentation/How-to-become-a-member-project"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <span>Project requirements</span>
-                  </LiftedButton>
+                    <LiftedButton
+                      preset="secondary"
+                      width="mobile-full"
+                      rightIcon={<ArrowUpRightIcon />}
+                    >
+                      <span>Project requirements</span>
+                    </LiftedButton>
+                  </Link>
                 </div>
                 <p className="text-caption mt-4 text-text-standard">
                   *Member projects are carefully selected. Sign ups are not

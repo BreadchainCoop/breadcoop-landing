@@ -159,7 +159,7 @@ export function Footer() {
                 <FooterLink href={LINKS.newsletter}>Blog</FooterLink>
               </li>
               <li>
-                <FooterLink href="#">Contribute</FooterLink>
+                <FooterLink href={LINKS.contributorForm}>Contribute</FooterLink>
               </li>
             </ul>
           </div>

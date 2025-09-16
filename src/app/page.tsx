@@ -282,12 +282,18 @@ export default function Home() {
                     serves as a means of empowerment, not a tool for fear and
                     control.
                   </p>
-                  <LiftedButton
-                    rightIcon={<ArrowUpRightIcon />}
-                    className="w-full bg-primary-orange text-white flex items-center gap-2"
+                  <Link
+                    href={LINKS.manifesto}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <span>Our manifesto</span>
-                  </LiftedButton>
+                    <LiftedButton
+                      rightIcon={<ArrowUpRightIcon />}
+                      className="w-full bg-primary-orange text-white flex items-center gap-2"
+                    >
+                      <span>Our manifesto</span>
+                    </LiftedButton>
+                  </Link>
                 </div>
 
                 {/* Right Column - Image Desktop Only */}
@@ -387,13 +393,15 @@ export default function Home() {
                         <span>Get $BREAD</span>
                       </LiftedButton>
                     </Link>
-                    <LiftedButton
-                      preset="secondary"
-                      className="w-full"
-                      leftIcon={<BookOpenIcon />}
-                    >
-                      <span>Read more</span>
-                    </LiftedButton>
+                    <Link href={LINKS.docs + "/what-is-bread"} target="_blank">
+                      <LiftedButton
+                        preset="secondary"
+                        width="full"
+                        leftIcon={<BookOpenIcon />}
+                      >
+                        <span>Read more</span>
+                      </LiftedButton>
+                    </Link>
                   </div>
                 </div>
 
