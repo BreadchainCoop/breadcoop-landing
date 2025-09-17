@@ -187,11 +187,11 @@ export function Footer() {
           <div>
             <h3 className="font-univers text-white text-lg mb-4">Reach out</h3>
             <Link
-              href="mailto:info@bread.coop"
+              href="mailto:contact@bread.coop"
               className="text-surface-ink hover:text-paper-0 font-univers flex items-center gap-2"
             >
               <EnvelopeSimpleIcon className="w-6 h-6 text-orange-0" />
-              info@bread.coop
+              contact@bread.coop
             </Link>
           </div>
 
