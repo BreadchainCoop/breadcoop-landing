@@ -219,7 +219,10 @@ function StatsSection() {
     <div>
       <div className="grid md:grid-cols-3 gap-12 mb-10">
         {stats.map((stat, index) => (
-          <div className="text-center text-text-standard flex flex-col">
+          <div
+            key={index}
+            className="text-center text-text-standard flex flex-col"
+          >
             <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
               {stat.number} <span className="text-h5 ">{stat.numberText}</span>
             </div>
