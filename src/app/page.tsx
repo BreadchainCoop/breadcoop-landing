@@ -384,7 +384,11 @@ export default function Home() {
 
                   {/* Stacked Buttons */}
                   <div className="flex flex-col gap-6">
-                    <Link href={LINKS.solidarityFund} target="_blank">
+                    <Link
+                      href={LINKS.solidarityFund}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <LiftedButton
                         preset="primary"
                         width="full"
@@ -393,7 +397,11 @@ export default function Home() {
                         <span>Get $BREAD</span>
                       </LiftedButton>
                     </Link>
-                    <Link href={LINKS.docs + "/what-is-bread"} target="_blank">
+                    <Link
+                      href={LINKS.docsBreadToken}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <LiftedButton
                         preset="secondary"
                         width="full"

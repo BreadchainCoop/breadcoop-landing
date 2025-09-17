@@ -4,6 +4,11 @@ export const LINKS = {
   dashboard: "https://dune.com/breadchain_cooperative/breadchain",
   discord: "https://discord.com/invite/zmNqsHRHDa",
   docs: "https://docs.bread.coop",
+  docsBreadToken: "https://docs.bread.coop/bread-token/",
+  docsManifesto: "https://docs.bread.coop/manifesto",
+  docsHowToBecomeAMemberProject:
+    "https://docs.bread.coop/how-to-become-a-member-project",
+  docsVotingPower: "https://docs.bread.coop/voting-power",
   farcaster: "https://farcaster.xyz/~/channel/cryptoleft",
   giveth: "https://giveth.io/project/breadchain-cooperative",
   github: "http://github.com/BreadchainCoop",

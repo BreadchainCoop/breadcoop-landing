@@ -311,7 +311,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                   {/* Second Column - Orange box */}
                   <Link
-                    href={LINKS.docs + "/what-is-bread"}
+                    href={LINKS.docsBreadToken}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-1/3 bg-primary-orange relative overflow-hidden group/orange block"
@@ -347,6 +347,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             <Link
               href={LINKS.docs}
               target="_blank"
+              rel="noopener noreferrer"
               className="text-body text-text-standard hover:text-primary-orange"
             >
               Docs
@@ -354,6 +355,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             <Link
               href={LINKS.newsletter}
               target="_blank"
+              rel="noopener noreferrer"
               className="text-body text-text-standard hover:text-primary-orange"
             >
               Blog
@@ -376,7 +378,11 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
           >
             {/* Desktop: Visit App Button */}
             <div className="hidden md:block mt-1">
-              <Link href={LINKS.solidarityFund} target="_blank">
+              <Link
+                href={LINKS.solidarityFund}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <LiftedButton
                   preset="primary"
                   rightIcon={<ArrowUpRightIcon />}
@@ -447,7 +453,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                   What is $BREAD?
                 </div>
                 <Link
-                  href={LINKS.docs + "/what-is-bread"}
+                  href={LINKS.docsBreadToken}
                   className="text-body text-primary-blue underline"
                 >
                   Read more in our documentation
@@ -487,7 +493,11 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                           onNavigate={() => setIsMobileMenuOpen(false)}
                         />
                       ))}
-                      <Link href={LINKS.postCapitalistIdea} target="_blank">
+                      <Link
+                        href={LINKS.postCapitalistIdea}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <SolidarityToolItem
                           id="post-capitalist-idea"
                           logo="/logo-stroke.svg"

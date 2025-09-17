@@ -378,7 +378,7 @@ export default function SolidarityFund() {
                 </Link>
                 <span className="block xl:hidden h-8"></span>
                 <Link
-                  href={LINKS.docs + "/what-is-bread"}
+                  href={LINKS.docsBreadToken}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -462,10 +462,7 @@ export default function SolidarityFund() {
                     </LiftedButton>
                   </Link>
                   <Link
-                    href={
-                      LINKS.docs +
-                      "/documentation/How-to-become-a-member-project"
-                    }
+                    href={LINKS.docsHowToBecomeAMemberProject}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
