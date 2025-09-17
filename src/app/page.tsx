@@ -40,7 +40,12 @@ function StatsSection() {
       buttonLink: "/solidarity-fund#projects",
     },
     {
-      number: totalBread.data ? formatSupply(totalBread.data) : totalBread.error ? "43,000+" : "...",
+      number: totalBread.data
+        ? formatSupply(totalBread.data)
+        : totalBread.error
+        ? "43,000+"
+        : "...",
+      numberText: "USD",
       caption: "",
       title: "Total distributed towards solidarity since launch",
       buttonText: "View analytics",
@@ -59,7 +64,7 @@ function StatsSection() {
         >
           <div className="text-center md:text-right">
             <h1 className="text-h1 md:pb-12  text-surface-brown">
-              {stat.number}
+              {stat.number} <span className="text-h5 ">{stat.numberText}</span>
             </h1>
             {stat.caption && (
               <p className="text-caption text-text-standard pt-4">

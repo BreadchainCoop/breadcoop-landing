@@ -10,6 +10,9 @@ import { ArrowUpRightIcon, UserPlusIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { LINKS } from "@/constants/links";
+import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
+import { useTotalBread } from "@/hooks/use-total-bread";
+import { formatSupply } from "@/util/formatter";
 
 // Project data interface
 interface Project {
@@ -184,6 +187,64 @@ function ProjectCard({ project }: ProjectCardProps) {
   );
 }
 
+// Stats Section Component
+function StatsSection() {
+  const projects = useBreadchainProjects();
+  const totalBread = useTotalBread();
+
+  const stats = [
+    {
+      number: totalBread.data
+        ? formatSupply(totalBread.data)
+        : totalBread.error
+        ? "43,000+"
+        : "...",
+      numberText: "USD",
+      title: "Total distributed",
+      caption: "Since the launch of the fund",
+    },
+    {
+      number: projects.data ? projects.data.length : projects.error ? 8 : "...",
+      title: "Projects supported",
+      caption: "",
+    },
+    {
+      number: "450,000",
+      title: "$BREAD in existence",
+      caption: "*1 $BREAD is always equal to 1 USD",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="grid md:grid-cols-3 gap-12 mb-10">
+        {stats.map((stat, index) => (
+          <div className="text-center text-text-standard flex flex-col">
+            <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
+              {stat.number} <span className="text-h5 ">{stat.numberText}</span>
+            </div>
+            <div className="text-h5 text-text-standard">
+              {stat.title}
+              <p className="text-caption text-text-standard">{stat.caption}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <a href={"#"} target="_blank" rel="noopener noreferrer">
+          <LiftedButton
+            preset="stroke"
+            className="border border-surface-ink h-[32px]"
+            rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+          >
+            <span>View analytics</span>
+          </LiftedButton>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function SolidarityFund() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-paper-main flex flex-col">
@@ -287,51 +348,7 @@ export default function SolidarityFund() {
               </h2>
 
               {/* Statistics Grid */}
-              <div className="grid md:grid-cols-3 gap-12 mb-10">
-                <div className="text-center text-text-standard flex flex-col">
-                  <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
-                    50,000 <span className="text-h5 ">USD</span>
-                  </div>
-                  <div className="text-h5 text-text-standard">
-                    Total distributed
-                    <p className="text-caption text-text-standard">
-                      Since the launch of the fund
-                    </p>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-surface-brown mb-4">6</div>
-                  <p className="text-h5 text-text-standard">
-                    Projects supported
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-h1 text-surface-brown mb-4">450,000</div>
-                  <div className="text-h5 text-text-standard">
-                    $BREAD in existence
-                    <p className="text-caption text-text-standard">
-                      * 1 $BREAD is always equal to 1 USD
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <a
-                  href={LINKS.dashboard}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LiftedButton
-                    preset="stroke"
-                    className="border border-surface-ink h-[32px]"
-                    rightIcon={
-                      <ArrowUpRightIcon className="text-primary-orange" />
-                    }
-                  >
-                    <span>View analytics</span>
-                  </LiftedButton>
-                </a>
-              </div>
+              <StatsSection />
             </div>
           </div>
         </section>
