@@ -13,8 +13,6 @@ export const LINKS = {
   giveth: "https://giveth.io/project/breadchain-cooperative",
   github: "http://github.com/BreadchainCoop",
   linkedin: "https://www.linkedin.com/company/breadchain-cooperative/",
-  manifesto:
-    "https://drive.google.com/file/d/165MheWS-8CZ9MnBHxDkdHrICeYj0n-De/view",
   newsletter: "http://paragraph.com/@breadcoop",
   openCollective: "https://opencollective.com/breadchain-cooperative",
   postCapitalistIdea: "https://form.typeform.com/to/opwqWG8j",

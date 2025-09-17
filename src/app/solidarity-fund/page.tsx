@@ -106,15 +106,21 @@ function ProjectCard({ project }: ProjectCardProps) {
               </LiftedButton>
             </Link>
             <div className="hidden md:block">
-              <LiftedButton
-                preset="stroke"
-                className="border border-surface-ink  h-[32px] text-sm"
-                rightIcon={
-                  <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
-                }
+              <Link
+                href={project.karmagapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span>KarmaGAP</span>
-              </LiftedButton>
+                <LiftedButton
+                  preset="stroke"
+                  className="border border-surface-ink  h-[32px] text-sm"
+                  rightIcon={
+                    <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
+                  }
+                >
+                  <span>KarmaGAP</span>
+                </LiftedButton>
+              </Link>
             </div>
           </div>
         </div>
@@ -158,13 +164,19 @@ function ProjectCard({ project }: ProjectCardProps) {
               </LiftedButton>
             </Link>
             <div className="h-4"></div>
-            <LiftedButton
-              preset="stroke"
-              className="border border-surface-ink  h-[32px]"
-              rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+            <Link
+              href={project.karmagapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span>KarmaGAP</span>
-            </LiftedButton>
+              <LiftedButton
+                preset="stroke"
+                className="border border-surface-ink  h-[32px]"
+                rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
+              >
+                <span>KarmaGAP</span>
+              </LiftedButton>
+            </Link>
           </div>
         </div>
       </div>

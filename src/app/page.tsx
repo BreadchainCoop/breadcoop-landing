@@ -283,7 +283,7 @@ export default function Home() {
                     control.
                   </p>
                   <Link
-                    href={LINKS.manifesto}
+                    href={LINKS.docsManifesto}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
