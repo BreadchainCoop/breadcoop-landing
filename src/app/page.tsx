@@ -15,9 +15,15 @@ import {
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
+import { useTotalBread } from "@/hooks/use-total-bread";
+import { formatSupply } from "@/util/formatter";
 
 // Stats Section Component
 function StatsSection() {
+  const projects = useBreadchainProjects();
+  const totalBread = useTotalBread();
+
   const stats = [
     {
       number: "100K+",
@@ -27,14 +33,19 @@ function StatsSection() {
       buttonLink: "",
     },
     {
-      number: "6",
+      number: projects.data ? projects.data.length : projects.error ? 8 : "...",
       caption: "",
       title: "Projects empowering each other",
       buttonText: "View projects",
       buttonLink: "/solidarity-fund#projects",
     },
     {
-      number: "$40,000",
+      number: totalBread.data
+        ? formatSupply(totalBread.data)
+        : totalBread.error
+        ? "43,000+"
+        : "...",
+      numberText: "USD",
       caption: "",
       title: "Total distributed towards solidarity since launch",
       buttonText: "View analytics",
@@ -53,7 +64,7 @@ function StatsSection() {
         >
           <div className="text-center md:text-right">
             <h1 className="text-h1 md:pb-12  text-surface-brown">
-              {stat.number}
+              {stat.number} <span className="text-h5 ">{stat.numberText}</span>
             </h1>
             {stat.caption && (
               <p className="text-caption text-text-standard pt-4">
