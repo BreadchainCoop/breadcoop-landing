@@ -8,8 +8,9 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-akz: var(--font-akzidenz), ui-sans-serif, system-ui, sans-serif;
-  --font-uni: var(--font-univers), ui-sans-serif, system-ui, sans-serif;
+  --font-breadDisplay: var(--font-breadDisplay), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-breadBody: var(--font-breadBody), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-roboto);
 
   /* Custom Colors */
@@ -41,8 +42,8 @@
 
   /* Custom Fonts */
   --font-roboto: var(--font-roboto);
-  --font-akzidenz: var(--font-akzidenz);
-  --font-univers: var(--font-univers);
+  --font-breadDisplay: var(--font-breadDisplay);
+  --font-breadBody: var(--font-breadBody);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,35 +55,35 @@
 
 @layer components {
   .text-h1 {
-    @apply font-akz font-[900] text-[3rem] leading-[36px] md:text-[96px] md:leading-[76px] xl:text-[7rem] xl:leading-[83px] tracking-tight uppercase;
+    @apply font-breadDisplay font-[900] text-[3rem] leading-[36px] md:text-[96px] md:leading-[76px] xl:text-[7rem] xl:leading-[83px] tracking-tight uppercase;
   }
   .text-h2 {
-    @apply font-akz font-[900] text-[1.5rem] leading-[20px] md:text-[2.5rem] md:leading-[36px] xl:text-[3rem] xl:leading-[48px] tracking-tight;
+    @apply font-breadDisplay font-[900] text-[1.5rem] leading-[20px] md:text-[2.5rem] md:leading-[36px] xl:text-[3rem] xl:leading-[48px] tracking-tight;
   }
   .text-h3 {
-    @apply font-akz font-[900] text-[3rem] xl:text-[80px] leading-[36px] xl:leading-[63px] tracking-tighter;
+    @apply font-breadDisplay font-[900] text-[3rem] xl:text-[80px] leading-[36px] xl:leading-[63px] tracking-tighter;
   }
   .text-h4 {
-    @apply font-uni font-[700] text-[24px] xl:text-[2rem] leading-[24px] xl:leading-[2rem];
+    @apply font-breadBody font-[700] text-[24px] xl:text-[2rem] leading-[24px] xl:leading-[2rem];
   }
   .text-h5 {
-    @apply font-uni font-[400] text-[1rem] xl:text-[1.5rem] xl:leading-[24px];
+    @apply font-breadBody font-[400] text-[1rem] xl:text-[1.5rem] xl:leading-[24px];
   }
   .text-body {
-    @apply font-uni text-base;
+    @apply font-breadBody text-base;
   }
 
-  .text-akz-bold {
-    @apply font-akz font-[700] text-base;
+  .text-breadDisplay-bold {
+    @apply font-breadDisplay font-[700] text-base;
   }
-  .text-akz {
-    @apply font-akz font-[500] text-base;
+  .text-breadDisplay {
+    @apply font-breadDisplay font-[500] text-base;
   }
   .text-body-bold {
-    @apply font-uni text-base font-[700];
+    @apply font-breadBody text-base font-[700];
   }
   .text-caption {
-    @apply font-uni text-[0.7rem];
+    @apply font-breadBody text-[0.7rem];
   }
 }
 

@@ -152,7 +152,7 @@ export default function LiftedButton({
             {cloneWithClasses(leftIcon, "w-6 h-6")}
           </span>
         ) : null}
-        <span className="whitespace-nowrap leading-none p-[5px]">
+        <span className="whitespace-nowrap mt-1 leading-none p-[5px]">
           {children}
         </span>
         {rightIcon ? (

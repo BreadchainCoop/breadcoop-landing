@@ -74,7 +74,7 @@ function FooterLink({
 
   if (isDisabled) {
     return (
-      <span className="text-surface-ink font-univers flex items-center gap-2 opacity-50 ">
+      <span className="text-surface-ink font-breadBody flex items-center gap-2 opacity-50 ">
         {children}
       </span>
     );
@@ -85,7 +85,7 @@ function FooterLink({
       href={href}
       target={isExternal ? "_blank" : "_self"}
       rel={isExternal ? "noopener noreferrer" : ""}
-      className="text-surface-ink hover:text-paper-0 font-univers flex items-center gap-2"
+      className="text-surface-ink hover:text-paper-0 font-breadBody flex items-center gap-2"
     >
       {children}
       {isExternal && <ArrowUpRightIcon className="w-6 h-6 text-orange-0" />}
@@ -108,11 +108,11 @@ export function Footer() {
                 height={24}
                 className="w-6 h-6"
               />
-              <span className="font-akzidenz mt-1 font-bold text-[24px] text-white">
+              <span className="font-breadDisplay mt-1 font-bold text-[24px] text-white">
                 BREAD COOPERATIVE
               </span>
             </div>
-            <p className="text-white font-univers text-center md:text-left">
+            <p className="text-white font-breadBody text-center md:text-left">
               Solidarity forever.
             </p>
           </div>
@@ -132,11 +132,11 @@ export function Footer() {
                 height={24}
                 className="w-6 h-6 mb-1"
               />
-              <span className="font-akzidenz font-bold text-[24px] text-white">
+              <span className="font-breadDisplay font-bold text-[24px] text-white">
                 BREAD COOPERATIVE
               </span>
             </div>
-            <p className="text-white font-univers mb-6 text-center md:text-left">
+            <p className="text-white font-breadBody mb-6 text-center md:text-left">
               Solidarity forever.
             </p>
 
@@ -148,7 +148,7 @@ export function Footer() {
 
           {/* Cooperative Column */}
           <div>
-            <h3 className="font-univers text-white text-lg mb-4">
+            <h3 className="font-breadBody text-white text-lg mb-4">
               Cooperative
             </h3>
             <ul className="space-y-3">
@@ -166,7 +166,7 @@ export function Footer() {
 
           {/* Solidarity Tools Column */}
           <div>
-            <h3 className="font-univers text-white text-lg mb-4">
+            <h3 className="font-breadBody text-white text-lg mb-4">
               Solidarity tools
             </h3>
             <ul className="space-y-3">
@@ -185,10 +185,12 @@ export function Footer() {
 
           {/* Reach Out Column */}
           <div>
-            <h3 className="font-univers text-white text-lg mb-4">Reach out</h3>
+            <h3 className="font-breadBody text-white text-lg mb-4">
+              Reach out
+            </h3>
             <Link
               href="mailto:contact@bread.coop"
-              className="text-surface-ink hover:text-paper-0 font-univers flex items-center gap-2"
+              className="text-surface-ink hover:text-paper-0 font-breadBody flex items-center gap-2"
             >
               <EnvelopeSimpleIcon className="w-6 h-6 text-orange-0" />
               contact@bread.coop
@@ -197,7 +199,9 @@ export function Footer() {
 
           {/* Support Us Column */}
           <div>
-            <h3 className="font-univers text-white text-lg mb-4">Support us</h3>
+            <h3 className="font-breadBody text-white text-lg mb-4">
+              Support us
+            </h3>
             <ul className="space-y-3">
               <li>
                 <FooterLink href={LINKS.giveth} isExternal>
@@ -215,23 +219,25 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-orange-0 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white font-univers text-sm">
+          <p className="text-white font-breadBody text-sm">
             Creative Commons ©BREAD Cooperative
           </p>
           <div className="flex items-center gap-4 text-sm">
-            <span className="text-white font-univers">All Rights Reserved</span>
+            <span className="text-white font-breadBody">
+              All Rights Reserved
+            </span>
             {/* TODO: Add terms and conditions and privacy policy #10 */}
             {/* <span className="text-white">|</span> */}
             {/* <Link
               href="#"
-              className="text-orange-0 hover:text-paper-0 font-univers"
+              className="text-orange-0 hover:text-paper-0 font-breadBody"
             >
               Terms and Conditions
             </Link>
             <span className="text-white">|</span>
             <Link
               href="#"
-              className="text-orange-0 hover:text-paper-0 font-univers"
+                className="text-orange-0 hover:text-paper-0 font-breadBody"
             >
               Privacy Policy
             </Link> */}

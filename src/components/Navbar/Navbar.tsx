@@ -245,7 +245,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               />
 
               <span
-                className={`mt-1 hidden md:block text-text-standard text-akz-bold leading-none transition-opacity duration-300 ${
+                className={`mt-1 hidden md:block text-text-standard text-breadDisplay-bold leading-none transition-opacity duration-300 ${
                   isStatic || isScrolled || isNavbarHovered
                     ? "opacity-100"
                     : "opacity-0"
@@ -290,7 +290,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                 <div className="flex">
                   {/* First Column - 66% width */}
                   <div className="w-2/3">
-                    <h4 className="text-akz font-[500] uppercase text-surface-grey mb-4">
+                    <h4 className="text-breadDisplay font-[500] uppercase text-surface-grey mb-4">
                       Bread Solidarity Tools
                     </h4>
 
@@ -481,7 +481,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                 {isMobileDropdownOpen && (
                   <div className="pl-4 space-y-4">
-                    <h4 className="font-akz uppercase font-[500] text-surface-grey-2 mb-4">
+                    <h4 className="font-breadDisplay uppercase font-[500] text-surface-grey-2 mb-4">
                       BREAD SOLIDARITY TOOLS
                     </h4>
 
