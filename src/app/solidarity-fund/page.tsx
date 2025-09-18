@@ -12,6 +12,7 @@ import Link from "next/link";
 import { LINKS } from "@/constants/links";
 import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
 import { useTotalBread } from "@/hooks/use-total-bread";
+import { useBreadTvl } from "@/hooks/use-bread-tvl";
 import { formatSupply } from "@/util/formatter";
 
 // Project data interface
@@ -191,6 +192,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 function StatsSection() {
   const projects = useBreadchainProjects();
   const totalBread = useTotalBread();
+  const breadTvl = useBreadTvl();
 
   const stats = [
     {
@@ -209,7 +211,11 @@ function StatsSection() {
       caption: "",
     },
     {
-      number: "450,000",
+      number: breadTvl.data
+        ? formatSupply(breadTvl.data)
+        : breadTvl.error
+        ? "450,000+"
+        : "...",
       title: "$BREAD in existence",
       caption: "*1 $BREAD is always equal to 1 USD",
     },
