@@ -11,7 +11,7 @@ import {
   MagicWandIcon,
 } from "@phosphor-icons/react/ssr";
 import "@/app/globals.css";
-import { akzidenz, univers } from "@/app/fonts";
+import { breadDisplay, breadBody } from "@/app/fonts";
 
 import LiftedButton from "./LiftedButton";
 import type { LiftedButtonColors } from "./LiftedButtonPresets";
@@ -115,7 +115,7 @@ export const Showcase: Story = {
   render: () =>
     React.createElement(
       "div",
-      { className: `${akzidenz.variable} ${univers.variable}` },
+      { className: `${breadDisplay.variable} ${breadBody.variable}` },
       React.createElement(
         "div",
         {
@@ -212,7 +212,7 @@ export const Playground: Story = {
 
     return React.createElement(
       "div",
-      { className: `${akzidenz.variable} ${univers.variable}` },
+      { className: `${breadDisplay.variable} ${breadBody.variable}` },
       React.createElement(
         "div",
         { className: "w-full max-w-[720px] mx-auto px-6 py-8" },

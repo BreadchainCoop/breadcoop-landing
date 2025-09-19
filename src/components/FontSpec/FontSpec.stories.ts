@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
 import "@/app/globals.css";
-import { akzidenz, univers } from "@/app/fonts";
+import { breadDisplay, breadBody } from "@/app/fonts";
 import FontSpec from "./FontSpec";
 
 const meta: Meta<typeof FontSpec> = {
@@ -18,7 +18,7 @@ export const Default: Story = {
   render: () =>
     React.createElement(
       "div",
-      { className: `${akzidenz.variable} ${univers.variable}` },
+      { className: `${breadDisplay.variable} ${breadBody.variable}` },
       React.createElement(FontSpec)
     ),
 };
