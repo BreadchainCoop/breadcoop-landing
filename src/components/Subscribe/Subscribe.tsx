@@ -12,9 +12,9 @@ export function Subscribe() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text */}
             <div>
-              <h2 className="text-h2 text-text-standard mb-6">
+              <h3 className="text-h3 text-text-standard mb-6">
                 Subscribe, stay updated.
-              </h2>
+              </h3>
               <p className="text-body text-text-standard">
                 Get all the Bread Cooperative updates right in your inbox.
               </p>

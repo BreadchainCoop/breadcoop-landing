@@ -171,10 +171,10 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4 xl:gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
-                    <h2 className="text-h2 font-[400] xl:text-[4rem] xl:leading-[64px] text-paper-main my-4 xl:my-8 max-w-full xl:max-w-[519px]">
+                    <h3 className="text-h3 font-[400] xl:text-[4rem] xl:leading-[64px] text-paper-main my-4 xl:my-8 max-w-full xl:max-w-[519px]">
                       We are a worker collective building technology to go far,
                       together.
-                    </h2>
+                    </h3>
                     <div className="flex flex-col md:flex-row gap-4 xl:gap-6">
                       <a
                         href={LINKS.solidarityFund}
@@ -266,10 +266,10 @@ export default function Home() {
 
               {/* Bold Left Aligned Text */}
               <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-18 relative z-10">
-                <h2 className="text-h2 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
+                <h3 className="text-h3 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
                   We&apos;re here to show what a worker-owned future can look
                   like
-                </h2>
+                </h3>
               </div>
               <div className="block md:hidden relative">
                 <Image
@@ -343,9 +343,9 @@ export default function Home() {
                   A global <br />
                   community
                 </h1>
-                <h2 className="text-h2 text-text-standard w-3/4 -mt-5 md:-mt-9 xl:-mt-12 xl:ml-4 text-right">
+                <h3 className="text-h3 text-text-standard w-3/4 -mt-5 md:-mt-9 xl:-mt-12 xl:ml-4 text-right">
                   United by solidarity
-                </h2>
+                </h3>
               </div>
 
               {/* Stats Sections */}
@@ -368,9 +368,9 @@ export default function Home() {
                   $Bread&mdash;How it <br className="hidden xl:block" /> works
                 </h1>
                 <div className="flex justify-end">
-                  <h2 className="text-h2 text-text-standard xl:w-2/3 text-right me-12 -mt-5 xl:pl-18 xl:-mt-36">
+                  <h3 className="text-h3 text-text-standard xl:w-2/3 text-right me-12 -mt-5 xl:pl-18 xl:-mt-36">
                     Spreading support and solidarity
-                  </h2>
+                  </h3>
                 </div>
               </div>
 

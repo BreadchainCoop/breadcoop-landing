@@ -330,7 +330,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </div>
 
                     <div className="absolute bottom-6 left-6 right-6">
-                      <div className="text-h2 leading-[48px] text-white">
+                      <div className="text-h3 leading-[48px] text-white">
                         What is $BREAD?
                       </div>
                       <div className="mt-4">
