@@ -62,9 +62,9 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
               <>
                 {/* H3 Column */}
                 <div>
-                  <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 xl:mb-8">
+                  <h2 className="text-h2 text-right md:text-left xl:text-right text-orange-2 xl:mb-8">
                     OUR OTHER SOLIDARITY TOOLS
-                  </h3>
+                  </h2>
                 </div>
                 {/* P Column */}
                 <div>
@@ -78,9 +78,9 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
             ) : (
               /* Right Column - Text and Bullet List (original layout) */
               <div>
-                <h3 className="text-h3 text-right md:text-left xl:text-right text-orange-2 mb-8">
+                <h2 className="text-h2 text-right md:text-left xl:text-right text-orange-2 mb-8">
                   THIS IS WHAT SOLIDARITY LOOKS LIKE
-                </h3>
+                </h2>
                 <p className="xl:w-2/3 pe-7 text-white">
                   Mutual aid that works. Savings that grow together. Emergency
                   funds controlled by the community. Real financial tools that
@@ -102,13 +102,13 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
                 } ${index % 2 === 1 ? "md:ml-auto" : ""}`}
               >
                 <div>
-                  <h2
-                    className={`text-h2 ${getTextColorClass(
+                  <h3
+                    className={`text-h3 ${getTextColorClass(
                       column.color
                     )} mb-4`}
                   >
                     {column.title}
-                  </h2>
+                  </h3>
                   <p className="text-body text-white mb-6">
                     {column.description}
                   </p>

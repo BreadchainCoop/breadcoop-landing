@@ -285,9 +285,9 @@ export default function SolidarityFund() {
                       />
                     </div>
                     {/* H2 Text - Overlapping */}
-                    <h2 className="text-h2 relative z-30 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
+                    <h3 className="text-h3 relative z-30 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
                       Give without giving.*
-                    </h2>
+                    </h3>
                   </div>
                 </div>
 
@@ -352,9 +352,9 @@ export default function SolidarityFund() {
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Section Title */}
-              <h2 className="text-h2 text-text-standard text-center mb-16">
+              <h3 className="text-h3 text-text-standard text-center mb-16">
                 The impact of solidarity
-              </h2>
+              </h3>
 
               {/* Statistics Grid */}
               <StatsSection />
@@ -368,10 +368,10 @@ export default function SolidarityFund() {
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-8">
-                <h2 className="text-h3 text-primary-orange">
+                <h2 className="text-h2 text-primary-orange">
                   HOW IT <br className="block xl:hidden" /> WORKS
                 </h2>
-                <h3 className="text-h2 text-text-standard -mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
+                <h3 className="text-h3 text-text-standard -mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
                   Come together to fund <br className="hidden xl:block" />
                   what matters most.
                 </h3>
@@ -433,7 +433,7 @@ export default function SolidarityFund() {
               {/* Solidarity Diagram Desktop */}
               <div className="hidden md:block flex justify-center">
                 <Image
-                  src="/solidarity-diagram.svg"
+                  src="/solidarity-diagram.png"
                   alt="BREAD Solidarity Fund flowchart showing how users stake xDAI and $BREAD, which generates yield distributed equally and through voting to various projects"
                   width={800}
                   height={600}
@@ -450,10 +450,10 @@ export default function SolidarityFund() {
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-16">
-                <h2 className="text-h3 uppercase text-primary-orange text-right">
+                <h2 className="text-h2 uppercase text-primary-orange text-right">
                   The bread solidarity <br /> fund network
                 </h2>
-                <h3 className="text-h2 text-text-standard ms-12 xl:-mt-7">
+                <h3 className="text-h3 text-text-standard ms-12 xl:-mt-7">
                   A community of friends
                 </h3>
               </div>
