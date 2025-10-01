@@ -12,7 +12,7 @@ import {
   X,
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
-import { LiftedButton } from "@/components/LiftedButton";
+import { LiftedButton, Body, Heading4, Heading3 } from "@breadcoop/ui";
 import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
 import { LINKS } from "@/constants/links";
 
@@ -43,8 +43,6 @@ function SolidarityToolItem({
   linkOverride,
   onNavigate,
 }: SolidarityToolItemProps) {
-  const router = useRouter();
-
   const handleClick = (e: React.MouseEvent) => {
     if (!comingSoon) {
       // Call the navigation callback if provided (for mobile menu closing)
@@ -108,14 +106,14 @@ function SolidarityToolItem({
         />
         <div className="flex-grow">
           <div className="flex items-center gap-2">
-            <div className="text-body-bold text-text-standard">{title}</div>
+            <Body bold>{title}</Body>
             {comingSoon && (
-              <div className="text-body-bold text-primary-orange text-xs">
+              <Body bold className="text-primary-orange text-xs">
                 Coming soon
-              </div>
+              </Body>
             )}
           </div>
-          <div className="text-body text-surface-grey">{shortDescription}</div>
+          <Body className="text-surface-grey">{shortDescription}</Body>
         </div>
         <ArrowRightIcon
           className={`arrow-icon text-${color} w-6 h-6 opacity-0 transition-opacity duration-300 absolute right-2`}
@@ -245,7 +243,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
               />
 
               <span
-                className={`mt-1 hidden md:block text-text-standard text-breadDisplay-bold leading-none transition-opacity duration-300 ${
+                className={`mt-1 hidden text-breadDisplay-bold md:block leading-none transition-opacity duration-300 ${
                   isStatic || isScrolled || isNavbarHovered
                     ? "opacity-100"
                     : "opacity-0"
@@ -290,9 +288,9 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                 <div className="flex">
                   {/* First Column - 66% width */}
                   <div className="w-2/3">
-                    <h4 className="text-breadDisplay font-[500] uppercase text-surface-grey mb-4">
+                    <Heading4 className="text-breadDisplay font-[500] uppercase text-surface-grey mb-4">
                       Bread Solidarity Tools
-                    </h4>
+                    </Heading4>
 
                     <div className="space-y-6  pe-6">
                       {SOLIDARITY_TOOLS.map((tool) => (
@@ -330,13 +328,13 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </div>
 
                     <div className="absolute bottom-6 left-6 right-6">
-                      <div className="text-h3 leading-[48px] text-white">
+                      <Heading3 className="leading-[48px] text-white">
                         What is $BREAD?
-                      </div>
+                      </Heading3>
                       <div className="mt-4">
-                        <span className="text-body text-primary-blue underline">
+                        <Body className="text-primary-blue underline">
                           Read more in our documentation
-                        </span>
+                        </Body>
                       </div>
                     </div>
                   </Link>
@@ -449,15 +447,14 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             <div className="p-6 space-y-8">
               {/* Informational Banner */}
               <div className="bg-primary-orange rounded-none px-[20px] py-[10px] relative overflow-hidden h-[118px]">
-                <div className="text-body-bold pt-8 text-[24px] text-paper-main">
+                <Body bold className="pt-8 text-[24px] text-paper-main">
                   What is $BREAD?
-                </div>
-                <Link
-                  href={LINKS.docsBreadToken}
-                  className="text-body text-primary-blue underline"
-                >
-                  Read more in our documentation
-                </Link>
+                </Body>
+                <Body className="text-primary-blue underline">
+                  <Link href={LINKS.docsBreadToken}>
+                    Read more in our documentation
+                  </Link>
+                </Body>
                 <div className="absolute top-4 right-4">
                   <ArrowUpRightIcon className="w-6 h-6 text-text-standard" />
                 </div>
@@ -481,9 +478,9 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                 {isMobileDropdownOpen && (
                   <div className="pl-4 space-y-4">
-                    <h4 className="font-breadDisplay uppercase font-[500] text-surface-grey-2 mb-4">
-                      BREAD SOLIDARITY TOOLS
-                    </h4>
+                    <Heading4 className="uppercase font-[500] text-surface-grey-2 mb-4">
+                      Bread Solidarity Tools
+                    </Heading4>
 
                     <div className="space-y-4">
                       {SOLIDARITY_TOOLS.map((tool) => (
@@ -510,24 +507,15 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </div>
                   </div>
                 )}
-                <Link
-                  href="#"
-                  className="block text-body text-text-standard hover:text-primary-orange"
-                >
-                  Docs
-                </Link>
-                <Link
-                  href="#"
-                  className="block text-body text-text-standard hover:text-primary-orange"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href={LINKS.contributorForm}
-                  className="block text-body text-text-standard hover:text-primary-orange"
-                >
-                  Contribute
-                </Link>
+                <Body>
+                  <Link href={LINKS.docs}>Docs</Link>
+                </Body>
+                <Body>
+                  <Link href={LINKS.newsletter}>Blog</Link>
+                </Body>
+                <Body>
+                  <Link href={LINKS.contributorForm}>Contribute</Link>
+                </Body>
               </div>
             </div>
           </div>

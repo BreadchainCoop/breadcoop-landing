@@ -9,6 +9,7 @@ import {
   EnvelopeSimpleIcon,
   ArrowUpRightIcon,
 } from "@phosphor-icons/react/ssr";
+import { Body, Heading3 } from "@breadcoop/ui";
 import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
 import { LINKS } from "@/constants/links";
 
@@ -74,9 +75,9 @@ function FooterLink({
 
   if (isDisabled) {
     return (
-      <span className="text-surface-ink font-breadBody flex items-center gap-2 opacity-50 ">
+      <Body className="text-surface-ink font-breadBody flex items-center gap-2 opacity-50 ">
         {children}
-      </span>
+      </Body>
     );
   }
 
@@ -148,9 +149,7 @@ export function Footer() {
 
           {/* Cooperative Column */}
           <div>
-            <h3 className="font-breadBody text-white text-lg mb-4">
-              Cooperative
-            </h3>
+            <Body className="text-lg text-white mb-4">Cooperative</Body>
             <ul className="space-y-3">
               <li>
                 <FooterLink href={LINKS.docs}>Documentation</FooterLink>
@@ -166,9 +165,7 @@ export function Footer() {
 
           {/* Solidarity Tools Column */}
           <div>
-            <h3 className="font-breadBody text-white text-lg mb-4">
-              Solidarity tools
-            </h3>
+            <Body className="text-lg text-white mb-4">Solidarity tools</Body>
             <ul className="space-y-3">
               {SOLIDARITY_TOOLS.map((tool) => (
                 <li key={tool.id}>
@@ -185,9 +182,7 @@ export function Footer() {
 
           {/* Reach Out Column */}
           <div>
-            <h3 className="font-breadBody text-white text-lg mb-4">
-              Reach out
-            </h3>
+            <Body className="text-lg text-white mb-4">Reach out</Body>
             <Link
               href="mailto:contact@bread.coop"
               className="text-surface-ink hover:text-paper-0 font-breadBody flex items-center gap-2"
@@ -199,9 +194,7 @@ export function Footer() {
 
           {/* Support Us Column */}
           <div>
-            <h3 className="font-breadBody text-white text-lg mb-4">
-              Support us
-            </h3>
+            <Body className="text-lg text-white mb-4">Support us</Body>
             <ul className="space-y-3">
               <li>
                 <FooterLink href={LINKS.giveth} isExternal>
@@ -219,13 +212,11 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-orange-0 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white font-breadBody text-sm">
+          <Body className="text-white text-sm">
             Creative Commons ©BREAD Cooperative
-          </p>
-          <div className="flex items-center gap-4 text-sm">
-            <span className="text-white font-breadBody">
-              All Rights Reserved
-            </span>
+          </Body>
+          <div className="flex items-center gap-4">
+            <Body className="text-white text-sm">All Rights Reserved</Body>
             {/* TODO: Add terms and conditions and privacy policy #10 */}
             {/* <span className="text-white">|</span> */}
             {/* <Link

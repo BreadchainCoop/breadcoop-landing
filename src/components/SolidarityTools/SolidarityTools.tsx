@@ -1,10 +1,10 @@
 "use client";
 
-import { LiftedButton } from "@/components/LiftedButton";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { getVisibleSolidarityTools } from "@/constants/solidarityTools";
+import { LiftedButton, Body, Heading2, Heading3 } from "@breadcoop/ui";
 
 interface SolidarityToolsProps {
   hiddenColumns?: string[];
@@ -60,32 +60,31 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
             {/* Text Columns */}
             {hiddenColumns.length > 0 ? (
               <>
-                {/* H3 Column */}
                 <div>
-                  <h2 className="text-h2 text-right md:text-left xl:text-right text-orange-2 xl:mb-8">
+                  <Heading2 className="text-right md:text-left xl:text-right text-orange-2 xl:mb-8">
                     OUR OTHER SOLIDARITY TOOLS
-                  </h2>
+                  </Heading2>
                 </div>
                 {/* P Column */}
                 <div>
-                  <p className="xl:w-2/3 pe-7 text-white">
+                  <Body className="xl:w-2/3 pe-7 text-white">
                     Mutual aid that works. Savings that grow together. Emergency
                     funds controlled by the community. Real financial tools that
                     put people before profit. Support your friends with $BREAD.
-                  </p>
+                  </Body>
                 </div>
               </>
             ) : (
               /* Right Column - Text and Bullet List (original layout) */
               <div>
-                <h2 className="text-h2 text-right md:text-left xl:text-right text-orange-2 mb-8">
-                  THIS IS WHAT SOLIDARITY LOOKS LIKE
-                </h2>
-                <p className="xl:w-2/3 pe-7 text-white">
+                <Heading2 className="text-right uppercase md:text-left xl:text-right text-orange-2 mb-8">
+                  This is what solidarity looks like
+                </Heading2>
+                <Body className="xl:w-2/3 pe-7 text-white">
                   Mutual aid that works. Savings that grow together. Emergency
                   funds controlled by the community. Real financial tools that
                   put people before profit. Support your friends with $BREAD.
-                </p>
+                </Body>
               </div>
             )}
           </div>
@@ -102,16 +101,12 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
                 } ${index % 2 === 1 ? "md:ml-auto" : ""}`}
               >
                 <div>
-                  <h3
-                    className={`text-h3 ${getTextColorClass(
-                      column.color
-                    )} mb-4`}
+                  <Heading3
+                    className={`${getTextColorClass(column.color)} mb-4`}
                   >
                     {column.title}
-                  </h3>
-                  <p className="text-body text-white mb-6">
-                    {column.description}
-                  </p>
+                  </Heading3>
+                  <Body className="text-white mb-6">{column.description}</Body>
                 </div>
 
                 <div className="">
