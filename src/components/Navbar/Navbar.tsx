@@ -219,13 +219,13 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
         className={`max-w-[1200px] mx-auto z-50 transition-all duration-300 ${
           isStatic
             ? isScrolled
-              ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 border border-paper-2 shadow-lg"
+              ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-1 border border-paper-2 shadow-lg"
               : "absolute top-0 left-0 right-0 bg-transparent px-6 py-4"
             : isScrolled
-            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 xl:py-0 border border-paper-2 shadow-lg"
+            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-1 xl:py-0 border border-paper-2 shadow-lg"
             : isNavbarHovered
-            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-2 xl:py-0 border border-paper-2 shadow-lg"
-            : "fixed xl:top-2 top-0 left-0 right-0 bg-transparent px-6 py-2 xl:py-0 border border-transparent shadow-none"
+            ? "fixed xl:top-2 top-0 left-0 right-0 bg-paper-main px-6 py-1 xl:py-0 border border-paper-2 shadow-lg"
+            : "fixed xl:top-2 top-0 left-0 right-0 bg-transparent px-6 py-1 xl:py-0 border border-transparent shadow-none"
         }`}
         onMouseEnter={() => setIsNavbarHovered(true)}
         onMouseLeave={() => setIsNavbarHovered(false)}
@@ -392,7 +392,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             </div>
 
             {/* Mobile: Visit App Button */}
-            <div className="md:hidden">
+            <div className="md:hidden mt-1">
               <LiftedButton
                 preset="primary"
                 rightIcon={<ArrowUpRightIcon />}

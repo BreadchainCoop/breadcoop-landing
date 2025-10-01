@@ -70,10 +70,12 @@ function StatsSection() {
             index < stats.length - 1 ? "border-b border-orange-0" : ""
           }`}
         >
-          <div className="text-center md:text-right">
-            <Heading1 className="md:pb-12 text-surface-brown">
-              {stat.number} <Heading5>{stat.numberText}</Heading5>
+          <div className="text-center md:text-right md:pb-12">
+            <Heading1 className="inline text-surface-brown">
+              {stat.number}{" "}
             </Heading1>
+            <Heading5 className="inline">{stat.numberText}</Heading5>
+
             {stat.caption && <Caption className="pt-4">{stat.caption}</Caption>}
           </div>
           <div className="px-12">
