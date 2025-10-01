@@ -1,6 +1,6 @@
 "use client";
 
-import { LiftedButton } from "@/components/LiftedButton";
+import { LiftedButton, Body, Heading3 } from "@breadcoop/ui";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import { LINKS } from "@/constants/links";
 
@@ -12,12 +12,10 @@ export function Subscribe() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text */}
             <div>
-              <h3 className="text-h3 text-text-standard mb-6">
-                Subscribe, stay updated.
-              </h3>
-              <p className="text-body text-text-standard">
+              <Heading3 className="mb-6">Subscribe, stay updated.</Heading3>
+              <Body>
                 Get all the Bread Cooperative updates right in your inbox.
-              </p>
+              </Body>
             </div>
 
             {/* Right Column - Subscription Form */}

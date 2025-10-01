@@ -1,6 +1,6 @@
 "use client";
 
-import { LiftedButton } from "@/components/LiftedButton";
+import { LiftedButton, Heading2, Body } from "@breadcoop/ui";
 import { LINKS } from "@/constants/links";
 import { ArrowUpRightIcon, HandPeaceIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
@@ -25,16 +25,16 @@ export function CooperativeServices() {
             </div>
             <div className="max-w-[360px] md:max-w-[640px] xl:max-w-[640px] mx-auto flex flex-col h-full">
               <div className="flex-grow relative z-10">
-                <h2 className="text-h2 text-primary-orange mb-6">
+                <Heading2 className="text-primary-orange mb-6">
                   JOIN THE
                   <br />
                   COOPERATIVE<span className="hidden md:inline">.</span>
-                </h2>
-                <p className="text-body text-text-standard mb-8">
+                </Heading2>
+                <Body className="text-text-standard mb-8">
                   Bring your skills, your questions, and your perspective.
                   We&apos;re stronger when people from all walks of life unite
                   for a common cause.
-                </p>
+                </Body>
               </div>
               <div className="mt-auto">
                 <Link
@@ -69,15 +69,15 @@ export function CooperativeServices() {
             </div>
             <div className="max-w-[360px] md:max-w-[640px] xl:max-w-[640px] mx-auto flex flex-col h-full">
               <div className="flex-grow relative z-10">
-                <h2 className="text-h2 text-paper-main mb-6">
+                <Heading2 className="text-paper-main mb-6">
                   WE CAN BUILD
                   <br />
                   WITH YOU<span className="hidden md:inline">.</span>
-                </h2>
-                <p className="text-body text-paper-main mb-8">
+                </Heading2>
+                <Body className="text-paper-main mb-8">
                   Sourdough Systems is our full service web3 development studio
                   where we build applications with others.
-                </p>
+                </Body>
               </div>
               <div className="mt-auto">
                 <Link

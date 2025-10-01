@@ -2,7 +2,6 @@
 
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
-import { LiftedButton } from "@/components/LiftedButton";
 import { CooperativeServices } from "@/components/CooperativeServices/CooperativeServices";
 import { Subscribe } from "@/components/Subscribe/Subscribe";
 import { SolidarityTools } from "@/components/SolidarityTools/SolidarityTools";
@@ -14,6 +13,16 @@ import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
 import { useTotalBread } from "@/hooks/use-total-bread";
 import { useBreadTvl } from "@/hooks/use-bread-tvl";
 import { formatSupply } from "@/util/formatter";
+import {
+  LiftedButton,
+  Body,
+  Heading1,
+  Heading3,
+  Heading4,
+  Heading5,
+  Caption,
+  Heading2,
+} from "@breadcoop/ui";
 
 // Project data interface
 interface Project {
@@ -85,12 +94,10 @@ function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Second Column - Name and Buttons */}
         <div className="col-span-2 flex flex-col justify-end xl:h-full h-[104px]">
-          <h4 className="text-h4 text-text-standard font-bold mb-4 xl:mb-2">
-            {project.name}
-          </h4>
-          <p className="hidden xl:block text-body text-text-standard mb-4 text-sm">
+          <Heading4 className="font-bold mb-4 xl:mb-2">{project.name}</Heading4>
+          <Body className="hidden xl:block mb-4 text-sm">
             {project.description}
-          </p>
+          </Body>
 
           {/* Buttons */}
           <div className="space-y-[1px] md:space-y-2">
@@ -101,7 +108,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             >
               <LiftedButton
                 preset="stroke"
-                className="border border-surface-ink  h-[32px] text-sm  h-[32px]"
+                className="h-[32px] text-sm"
                 rightIcon={
                   <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
                 }
@@ -117,7 +124,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               >
                 <LiftedButton
                   preset="stroke"
-                  className="border border-surface-ink  h-[32px] text-sm"
+                  className="h-[32px] text-sm"
                   rightIcon={
                     <ArrowUpRightIcon className="text-primary-orange w-4 h-4" />
                   }
@@ -145,12 +152,8 @@ function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Project Info */}
         <div className="flex flex-col flex-1">
-          <h4 className="text-h4 text-text-standard font-bold mb-2">
-            {project.name}
-          </h4>
-          <p className="text-body text-text-standard mb-4 flex-1">
-            {project.description}
-          </p>
+          <Heading4 className="font-bold mb-2">{project.name}</Heading4>
+          <Body className="mb-4 flex-1">{project.description}</Body>
 
           {/* Buttons */}
           <div className="mt-8">
@@ -161,7 +164,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             >
               <LiftedButton
                 preset="stroke"
-                className="border border-surface-ink  h-[32px]"
+                className="h-[32px]"
                 rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
               >
                 <span>Website</span>
@@ -175,7 +178,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             >
               <LiftedButton
                 preset="stroke"
-                className="border border-surface-ink  h-[32px]"
+                className="h-[32px]"
                 rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
               >
                 <span>KarmaGAP</span>
@@ -225,25 +228,22 @@ function StatsSection() {
     <div>
       <div className="grid md:grid-cols-3 gap-12 mb-10">
         {stats.map((stat, index) => (
-          <div
-            key={index}
-            className="text-center text-text-standard flex flex-col"
-          >
-            <div className="text-h1 flex mb-4 items-end text-surface-brown justify-center">
-              {stat.number} <span className="text-h5 ">{stat.numberText}</span>
-            </div>
-            <div className="text-h5 text-text-standard">
+          <div key={index} className="text-center flex flex-col">
+            <Heading1 className="flex mb-4 items-end text-surface-brown justify-center">
+              {stat.number} <Heading5>{stat.numberText}</Heading5>
+            </Heading1>
+            <Heading5>
               {stat.title}
-              <p className="text-caption text-text-standard">{stat.caption}</p>
-            </div>
+              <Caption>{stat.caption}</Caption>
+            </Heading5>
           </div>
         ))}
       </div>
       <div className="flex justify-center">
-        <a href={"#"} target="_blank" rel="noopener noreferrer">
+        <a href={LINKS.dashboard} target="_blank" rel="noopener noreferrer">
           <LiftedButton
             preset="stroke"
-            className="border border-surface-ink h-[32px]"
+            className="h-[32px]"
             rightIcon={<ArrowUpRightIcon className="text-primary-orange" />}
           >
             <span>View analytics</span>
@@ -271,10 +271,10 @@ export default function SolidarityFund() {
                   {/* H1 Text */}
                   <div className="relative z-20">
                     {" "}
-                    <h1 className="text-h1 relative z-20 uppercase text-primary-orange mb-6">
+                    <Heading1 className="relative z-20 uppercase text-primary-orange mb-6">
                       The <br /> solidarity <br className="block md:hidden" />{" "}
                       fund
-                    </h1>
+                    </Heading1>
                     <div className="block md:hidden relative">
                       <Image
                         src="/hands.jpg"
@@ -284,10 +284,9 @@ export default function SolidarityFund() {
                         className="ml-auto object-cover z-10 -mr-12 -mt-13 object-bottom-left w-[304px] h-[184px]"
                       />
                     </div>
-                    {/* H2 Text - Overlapping */}
-                    <h3 className="text-h3 relative z-30 text-text-standard mt-3 mb-8 xl:mb-0 xl:-mt-11">
+                    <Heading3 className="relative z-30 mt-3 mb-8 xl:mb-0 xl:-mt-11">
                       Give without giving.*
-                    </h3>
+                    </Heading3>
                   </div>
                 </div>
 
@@ -295,16 +294,16 @@ export default function SolidarityFund() {
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 xl:gap-12 items-start">
                   {/* Left column - Text and button (1/3) */}
                   <div className="xl:col-span-1 xl:max-w-[386px] md:col-span-1">
-                    <p className="text-body text-text-standard mb-8 ">
+                    <Body className="mb-8 ">
                       The fund supporting work that matters.
                       <br />
                       <br /> Mint $BREAD and vote for the future you wish to
                       see. This is what a real democratic economy can look like.
-                    </p>
-                    <p className="text-caption text-text-standard mb-8">
+                    </Body>
+                    <Caption className="mb-8">
                       *This is a community fund, not an investment vehicle.
                       Built for solidarity, not speculation
-                    </p>
+                    </Caption>
                     <Link
                       href={LINKS.solidarityFund}
                       target="_blank"
@@ -352,9 +351,9 @@ export default function SolidarityFund() {
           <div className="max-w-[1280px] mx-auto px-12">
             <div className="max-w-7xl mx-auto">
               {/* Section Title */}
-              <h3 className="text-h3 text-text-standard text-center mb-16">
+              <Heading3 className="text-center mb-16">
                 The impact of solidarity
-              </h3>
+              </Heading3>
 
               {/* Statistics Grid */}
               <StatsSection />
@@ -368,17 +367,17 @@ export default function SolidarityFund() {
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-8">
-                <h2 className="text-h2 text-primary-orange">
-                  HOW IT <br className="block xl:hidden" /> WORKS
-                </h2>
-                <h3 className="text-h3 text-text-standard -mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
+                <Heading2 className="uppercase text-primary-orange">
+                  How it <br className="block xl:hidden" /> works
+                </Heading2>
+                <Heading3 className="-mt-3 xl:-mt-8 ms-[80px] text-left xl:text-right w-3/4 ">
                   Come together to fund <br className="hidden xl:block" />
                   what matters most.
-                </h3>
+                </Heading3>
               </div>
 
               {/* Body Text */}
-              <p className="text-body text-text-standard xl:mb-8 xl:max-w-[386px]">
+              <Body className="xl:mb-8 xl:max-w-[386px]">
                 What you know as minting, we call baking.
                 <br />
                 <br />
@@ -386,7 +385,7 @@ export default function SolidarityFund() {
                 Your funds generate yield, and you decide which member
                 organisation receives it. The more $BREAD baked, the greater our
                 capacity to address the needs of real people, everywhere.
-              </p>
+              </Body>
 
               {/* Solidarity Diagram Mobile */}
               <div className="block md:hidden flex mb-4 justify-center">
@@ -450,12 +449,12 @@ export default function SolidarityFund() {
             <div className="max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="relative mb-16">
-                <h2 className="text-h2 uppercase text-primary-orange text-right">
+                <Heading2 className="uppercase text-primary-orange text-right">
                   The bread solidarity <br /> fund network
-                </h2>
-                <h3 className="text-h3 text-text-standard ms-12 xl:-mt-7">
+                </Heading2>
+                <Heading3 className="ms-12 xl:-mt-7">
                   A community of friends
-                </h3>
+                </Heading3>
               </div>
 
               {/* Projects Grid */}
@@ -481,10 +480,10 @@ export default function SolidarityFund() {
 
               {/* Call to Action */}
               <div className="text-left xl:text-left max-w-2xl mx-auto">
-                <p className="text-body text-text-standard mb-8">
+                <Body className="mb-8">
                   Each project is carefully selected and held to the core values
                   and mission of the Bread Cooperative Solidarity Fund network.
-                </p>
+                </Body>
                 <div className="flex flex-col xl:flex-row gap-4 justify-center">
                   <Link
                     href={LINKS.projectApplicationForm}
@@ -513,10 +512,10 @@ export default function SolidarityFund() {
                     </LiftedButton>
                   </Link>
                 </div>
-                <p className="text-caption mt-4 text-text-standard">
+                <Caption className="mt-4">
                   *Member projects are carefully selected. Sign ups are not
                   guaranteed memberships
-                </p>
+                </Caption>
               </div>
             </div>
           </div>

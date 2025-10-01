@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { breadDisplay, breadBody } from "./fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ClientProviders } from "@/components/ClientProviders";
@@ -66,10 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${breadDisplay.variable} ${breadBody.variable}`}
-    >
+    <html lang="en">
       <head>
         <GoogleAnalytics
           gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""}

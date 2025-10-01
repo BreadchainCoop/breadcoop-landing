@@ -2,7 +2,15 @@
 
 import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
-import { LiftedButton } from "@/components/LiftedButton";
+import {
+  LiftedButton,
+  Heading1,
+  Heading3,
+  Heading4,
+  Heading5,
+  Body,
+  Caption,
+} from "@breadcoop/ui";
 import { CooperativeServices } from "@/components/CooperativeServices/CooperativeServices";
 import { Subscribe } from "@/components/Subscribe/Subscribe";
 import { SolidarityTools } from "@/components/SolidarityTools/SolidarityTools";
@@ -62,20 +70,18 @@ function StatsSection() {
             index < stats.length - 1 ? "border-b border-orange-0" : ""
           }`}
         >
-          <div className="text-center md:text-right">
-            <h1 className="text-h1 md:pb-12  text-surface-brown">
-              {stat.number} <span className="text-h5 ">{stat.numberText}</span>
-            </h1>
-            {stat.caption && (
-              <p className="text-caption text-text-standard pt-4">
-                {stat.caption}
-              </p>
-            )}
+          <div className="text-center md:text-right md:pb-12">
+            <Heading1 className="inline text-surface-brown">
+              {stat.number}{" "}
+            </Heading1>
+            <Heading5 className="inline">{stat.numberText}</Heading5>
+
+            {stat.caption && <Caption className="pt-4">{stat.caption}</Caption>}
           </div>
           <div className="px-12">
-            <h5 className="text-h5 text-text-standard text-center md:text-left mb-8">
+            <Heading5 className="text-center md:text-left mb-8">
               {stat.title}
-            </h5>
+            </Heading5>
             {stat.buttonText && (
               <div className="flex justify-center pb-12 md:justify-start">
                 {stat.buttonLink ? (
@@ -87,7 +93,7 @@ function StatsSection() {
                   >
                     <LiftedButton
                       preset="stroke"
-                      className="border border-surface-ink h-[32px]"
+                      className="h-[32px]"
                       rightIcon={
                         <ArrowUpRightIcon className="text-primary-orange" />
                       }
@@ -98,7 +104,7 @@ function StatsSection() {
                 ) : (
                   <LiftedButton
                     preset="stroke"
-                    className="border border-surface-ink h-[32px]"
+                    className="h-[32px]"
                     rightIcon={
                       <ArrowUpRightIcon className="text-primary-orange" />
                     }
@@ -120,7 +126,7 @@ function ChipsSection() {
   return (
     <div className="flex items-center justify-center gap-4 mb-4">
       <div className="w-[40%] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
-        <span className="text-body text-text-standard flex items-center gap-2">
+        <Body className="flex items-center gap-2">
           <Image
             src="/logo.svg"
             alt="$BREAD"
@@ -129,12 +135,12 @@ function ChipsSection() {
             className="w-[24px] h-[24px] inline"
           />
           1 BREAD
-        </span>
+        </Body>
       </div>
-      <span className="text-body-bold text-text-standard">=</span>
+      <Body>=</Body>
       <div className="w-[40%] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
         <CurrencyCircleDollarIcon className="w-6 h-6 text-primary-orange" />
-        <span className="text-body text-text-standard">1 USD</span>
+        <Body>1 USD</Body>
       </div>
     </div>
   );
@@ -163,18 +169,18 @@ export default function Home() {
             <div className="w-full px-4 xl:px-4 py-20">
               <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
                 {/* Title spans full width */}
-                <h1 className="text-h1 pt-4 uppercase text-paper-main">
+                <Heading1 className="pt-4 uppercase text-paper-main">
                   Financial tools today. Solidarity forever.
-                </h1>
+                </Heading1>
 
                 {/* Two column layout for content and image */}
                 <div className="grid grid-cols-2 gap-4 xl:gap-12 items-start">
                   {/* Left column - Text and buttons */}
                   <div id="LeftColumn" className="col-span-1">
-                    <h3 className="text-h3 font-[400] xl:text-[4rem] xl:leading-[64px] text-paper-main my-4 xl:my-8 max-w-full xl:max-w-[519px]">
+                    <Heading3 className="font-[400] xl:text-[4rem] xl:leading-[64px] text-paper-main my-4 xl:my-8 max-w-full xl:max-w-[519px]">
                       We are a worker collective building technology to go far,
                       together.
-                    </h3>
+                    </Heading3>
                     <div className="flex flex-col md:flex-row gap-4 xl:gap-6">
                       <a
                         href={LINKS.solidarityFund}
@@ -257,19 +263,19 @@ export default function Home() {
             <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl px-6 xl:mx-0 xl:mr-12 mx-auto">
               {/* Orange H1 - Right Aligned */}
               <div className="text-right mb-8 relative">
-                <h1 className="text-h1 uppercase text-primary-orange relative z-10">
+                <Heading1 className="uppercase text-primary-orange relative z-10">
                   Powered &
                   <br />
                   owned by workers
-                </h1>
+                </Heading1>
               </div>
 
               {/* Bold Left Aligned Text */}
               <div className="mb-8 -mt-12 ms-4 xl:ms-0 xl:-mt-18 relative z-10">
-                <h3 className="text-h3 text-text-standard mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
+                <Heading3 className="mb-[-52px] xl:mb-0 w-3/4 xl:w-7/8">
                   We&apos;re here to show what a worker-owned future can look
                   like
-                </h3>
+                </Heading3>
               </div>
               <div className="block md:hidden relative">
                 <Image
@@ -284,15 +290,15 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-12  xl:pt-20 items-start">
                 {/* Left Column - Content */}
                 <div className="flex flex-col w-full pr-12 md:pr-0 md:pt-12 xl:pt-12 xl:pt-0">
-                  <h4 className="hidden md:block text-h4 text-text-standard mb-6">
+                  <Heading4 className="hidden md:block mb-6">
                     The most powerful mission is the one where you act.
-                  </h4>
-                  <p className="text-body text-text-standard pt-4 xl:pt-0 mb-8">
+                  </Heading4>
+                  <Body className="pt-4 xl:pt-0 mb-8">
                     Bread Cooperative builds tools that put working people
                     first. We want to put in place a future where technology
                     serves as a means of empowerment, not a tool for fear and
                     control.
-                  </p>
+                  </Body>
                   <Link
                     href={LINKS.docsManifesto}
                     target="_blank"
@@ -339,13 +345,13 @@ export default function Home() {
             <div className="max-w-[388px] md:max-w-[768px] xl:max-w-7xl mx-auto">
               {/* Header with overlapping text */}
               <div className="mb-8 md:mb-16 -mt-8">
-                <h1 className="text-h1 uppercase text-primary-orange mb-4">
+                <Heading1 className="uppercase text-primary-orange mb-4">
                   A global <br />
                   community
-                </h1>
-                <h3 className="text-h3 text-text-standard w-3/4 -mt-5 md:-mt-9 xl:-mt-12 xl:ml-4 text-right">
+                </Heading1>
+                <Heading3 className="w-3/4 -mt-5 md:-mt-9 xl:-mt-12 xl:ml-4 text-right">
                   United by solidarity
-                </h3>
+                </Heading3>
               </div>
 
               {/* Stats Sections */}
@@ -364,13 +370,13 @@ export default function Home() {
             <div className="max-w-[360px] md:max-w-[768px] xl:max-w-7xl mx-auto">
               {/* Header */}
               <div className="mb-8 xl:mb-16">
-                <h1 className="text-h1 uppercase text-primary-orange mb-4">
+                <Heading1 className="uppercase text-primary-orange mb-4">
                   $Bread&mdash;How it <br className="hidden xl:block" /> works
-                </h1>
+                </Heading1>
                 <div className="flex justify-end">
-                  <h3 className="text-h3 text-text-standard xl:w-2/3 text-right me-12 -mt-5 xl:pl-18 xl:-mt-36">
+                  <Heading3 className="xl:w-2/3 text-right me-12 -mt-5 xl:pl-18 xl:-mt-36">
                     Spreading support and solidarity
-                  </h3>
+                  </Heading3>
                 </div>
               </div>
 
@@ -378,15 +384,15 @@ export default function Home() {
               <div className="grid md:grid-cols-8 md:gap-1 xl:gap-12 items-start">
                 {/* Left Column - Text and Buttons */}
                 <div className="flex flex-col md:ps-8 md:col-span-3">
-                  <p className="text-body text-text-standard mb-6">
+                  <Body className="mb-6">
                     $BREAD reflects the solidarity in our community. Anyone can
                     bake $BREAD. All $BREAD holders contribute to the future we
                     can put in place. Digital money, built for mutual aid.
-                  </p>
-                  <p className="text-body text-text-standard mb-8">
+                  </Body>
+                  <Body className="mb-8">
                     $BREAD is our engine for a worker-owned future built on
                     resilient infrastructure.
-                  </p>
+                  </Body>
 
                   {/* Chips and Text - Mobile */}
                   <div className="md:hidden mb-6 -ml-1">
@@ -444,7 +450,7 @@ export default function Home() {
 
                   {/* Forever Text */}
                   <div className="hidden md:block text-right me-12">
-                    <h5 className="text-h5 text-text-standard">Forever.</h5>
+                    <Heading5>Forever.</Heading5>
                   </div>
                 </div>
               </div>
