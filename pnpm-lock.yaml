@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@breadcoop/ui':
-        specifier: ^1.0.18
-        version: 1.0.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^1.0.19
+        version: 1.0.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@duneanalytics/client-sdk':
         specifier: ^0.2.5
         version: 0.2.5
@@ -679,8 +679,8 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@breadcoop/ui@1.0.18':
-    resolution: {integrity: sha512-p/JZuou+WXPzTArM+2zVtjVu5ayXZD4nRMA4BOgRrzkyxe7kVhjYq1l41eriqhyFPLUfyyI5JR9olQyi9HzyDg==}
+  '@breadcoop/ui@1.0.19':
+    resolution: {integrity: sha512-yDE9bTj9wCeDtnbpUpikMdNxPcHKNwluQmhxj5NoLJ+XrlhGvW15O/vYsshbhCHnNyT0P3T9d5IE1m8nTqJ+yg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -5327,7 +5327,7 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@breadcoop/ui@1.0.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@breadcoop/ui@1.0.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
