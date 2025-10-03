@@ -4,7 +4,14 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { getVisibleSolidarityTools } from "@/constants/solidarityTools";
-import { LiftedButton, Body, Heading2, Heading3 } from "@breadcoop/ui";
+import {
+  LiftedButton,
+  Body,
+  Heading2,
+  Heading3,
+  Logo,
+  LogoColor,
+} from "@breadcoop/ui";
 
 interface SolidarityToolsProps {
   hiddenColumns?: string[];
@@ -13,13 +20,13 @@ interface SolidarityToolsProps {
 // Helper function to map color values to Tailwind text classes
 function getTextColorClass(color: string): string {
   switch (color) {
-    case "primary-orange":
+    case "orange":
       return "text-primary-orange";
-    case "primary-blue":
+    case "blue":
       return "text-primary-blue";
-    case "primary-jade":
+    case "jade":
       return "text-primary-jade";
-    case "surface-ink":
+    case "white":
       return "text-surface-ink";
     default:
       return "text-text-standard";
@@ -134,7 +141,7 @@ export function SolidarityTools({ hiddenColumns = [] }: SolidarityToolsProps) {
 
                 <div className="hidden md:block absolute -top-18 right-0 -z-10">
                   <Image
-                    src={column.lineLogo}
+                    src={`logo-line-${column.color}.svg`}
                     alt="Logo"
                     width={140}
                     height={140}
