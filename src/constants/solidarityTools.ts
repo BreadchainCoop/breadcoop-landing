@@ -1,18 +1,17 @@
 import { LINKS } from "./links";
+import { type LogoColor } from "@breadcoop/ui";
 
 export interface SolidarityTool {
   id: string;
   title: string;
   shortDescription: string;
   description: string;
-  color: string;
+  color: LogoColor;
   buttonClass: string;
   colorOverrides?: {
     bg: string;
     hoverBg: string;
   };
-  logo: string;
-  lineLogo: string;
   webLink?: string;
   comingSoon: boolean;
 }
@@ -24,10 +23,8 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     shortDescription: "Fund post-capitalism.",
     description:
       "Community coming together to fund what matters to us. Bake $BREAD and support projects you believe in.",
-    color: "primary-orange",
+    color: "orange",
     buttonClass: "bg-primary-orange text-white",
-    logo: "/logo.svg",
-    lineLogo: "/logo-line-orange.svg",
     webLink: LINKS.solidarityFund,
     comingSoon: false,
   },
@@ -36,14 +33,12 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     title: "Stacks",
     shortDescription: "Save money together.",
     description: "Financial goals. Achieved together.",
-    color: "primary-blue",
+    color: "blue",
     buttonClass: "",
     colorOverrides: {
       bg: "--color-primary-blue",
       hoverBg: "--color-blue-2",
     },
-    logo: "/logo-blue.svg",
-    lineLogo: "/logo-line-blue.svg",
     comingSoon: true,
   },
   {
@@ -52,14 +47,12 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     shortDescription: "Cover each other.",
     description:
       "Collective support guides us through crisis. Build emergency funds with people you trust.",
-    color: "primary-jade",
+    color: "jade",
     buttonClass: "",
     colorOverrides: {
       bg: "--color-primary-jade",
       hoverBg: "--color-jade-2",
     },
-    logo: "/logo-green.svg",
-    lineLogo: "/logo-line-green.svg",
     comingSoon: true,
   },
 ];

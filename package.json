@@ -11,7 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@breadcoop/ui": "^1.0.6",
+    "@breadcoop/ui": "^1.0.16",
     "@duneanalytics/client-sdk": "^0.2.5",
     "@next/third-parties": "^15.5.3",
     "@phosphor-icons/react": "^2.1.10",

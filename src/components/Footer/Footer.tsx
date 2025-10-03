@@ -9,7 +9,7 @@ import {
   EnvelopeSimpleIcon,
   ArrowUpRightIcon,
 } from "@phosphor-icons/react/ssr";
-import { Body, Heading3 } from "@breadcoop/ui";
+import { Body, Logo } from "@breadcoop/ui";
 import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
 import { LINKS } from "@/constants/links";
 
@@ -101,17 +101,8 @@ export function Footer() {
         {/* Top Row - Logo, Name, and Social Icons (Tablet Layout) */}
         <div className="max-w-[318px] md:max-w-[1280px] mx-auto md:flex md:items-center md:justify-between md:mb-8 xl:hidden">
           <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-            <div className="flex items-center gap-3 mb-2">
-              <Image
-                src="/logo-white.svg"
-                alt="Bread Cooperative Logo"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <span className="font-breadDisplay mt-1 font-bold text-[24px] text-white">
-                BREAD COOPERATIVE
-              </span>
+            <div className="flex uppercase text-[24px]  items-center gap-3 mb-2">
+              <Logo text="Bread Cooperative" size={23} color="white" />
             </div>
             <p className="text-white font-breadBody text-center md:text-left">
               Solidarity forever.
@@ -125,17 +116,8 @@ export function Footer() {
         <div className="max-w-[318px] md:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
           {/* Logo and Tagline (Desktop Layout) */}
           <div className="hidden xl:block xl:col-span-2 xl:max-w-[311px]">
-            <div className="flex items-center gap-3 mb-2 justify-center md:justify-start">
-              <Image
-                src="/logo-white.svg"
-                alt="Bread Cooperative Logo"
-                width={24}
-                height={24}
-                className="w-6 h-6 mb-1"
-              />
-              <span className="font-breadDisplay font-bold text-[24px] text-white">
-                BREAD COOPERATIVE
-              </span>
+            <div className="flex text-[24px] uppercase -mt-1 items-center gap-3 mb-2 justify-center md:justify-start">
+              <Logo text="Bread Cooperative" size={23} color="white" />
             </div>
             <p className="text-white font-breadBody mb-6 text-center md:text-left">
               Solidarity forever.

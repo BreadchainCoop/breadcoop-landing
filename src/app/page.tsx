@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/Footer/Footer";
 import {
   LiftedButton,
+  Logo,
   Heading1,
   Heading3,
   Heading4,
@@ -127,14 +128,7 @@ function ChipsSection() {
     <div className="flex items-center justify-center gap-4 mb-4">
       <div className="w-[40%] border border-text-standard py-2 shadow-sm flex items-center justify-center gap-2">
         <Body className="flex items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="$BREAD"
-            width={24}
-            height={24}
-            className="w-[24px] h-[24px] inline"
-          />
-          1 BREAD
+          <Logo size={24} />1 BREAD
         </Body>
       </div>
       <Body>=</Body>

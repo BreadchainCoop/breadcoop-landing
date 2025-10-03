@@ -12,18 +12,26 @@ import {
   X,
 } from "@phosphor-icons/react/ssr";
 import { useState, useEffect, useRef } from "react";
-import { LiftedButton, Body, Heading4, Heading3 } from "@breadcoop/ui";
+import {
+  LiftedButton,
+  Body,
+  Heading4,
+  Heading3,
+  Logo,
+  type LogoColor,
+  type LogoVariant,
+} from "@breadcoop/ui";
 import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
 import { LINKS } from "@/constants/links";
 
 // Solidarity Tool Item Component
 interface SolidarityToolItemProps {
   id: string;
-  logo: string;
   title: string;
   shortDescription: string;
-  color: string;
+  color: LogoColor;
   comingSoon?: boolean;
+  variant?: LogoVariant;
   buttonClass?: string;
   colorOverrides?: {
     bg: string;
@@ -35,10 +43,10 @@ interface SolidarityToolItemProps {
 
 function SolidarityToolItem({
   id,
-  logo,
   title,
   shortDescription,
   color,
+  variant,
   comingSoon,
   linkOverride,
   onNavigate,
@@ -68,13 +76,13 @@ function SolidarityToolItem({
     >
       <div
         className={`border-primary-orange group flex py-1 px-[6px] items-center gap-4 w-full transition-all duration-300 border border-transparent relative cursor-pointer ${
-          color === "primary-orange"
+          color === "orange"
             ? "active:border-primary-orange hover:border-primary-orange"
-            : color === "primary-blue"
+            : color === "blue"
             ? "active:border-primary-blue hover:border-primary-blue"
-            : color === "primary-jade"
+            : color === "jade"
             ? "active:border-primary-jade hover:border-primary-jade"
-            : color === "surface-ink"
+            : color === "white"
             ? "active:border-surface-ink hover:border-surface-ink"
             : ""
         }`}
@@ -97,13 +105,7 @@ function SolidarityToolItem({
               }
         }
       >
-        <Image
-          src={logo}
-          alt="Logo"
-          width={32}
-          height={32}
-          className="w-8 h-8 flex-shrink-0"
-        />
+        <Logo color={color as LogoColor} variant={variant} />
         <div className="flex-grow">
           <div className="flex items-center gap-2">
             <Body bold>{title}</Body>
@@ -116,7 +118,7 @@ function SolidarityToolItem({
           <Body className="text-surface-grey">{shortDescription}</Body>
         </div>
         <ArrowRightIcon
-          className={`arrow-icon text-${color} w-6 h-6 opacity-0 transition-opacity duration-300 absolute right-2`}
+          className={`arrow-icon text-primary-${color} w-6 h-6 opacity-0 transition-opacity duration-300 absolute right-2`}
         />
       </div>
     </Link>
@@ -234,23 +236,18 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
           {/* Logo and Brand */}
           <div className="flex items-center gap-3">
             <Link className="flex items-center gap-2" href="/">
-              <Image
-                src="/logo.svg"
-                alt="Bread Cooperative Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
-
-              <span
-                className={`mt-1 hidden text-breadDisplay-bold md:block leading-none transition-opacity duration-300 ${
-                  isStatic || isScrolled || isNavbarHovered
-                    ? "opacity-100"
-                    : "opacity-0"
-                }`}
-              >
-                BREAD COOPERATIVE
-              </span>
+              <div className="hidden md:block">
+                <Logo
+                  text={
+                    isStatic || isScrolled || isNavbarHovered
+                      ? "BREAD COOPERATIVE"
+                      : ""
+                  }
+                />
+              </div>
+              <div className="block md:hidden">
+                <Logo />
+              </div>
             </Link>
           </div>
 
@@ -288,7 +285,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                 <div className="flex">
                   {/* First Column - 66% width */}
                   <div className="w-2/3">
-                    <Heading4 className="text-breadDisplay font-[500] uppercase text-surface-grey mb-4">
+                    <Heading4 className="text-base font-[500] uppercase text-surface-grey mb-4">
                       Bread Solidarity Tools
                     </Heading4>
 
@@ -298,10 +295,10 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       ))}
                       <SolidarityToolItem
                         id="post-capitalist-idea"
-                        logo="/logo-stroke.svg"
                         title="I have a post-capitalist idea..."
                         shortDescription="Have a better idea? Share it."
-                        color="surface-ink"
+                        color="white"
+                        variant="line"
                         linkOverride={LINKS.postCapitalistIdea}
                       />
                     </div>
@@ -478,7 +475,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
                 {isMobileDropdownOpen && (
                   <div className="pl-4 space-y-4">
-                    <Heading4 className="uppercase font-[500] text-surface-grey-2 mb-4">
+                    <Heading4 className="uppercase text-base font-[500] text-surface-grey-2 mb-4">
                       Bread Solidarity Tools
                     </Heading4>
 
@@ -497,11 +494,12 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                       >
                         <SolidarityToolItem
                           id="post-capitalist-idea"
-                          logo="/logo-stroke.svg"
                           title="I have a post-capitalist idea..."
                           shortDescription="Have a better idea? Share it."
-                          color="surface-ink"
+                          color="white"
+                          variant="line"
                           onNavigate={() => setIsMobileMenuOpen(false)}
+                          linkOverride={LINKS.postCapitalistIdea}
                         />
                       </Link>
                     </div>
