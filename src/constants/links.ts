@@ -1,7 +1,7 @@
 export const LINKS = {
   contributorForm:
-    "https://docs.google.com/forms/d/15f9dR00sEj6FB3hhzLiqTO3NRq15SSak1MrpxAVdTbE/preview?edit_requested=true",
-  dashboard: "https://dune.com/breadchain_cooperative/breadchain",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdiHclxYr3niJ7LW7hfR16K1dD0SSmpgCgzV3NzLMh1MJJygw/viewform",
+  dashboard: "https://dune.com/bread_cooperative/solidarity",
   discord: "https://discord.com/invite/zmNqsHRHDa",
   docs: "https://docs.bread.coop",
   docsBreadToken: "https://docs.bread.coop/bread-token/",
@@ -19,7 +19,7 @@ export const LINKS = {
   projectApplicationForm: "https://forms.gle/DeTETFxCxZbKRCzS7",
   solidarityFund: "https://app.breadchain.xyz",
   sourdoughSystems: "https://www.sourdough.systems/",
-  twitter: "https://x.com/breadchain_",
+  twitter: "https://x.com/breadcoop",
   youtube: "https://www.youtube.com/@BreadchainCooperative/",
 } as const;
 
