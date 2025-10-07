@@ -18,6 +18,12 @@ export const metadata: Metadata = {
         height: 600,
         alt: "Bread Cooperative",
       },
+      {
+        url: "https://bread.coop/preview-mobile.png",
+        width: 400,
+        height: 600,
+        alt: "Bread Cooperative",
+      },
     ],
     locale: "en_US",
     type: "website",
