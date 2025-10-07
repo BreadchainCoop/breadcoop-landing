@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     siteName: "Bread Cooperative",
     images: [
       {
-        url: "https://bread.coop/preview.png",
-        width: 800,
+        url: "https://bread.coop/preview-mobile.png",
+        width: 400,
         height: 600,
         alt: "Bread Cooperative",
       },
