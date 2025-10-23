@@ -1,6 +1,6 @@
 export const LINKS = {
   contributorForm:
-    "https://docs.google.com/forms/d/15f9dR00sEj6FB3hhzLiqTO3NRq15SSak1MrpxAVdTbE/preview?edit_requested=true",
+    "https://docs.google.com/forms/d/e/1FAIpQLSfOWubPChHH14LpV4GwgXrrot0Smqd1rmypN4MEULdw7n1o4g/viewform",
   dashboard: "https://dune.com/bread_cooperative/solidarity",
   discord: "https://discord.com/invite/zmNqsHRHDa",
   docs: "https://docs.bread.coop",
