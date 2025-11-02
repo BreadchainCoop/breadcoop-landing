@@ -69,6 +69,15 @@ const projects: Project[] = [
     websiteUrl: "https://www.regencoordination.xyz/",
     karmagapUrl: "https://gap.karmahq.xyz/community/regen-coordination",
   },
+  {
+    id: "gardens",
+    name: "Gardens",
+    description: "Next generation community governance.",
+    image: "/banner_gardens.webp",
+    websiteUrl:
+      "https://app.gardens.fund/gardens/100/0xa555d5344f6fb6c65da19e403cb4c1ec4a1a5ee3/0xe33e18b5887cf16ad4e351e98980eb5f50727c31/76",
+    karmagapUrl: "https://gap.karmahq.xyz/project/gardens-",
+  },
 ];
 
 // Project Card Component
