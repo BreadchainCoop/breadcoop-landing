@@ -390,13 +390,19 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
 
             {/* Mobile: Visit App Button */}
             <div className="md:hidden mt-1">
-              <LiftedButton
-                preset="primary"
-                rightIcon={<ArrowUpRightIcon />}
-                className="bg-primary-orange h-[48px] flex items-center gap-2"
+              <a
+                href={LINKS.solidarityFund}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span>Visit app</span>
-              </LiftedButton>
+                <LiftedButton
+                  preset="primary"
+                  rightIcon={<ArrowUpRightIcon />}
+                  className="bg-primary-orange h-[48px] flex items-center gap-2"
+                >
+                  <span>Visit app</span>
+                </LiftedButton>
+              </a>
             </div>
 
             {/* Mobile: Hamburger Menu */}
