@@ -323,7 +323,7 @@ export default function SolidarityFund() {
                         rightIcon={<ArrowUpRightIcon />}
                         width="full"
                       >
-                        <span>Visit solidarity fund</span>
+                        <span>Visit Solidarity Fund</span>
                       </LiftedButton>
                     </Link>
                   </div>
@@ -419,7 +419,7 @@ export default function SolidarityFund() {
                     rightIcon={<ArrowUpRightIcon />}
                     width="mobile-full"
                   >
-                    <span>Visit solidarity fund</span>
+                    <span>Visit Solidarity Fund</span>
                   </LiftedButton>
                 </Link>
                 <span className="block xl:hidden h-8"></span>
