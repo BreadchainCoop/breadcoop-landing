@@ -17,7 +17,7 @@ const Page = () => {
 				<Tools />
 				<Ready />
 			</main>
-			<Footer />
+			<Footer mode="transparent" />
 		</div>
 	);
 };
