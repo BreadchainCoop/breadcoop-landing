@@ -5,6 +5,7 @@ import Suppercharge from "./_components/supercharge";
 import HowItWorks from "./_components/how-it-works";
 import Ready from "./_components/ready";
 import Tools from "./_components/tools";
+import CanDoWithStacks from "./_components/can-do-with-stacks";
 
 const Page = () => {
 	return (
@@ -13,6 +14,7 @@ const Page = () => {
 			<main>
 				<Intro />
 				<HowItWorks />
+				<CanDoWithStacks />
 				<Suppercharge />
 				<Tools />
 				<Ready />

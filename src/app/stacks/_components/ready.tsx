@@ -6,7 +6,7 @@ import SiteLogoBg from "@/components/site-logo-bg";
 
 const Ready = () => {
 	return (
-		<section className="bg-paper-2 py-12 relative z-0 overflow-hidden">
+		<section className="stack-page-section bg-paper-2 relative z-0 overflow-hidden">
 			<div className="z-[1] absolute top-1/2 -translate-y-1/2 flex items-center justify-center">
 				<SiteLogoBg />
 			</div>
@@ -15,8 +15,11 @@ const Ready = () => {
 					centered
 					title="READY TO EXPLORE THE FUTURE OF INSURANCE?"
 					subTitle="Create your Stack"
-					titleClassName="max-w-[62rem] mx-auto"
-					subTitleClassName="max-w-none mx-auto"
+					// titleClassName="max-w-[62rem] mx-auto"
+					// subTitleClassName="max-w-none mx-auto"
+					className=""
+					titleClassName="text-left tablet:text-center xl:text-[5rem]! xl:leading-[3.9375rem]!"
+					subTitleClassName="text-right tablet:text-center"
 				/>
 				<Body className="text-center mb-6">
 					Experience the power of community coverage, amplified by

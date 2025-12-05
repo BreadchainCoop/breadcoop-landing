@@ -5,7 +5,6 @@ import { Body, Heading2, LiftedButton } from "@breadcoop/ui";
 import Link from "next/link";
 import { LinkArrow } from "./tools-icon";
 import Image from "next/image";
-import "./stacks.css";
 
 const Tools = () => {
 	const tools = getVisibleSolidarityTools(["stacks"]);
@@ -13,8 +12,8 @@ const Tools = () => {
 	return (
 		<section className="py-12 bg-[url('/stack-tools-mobile-bg.png')] tablet:mt-12 tablet:bg-[url('/stack-tools-tablet-bg.png')] tablet:bg-no-repeat tablet:bg-cover">
 			<div className="page-layout text-paper-main">
-				<div className="solidarity-tools-stack mb-6 tablet:mb-16 tablet:grid tablet:grid-cols-2 tablet:gap-6 xl:gap-y-9 xl:gap-x-16 xl:mb-[156px]">
-					<div className="solidarity-tools-stack-bg hidden tablet:block tablet:-mt-24">
+				<div className="mb-6 tablet:mb-16 tablet:grid tablet:grid-cols-2 tablet:gap-6 xl:gap-y-9 xl:gap-x-16 xl:mb-[156px]">
+					<div className="hidden tablet:block tablet:-mt-24">
 						<Image
 							src="/bread-cooperative-bakery-2.png"
 							alt=""
@@ -23,13 +22,13 @@ const Tools = () => {
 							className="w-full"
 						/>
 					</div>
-					<header className="solidarity-tools-stack-title tablet:self-end">
+					<header className="tablet:self-end">
 						<Heading2 className="text-primary-blue mb-4 tablet:text-[4rem] tablet:leading-14 tablet:m-0 tablet:mb-[-0.7rem]">
 							WHAT SOLIDARITY LOOKS LIKE
 						</Heading2>
 					</header>
 					{/* <Body className="solidarity-tools-stack-desc mb-6 xl:max-w-[25.1875rem] xl:mx-auto xl:mb-[156px]"> */}
-					<Body className="solidarity-tools-stack-desc xl:max-w-[26.1875rem] xl:mx-auto">
+					<Body className="xl:max-w-[26.1875rem] xl:mx-auto">
 						A community that never gives up <br />
 						Tools that are open to use. A way to Fund people that
 						are focused on building something post-capitalist.

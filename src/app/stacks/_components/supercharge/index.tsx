@@ -27,17 +27,16 @@ const benefits = [
 
 const Suppercharge = () => {
 	return (
-		<section className="page-layout py-12">
+		<section className="stack-page-section page-layout section">
 			<OverlappedHeading
 				title="The Crypto Supercharge"
 				subTitle="The benefits"
 				className="xl:max-w-[1128px]"
+				titleClassName="xl:text-[4rem]! xl:leading-[3.9375rem]!"
 			/>
-			<Body className="mb-6 tablet:mb-8">
-				Cryptocurrency and blockchain technology elevate this model,
-				offering enhanced transparency, efficiency, security, and global
-				reach. Smart contracts automate processes, ensuring rules are
-				enforced fairly and funds are managed securely.
+			<Body className="mb-6 leading-[150%] max-w-[46.25rem]">
+				Savings circles have met community needs for generations. With
+				Bread Stacks, this time-tested system goes global
 			</Body>
 			<ul className="tablet:grid tablet:grid-cols-2 tablet:gap-8">
 				{benefits.map((benefit) => {
@@ -49,7 +48,9 @@ const Suppercharge = () => {
 							<figure className="flex items-center justify-center p-[0.8rem] bg-paper-2 w-16 h-16">
 								{<benefit.icon />}
 							</figure>
-							<Heading3 className="font-bold text-2xl">{benefit.title}</Heading3>
+							<Heading3 className="font-bold text-2xl">
+								{benefit.title}
+							</Heading3>
 							<Body>{benefit.desc}</Body>
 						</li>
 					);
