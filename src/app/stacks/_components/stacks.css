@@ -1,0 +1,25 @@
+.solidarity-tools-stack {
+	grid-template-areas:
+		"bg title"
+		".  desc";
+}
+
+.solidarity-tools-stack-bg {
+	grid-area: bg;
+}
+
+.solidarity-tools-stack-title {
+	grid-area: title;
+}
+
+.solidarity-tools-stack-desc {
+	grid-area: desc;
+}
+
+@media (min-width: 1280px) {
+	.solidarity-tools-stack {
+		grid-template-areas:
+			"bg title"
+			"desc .";
+	}
+}
