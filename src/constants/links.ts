@@ -19,6 +19,7 @@ export const LINKS = {
 	projectApplicationForm: "https://forms.gle/DeTETFxCxZbKRCzS7",
 	solidarityFund: "https://fund.bread.coop",
 	sourdoughSystems: "https://www.sourdough.systems/",
+	stacks: "https://stacks.bread.coop",
 	twitter: "https://x.com/breadcoop",
 	youtube: "https://www.youtube.com/@BreadCooperative/",
 } as const;
