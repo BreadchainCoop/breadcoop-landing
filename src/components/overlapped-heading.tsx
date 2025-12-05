@@ -21,18 +21,22 @@ const OverlappedHeading = ({
 		<header className={clsx("mb-6 tablet:mb-8", className)}>
 			<h2
 				className={clsx(
-					"text-h1 text-primary-blue text-5xl leading-12 tablet:text-[4rem] tablet:leading-14 xl:text-[5rem] xl:leading-16",
+					"font-breadDisplay text-h1 text-primary-blue text-5xl leading-9 tracking-[-3%]",
+					"tablet:text-[4rem] tablet:leading-14",
+					"xl:text-[7.5rem] xl:leading-[5.875rem]",
 					centered ? "text-center" : "",
-					titleClassName
+					titleClassName,
 				)}
 			>
 				{title}
 			</h2>
 			<h3
 				className={clsx(
-					"text-h2 text-2xl -mt-[0.85rem] leading-6 max-w-[38rem] tablet:-mt-4 tablet:text-[2.5rem] xl:text-5xl xl:max-w-[45.875rem] xl:leading-12 xl:-mt-5",
+					"font-breadDisplay text-h2 text-2xl -mt-[0.85rem] leading-6 tracking-[-2%]",
+					"tablet:text-[2.5rem] tablet:leading-9 tablet:-mt-4",
+					"xl:text-5xl xl:leading-12 xl:-mt-5",
 					centered ? "text-center" : "text-right ml-auto",
-					subTitleClassName
+					subTitleClassName,
 				)}
 			>
 				{subTitle}

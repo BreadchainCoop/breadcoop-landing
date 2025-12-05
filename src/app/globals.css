@@ -36,4 +36,8 @@
   .page-layout {
     @apply w-full max-w-[71.0625rem] px-4 mx-auto;
   }
+
+  .stack-page-section {
+    @apply py-12 xl:py-20;
+  }
 }
