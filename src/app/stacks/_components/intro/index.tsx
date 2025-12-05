@@ -1,17 +1,15 @@
-import { Body, Heading1, Heading2, Heading3 } from "@breadcoop/ui";
+import { Body, Heading3 } from "@breadcoop/ui";
 import DashboardPages from "../dashboard-pages";
 import OverlappedHeading from "@/components/overlapped-heading";
 import Deposit from "./deposit";
 
 const Intro = () => {
 	return (
-		// <div className="page-layout mb-12">
 		<div className="page-layout py-12">
 			<OverlappedHeading
 				title="STACK MONEY TOGETHER"
 				subTitle="With friends"
 				className="tablet:max-w-[30rem] xl:max-w-[41rem]"
-				// titleClassName="xl:text-[120px] xl:leading-[94px]"
 			/>
 			<div className="xl:flex xl:items-end xl:gap-12">
 				<div>
@@ -23,7 +21,7 @@ const Intro = () => {
 					</Body>
 					<DashboardPages className="mb-12 xl:flex-col xl:-mb-0.5" />
 				</div>
-				<section>
+				<section className="xl:shrink-0">
 					<Heading3 className="mb-4 text-2xl font-bold xl:max-w-[23.625rem] xl:leading-[100%]">
 						What do you wanna save every month/week deposit?
 					</Heading3>
