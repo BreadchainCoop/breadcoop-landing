@@ -204,7 +204,7 @@ function InputCard({
 			) : (
 				<Body
 					bold
-					className="text-primary-blue text-[2.5rem] font-black"
+					className="text-primary-blue text-[2.5rem] font-black break-all"
 				>
 					{formatUSD(value)}
 				</Body>
