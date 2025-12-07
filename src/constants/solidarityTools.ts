@@ -34,12 +34,13 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
     shortDescription: "Save money together.",
     description: "Financial goals. Achieved together.",
     color: "blue",
-    buttonClass: "",
+    buttonClass: "bg-primary-blue",
     colorOverrides: {
       bg: "--color-primary-blue",
       hoverBg: "--color-blue-2",
     },
-    comingSoon: true,
+    webLink: LINKS.solidarityFund,
+    comingSoon: false,
   },
   {
     id: "safety-net",
