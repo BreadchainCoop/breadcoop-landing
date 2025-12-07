@@ -1,7 +1,7 @@
 "use client";
 
 import { Slider } from "@/components/slider";
-import { Body, Caption } from "@breadcoop/ui";
+import { Body } from "@breadcoop/ui";
 import { ChangeEventHandler, ReactNode, useState } from "react";
 
 const MIN = 200;
@@ -29,17 +29,17 @@ const Deposit = () => {
 	const [members, setMembers] = useState(1);
 	const [period, setPeriod] = useState<Period>({ type: "monthly", value: 1 });
 	const changeDeposit = (v: number[]) => setDeposit(v[0]);
-	const changePeriodValue = (rawValue: string) => {
-		let value = parseInt(rawValue, 10);
+	// const changePeriodValue = (rawValue: string) => {
+	// 	let value = parseInt(rawValue, 10);
 
-		if (isNaN(value) || value < 0) value = 0;
+	// 	if (isNaN(value) || value < 0) value = 0;
 
-		const max =
-			period.type === "monthly" ? MAX_MONTH_PERIOD : MAX_WEEK_PERIOD;
-		if (value > max) value = max;
+	// 	const max =
+	// 		period.type === "monthly" ? MAX_MONTH_PERIOD : MAX_WEEK_PERIOD;
+	// 	if (value > max) value = max;
 
-		setPeriod((p) => ({ ...p, value }));
-	};
+	// 	setPeriod((p) => ({ ...p, value }));
+	// };
 
 	const changePeriodType = (type: Period["type"]) => {
 		setPeriod((p) => {
@@ -51,17 +51,25 @@ const Deposit = () => {
 		});
 	};
 
+	// const totalSackedText = `${
+	// 	period.type === "monthly" ? "Monthly" : "Weekly"
+	// }. max ${
+	// 	period.type === "monthly"
+	// 		? `${MAX_MONTH_PERIOD} months`
+	// 		: `${MAX_WEEK_PERIOD} weeks`
+	// }`;
+
 	const totalSackedText = `${
 		period.type === "monthly" ? "Monthly" : "Weekly"
-	}. max ${
-		period.type === "monthly"
-			? `${MAX_MONTH_PERIOD} months`
-			: `${MAX_WEEK_PERIOD} weeks`
 	}`;
 	const totalSackedValue = deposit * members;
 
 	return (
-		<form onSubmit={(e) => { e.preventDefault()}}>
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+			}}
+		>
 			<div className="flex items-center justify-between gap-2.5">
 				<Body bold className="shrink-0">
 					$ {MIN}
@@ -101,8 +109,12 @@ const Deposit = () => {
 						title="Time Period"
 						type="input"
 						name="period"
-						value={period.value}
-						onChange={(v) => changePeriodValue(v as string)}
+						// Use these in v2
+						// value={period.value}
+						// onChange={(v) => changePeriodValue(v as string)}
+						value={members}
+						onChange={() => {}}
+						disabled
 						unit={
 							<TimePeriod
 								type={period.type}
@@ -127,6 +139,7 @@ interface InputFieldCardProps {
 	name: string;
 	onChange: (value: string | number) => void;
 	max?: number;
+	disabled?: boolean;
 }
 
 interface TotalCardProps {
@@ -134,6 +147,7 @@ interface TotalCardProps {
 	name?: never;
 	onChange?: never;
 	max?: never;
+	disabled?: never;
 }
 
 type CommonCardProps = {
@@ -154,6 +168,7 @@ function InputCard({
 	onChange,
 	max,
 	className,
+	disabled,
 }: InputCardProps) {
 	const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		const raw = e.target.value;
@@ -183,6 +198,7 @@ function InputCard({
 					min="0"
 					max={max}
 					onChange={handleChange}
+					disabled={disabled}
 					className="text-surface-grey font-black pb-1 text-center border-b border-transparent focus:text-surface-ink focus:border-blue-1 outline-none"
 				/>
 			) : (
