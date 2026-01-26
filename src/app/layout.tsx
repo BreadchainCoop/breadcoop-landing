@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     siteName: "Bread Cooperative",
     images: [
       {
-        url: "https://bread.coop/preview.png",
-        width: 800,
-        height: 600,
+        url: "https://bread.coop/preview.png?v=2",
+        width: 1200,
+        height: 630,
         alt: "Bread Cooperative",
       },
     ],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bread Cooperative",
     description: "Tools for today. Solidarity forever.",
-    images: ["https://bread.coop/preview.png"],
+    images: ["https://bread.coop/preview.png?v=2"],
   },
   icons: {
     icon: [
