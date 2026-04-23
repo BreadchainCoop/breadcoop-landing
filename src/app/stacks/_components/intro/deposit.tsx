@@ -69,6 +69,7 @@ const Deposit = () => {
 			onSubmit={(e) => {
 				e.preventDefault();
 			}}
+			id="create-stacks"
 		>
 			<div className="flex items-center justify-between gap-2.5">
 				<Body bold className="shrink-0">

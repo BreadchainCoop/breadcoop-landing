@@ -39,7 +39,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
       bg: "--color-primary-blue",
       hoverBg: "--color-blue-2",
     },
-    webLink: LINKS.solidarityFund,
+    webLink: LINKS.stacks,
     comingSoon: false,
   },
   {
