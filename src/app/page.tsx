@@ -24,13 +24,12 @@ import {
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
-import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
 import { useTotalBread } from "@/hooks/use-total-bread";
 import { formatSupply } from "@/util/formatter";
+import { TOTAL_PROJECTS } from "@/util/projects";
 
 // Stats Section Component
 function StatsSection() {
-  const projects = useBreadchainProjects();
   const totalBread = useTotalBread();
 
   const stats = [
@@ -42,7 +41,7 @@ function StatsSection() {
       buttonLink: "",
     },
     {
-      number: projects.data ? projects.data.length : projects.error ? 8 : "...",
+      number: TOTAL_PROJECTS,
       caption: "",
       title: "Projects empowering each other",
       buttonText: "View projects",

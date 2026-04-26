@@ -9,7 +9,6 @@ import { ArrowUpRightIcon, UserPlusIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { LINKS } from "@/constants/links";
-import { useBreadchainProjects } from "@/hooks/use-breadchain-projects";
 import { useTotalBread } from "@/hooks/use-total-bread";
 import { useBreadTvl } from "@/hooks/use-bread-tvl";
 import { formatSupply } from "@/util/formatter";
@@ -23,66 +22,12 @@ import {
   Caption,
   Heading2,
 } from "@breadcoop/ui";
+import { ProjectMetaData, projectsMetadata, TOTAL_PROJECTS } from "@/util/projects";
 
-// Project data interface
-interface Project {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  websiteUrl: string;
-  karmagapUrl: string;
-}
-
-// Project data
-const projects: Project[] = [
-  {
-    id: "crypto-commons",
-    name: "Crypto Commons Association",
-    description: "Organizations focused on new cultural inquiries.",
-    image: "/banner_cca.png",
-    websiteUrl: "https://www.crypto-commons.org/",
-    karmagapUrl: "https://gap.karmahq.xyz/project/crypto-commons-association",
-  },
-  {
-    id: "symbiota",
-    name: "Symbiota",
-    description: "Organizations dedicated to cultural innovation.",
-    image: "/banner_symbiota.png",
-    websiteUrl: "https://symbiota.coop/",
-    karmagapUrl: "https://gap.karmahq.xyz/project/symbiota",
-  },
-  {
-    id: "citizen-wallet",
-    name: "Citizen Wallet",
-    description: "Open source tools for Web3 community currencies.",
-    image: "/banner_citizenwallet.png",
-    websiteUrl: "https://citizenwallet.xyz/",
-    karmagapUrl:
-      "https://gap.karmahq.xyz/project/citizen-wallet---an-open-source-wallet-with-account-abstraction-for-your-community-1",
-  },
-  {
-    id: "regen-coordination",
-    name: "Regen Coordination",
-    description: "Supporting regenerative initiatives globally.",
-    image: "/banner_refidao.png",
-    websiteUrl: "https://www.regencoordination.xyz/",
-    karmagapUrl: "https://gap.karmahq.xyz/community/regen-coordination",
-  },
-  {
-    id: "gardens",
-    name: "Gardens",
-    description: "Next generation community governance.",
-    image: "/banner_gardens.webp",
-    websiteUrl:
-      "https://app.gardens.fund/gardens/100/0xa555d5344f6fb6c65da19e403cb4c1ec4a1a5ee3/0xe33e18b5887cf16ad4e351e98980eb5f50727c31/76",
-    karmagapUrl: "https://gap.karmahq.xyz/project/gardens-",
-  },
-];
 
 // Project Card Component
 interface ProjectCardProps {
-  project: Project;
+  project: ProjectMetaData;
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
@@ -202,7 +147,6 @@ function ProjectCard({ project }: ProjectCardProps) {
 
 // Stats Section Component
 function StatsSection() {
-  const projects = useBreadchainProjects();
   const totalBread = useTotalBread();
   const breadTvl = useBreadTvl();
 
@@ -218,7 +162,7 @@ function StatsSection() {
       caption: "Since the launch of the fund",
     },
     {
-      number: projects.data ? projects.data.length : projects.error ? 8 : "...",
+      number: TOTAL_PROJECTS,
       title: "Projects supported",
       caption: "",
     },
@@ -467,25 +411,21 @@ export default function SolidarityFund() {
               </div>
 
               {/* Projects Grid */}
-              <div
+              <ul
                 className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ${
-                  projects.length === 1
+                  projectsMetadata.length === 1
                     ? "lg:grid-cols-1"
-                    : projects.length === 2
+                    : projectsMetadata.length === 2
                     ? "lg:grid-cols-2"
-                    : projects.length === 3
+                    : projectsMetadata.length === 3
                     ? "lg:grid-cols-3"
-                    : projects.length === 4
-                    ? "lg:grid-cols-4"
-                    : projects.length === 5
-                    ? "lg:grid-cols-5"
-                    : "lg:grid-cols-6"
+                    : "lg:grid-cols-4"
                 }`}
               >
-                {projects.map((project) => (
+                {projectsMetadata.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
-              </div>
+              </ul>
 
               {/* Call to Action */}
               <div className="text-left xl:text-left max-w-2xl mx-auto">
