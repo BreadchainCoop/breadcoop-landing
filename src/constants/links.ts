@@ -4,10 +4,10 @@ export const LINKS = {
 	dashboard: "https://dune.com/bread_cooperative/solidarity",
 	discord: "https://discord.com/invite/zmNqsHRHDa",
 	docs: "https://docs.bread.coop",
-	docsBreadToken: "https://docs.bread.coop/bread-token/",
+	docsBreadToken: "https://docs.bread.coop/about/bread-token",
 	docsManifesto: "https://docs.bread.coop/manifesto",
 	docsHowToBecomeAMemberProject:
-		"https://docs.bread.coop/how-to-become-a-member-project",
+		"https://docs.bread.coop/become-a-member-project",
 	docsVotingPower: "https://docs.bread.coop/voting-power",
 	farcaster: "https://farcaster.xyz/~/channel/cryptoleft",
 	giveth: "https://giveth.io/project/breadchain-cooperative",
