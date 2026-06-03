@@ -20,7 +20,7 @@ export const SOLIDARITY_TOOLS: SolidarityTool[] = [
   {
     id: "solidarity-fund",
     title: "Solidarity Fund",
-    shortDescription: "Fund post-capitalism.",
+    shortDescription: "Give without giving.",
     description:
       "Community coming together to fund what matters to us. Bake $BREAD and support projects you believe in.",
     color: "orange",
