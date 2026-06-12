@@ -46,13 +46,23 @@ function RotatingAudience() {
 	}, [reducedMotion]);
 
 	const word = reducedMotion ? AUDIENCES[0] : AUDIENCES[index];
+	const longestWord = AUDIENCES.reduce((a, b) =>
+		b.length > a.length ? b : a
+	);
 
 	return (
-		<span
-			key={word}
-			className="block text-blue-1 animate-[word-in_0.45s_ease-out]"
-		>
-			{word}
+		// The invisible sizer reserves the height of the longest word so the
+		// hero doesn't jump when shorter words rotate in
+		<span className="relative block">
+			<span className="invisible block" aria-hidden="true">
+				{longestWord}
+			</span>
+			<span
+				key={word}
+				className="absolute inset-0 text-blue-1 animate-[word-in_0.45s_ease-out]"
+			>
+				{word}
+			</span>
 		</span>
 	);
 }
@@ -81,9 +91,8 @@ const Hero = () => {
 						<div className="grid grid-cols-2 items-start gap-4 xl:gap-12">
 							<div className="col-span-2 md:col-span-1">
 								<Body className="my-6 max-w-[480px] text-2xl leading-snug text-paper-main xl:my-8">
-									A worker-owned dev team. We research, design, and ship real
-									products — from smart contracts to mobile apps — fast, and
-									built to last.
+									We research, design, and ship real products — from smart
+									contracts to mobile apps — fast, and built to last.
 								</Body>
 
 								<div className="flex flex-col gap-4 md:flex-row xl:gap-6">
