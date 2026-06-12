@@ -340,6 +340,12 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
             </div>
 
             <Link
+              href={LINKS.services}
+              className="text-body text-text-standard hover:text-primary-orange"
+            >
+              Services
+            </Link>
+            <Link
               href={LINKS.docs}
               target="_blank"
               rel="noopener noreferrer"
@@ -511,6 +517,14 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                     </div>
                   </div>
                 )}
+                <Body>
+                  <Link
+                    href={LINKS.services}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Services
+                  </Link>
+                </Body>
                 <Body>
                   <Link href={LINKS.docs}>Docs</Link>
                 </Body>
