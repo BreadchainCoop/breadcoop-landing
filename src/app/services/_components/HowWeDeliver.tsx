@@ -1,6 +1,6 @@
 "use client";
 
-import { Body, LiftedButton } from "@breadcoop/ui";
+import { Body, Heading2, Heading3, LiftedButton } from "@breadcoop/ui";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,9 +53,9 @@ const HowWeDeliver = () => {
 						<div className="absolute inset-0 bg-paper-0 mix-blend-color" />
 					</div>
 					<div className="flex flex-col gap-8 tablet:items-end tablet:text-left">
-						<h2 className="font-breadDisplay uppercase text-primary-orange text-5xl leading-9 tracking-[-3%] tablet:text-[4rem] tablet:leading-14 xl:text-[5rem] xl:leading-[4rem]">
+						<Heading2 className="uppercase text-primary-orange">
 							How we work
-						</h2>
+						</Heading2>
 						<Body className="text-paper-main tablet:max-w-[506px]">
 							One flat price, one dedicated team. The whole cooperative builds
 							for you — we design, develop, and deliver, working in the open
@@ -76,9 +76,7 @@ const HowWeDeliver = () => {
 									className="h-[120px] w-[120px] xl:h-[180px] xl:w-[180px]"
 								/>
 							</div>
-							<h3 className="font-breadDisplay text-orange-1 text-3xl leading-8 tracking-[-2%] xl:text-[3rem] xl:leading-[3rem]">
-								{column.title}
-							</h3>
+							<Heading3 className="text-orange-1">{column.title}</Heading3>
 							<Body bold className="text-orange-0 text-2xl leading-none">
 								{column.subtitle}
 							</Body>

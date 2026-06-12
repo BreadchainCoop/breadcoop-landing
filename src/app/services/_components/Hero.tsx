@@ -1,6 +1,6 @@
 "use client";
 
-import { Body, LiftedButton } from "@breadcoop/ui";
+import { Body, Heading1, LiftedButton } from "@breadcoop/ui";
 import { ArrowDownIcon, ArrowUpRightIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,10 +73,10 @@ const Hero = () => {
 			<div className="relative z-10 mx-auto max-w-[1280px] px-4 xl:px-12">
 				<div className="w-full px-4 py-20 xl:px-4">
 					<div className="mx-auto max-w-[388px] md:max-w-[768px] xl:max-w-7xl">
-						<h1 className="font-breadDisplay uppercase text-primary-orange text-5xl leading-10 tracking-[-3%] tablet:text-[4rem] tablet:leading-[3.75rem] xl:text-[6.5rem] xl:leading-[5.5rem]">
+						<Heading1 className="text-primary-orange">
 							We build for
 							<RotatingAudience />
-						</h1>
+						</Heading1>
 
 						<div className="grid grid-cols-2 items-start gap-4 xl:gap-12">
 							<div className="col-span-2 md:col-span-1">
@@ -111,7 +111,7 @@ const Hero = () => {
 								<div className="mt-10 flex gap-10">
 									{STATS.map((stat) => (
 										<div key={stat.label} className="max-w-[120px]">
-											<p className="font-breadDisplay text-primary-orange text-4xl leading-10">
+											<p className="font-breadDisplay font-[900] tracking-tight text-primary-orange text-4xl leading-10">
 												{stat.value}
 											</p>
 											<Body className="mt-2 text-paper-main">
