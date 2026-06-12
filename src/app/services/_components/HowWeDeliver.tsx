@@ -6,25 +6,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { LINKS } from "@/constants/links";
 
-/* TODO: confirm pricing, offerings, and descriptions with final copy */
 const DELIVERY_COLUMNS = [
 	{
-		title: "10k / Month",
-		subtitle: "Smart Contracts · AVS architecture development and consultation",
+		title: "Projects from $10,000/month",
+		subtitle: "One flat price",
 		description:
-			"A dedicated worker-owned team embedded with yours — senior engineers building, reviewing, and advising every month.",
+			"No hourly billing, no surprises. One flat monthly price gets the whole worker-owned team — engineers, designers, and strategists — building for you.",
 	},
 	{
-		title: "Research, design, develop",
-		subtitle: "Full-stack dApps · Mobile · AI",
+		title: "2 weeks – 6 months",
+		subtitle: "Design · Develop · Deliver",
 		description:
-			"From problem discovery to working software. We research, prototype, and develop alongside you, with full transparency.",
+			"Scoped to ship. From a two-week sprint to a six-month build, we research, design, and develop — delivering working software at a steady rhythm.",
 	},
 	{
-		title: "Launch & Maintenance",
-		subtitle: "Monitoring · Integration support",
+		title: "Open Source Code",
+		subtitle: "Built in the open",
 		description:
-			"We ship to production and stay accountable — monitoring, maintenance, and improvements long after launch day.",
+			"Everything we ship is open source. You own the code, audits stay easy, and your community can verify exactly what we built.",
 	},
 ];
 
@@ -55,12 +54,12 @@ const HowWeDeliver = () => {
 					</div>
 					<div className="flex flex-col gap-8 tablet:items-end tablet:text-left">
 						<h2 className="font-breadDisplay uppercase text-primary-orange text-5xl leading-9 tracking-[-3%] tablet:text-[4rem] tablet:leading-14 xl:text-[5rem] xl:leading-[4rem]">
-							How we deliver
+							How we work
 						</h2>
 						<Body className="text-paper-main tablet:max-w-[506px]">
-							A worker-owned team working in the open. We scope together,
-							deliver in steady increments, and stay with you from first
-							research session to long-term maintenance.
+							One flat price, one dedicated team. The whole cooperative builds
+							for you — we design, develop, and deliver, working in the open
+							from first call to launch.
 						</Body>
 					</div>
 				</div>
