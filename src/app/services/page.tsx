@@ -8,11 +8,10 @@ import Testimonials from "./_components/Testimonials";
 import HowWeDeliver from "./_components/HowWeDeliver";
 import FinalCTA from "./_components/FinalCTA";
 
-/* TODO: refine title/description keywords once the marketing .md arrives */
 export const metadata: Metadata = {
 	title: "Services | Bread Cooperative",
 	description:
-		"A worker-owned development team that researches, designs, and ships real products. Smart contracts, treasury systems, and infrastructure — built fast and built to last.",
+		"Worker-owned development cooperative. Smart contract development, stablecoin and treasury systems, full-stack dApp and mobile development, AI agents and automation, UX/UI design and frontend. Trusted by the Ethereum Foundation, Curve Labs, and European Commission-funded projects.",
 };
 
 const Page = () => {

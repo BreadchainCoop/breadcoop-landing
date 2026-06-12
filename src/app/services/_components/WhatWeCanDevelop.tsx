@@ -12,39 +12,60 @@ const CHIP_COLORS: Record<ChipColor, string> = {
 	blue: "border-primary-blue text-primary-blue",
 };
 
-/* TODO: replace placeholder descriptions and link targets with final copy */
 const SERVICES = [
 	{
-		chip: "Gas Killer integration",
+		chip: "Solidity · EVM",
 		chipColor: "orange" as ChipColor,
-		title: "Smart Contract Development",
+		title: "Smart Contracts & Onchain Systems",
 		description:
-			"We identified a significant challenge in the infrastructure for restaking and AVS. To address this, we implemented targeted development strategies that enhanced the overall framework, ensuring a more robust and efficient system.",
-		link: LINKS.servicesForm,
+			"Smart contract development, architecture, and review across EVM chains. Onchain treasuries with distribution logic, yield mechanisms, and gas-optimised custom infrastructure — from Gas Killer to Eigenlayer AVS.",
+		link: LINKS.github,
+		linkLabel: "View our code",
 	},
 	{
-		chip: "Infrastructure",
+		chip: "$BREAD engine",
 		chipColor: "jade" as ChipColor,
-		title: "Democratic Treasury Systems",
+		title: "Stablecoin & Treasury Systems",
 		description:
-			"We identified a significant challenge in the infrastructure for restaking and AVS. To address this, we implemented targeted development strategies that enhanced the overall framework, ensuring a more robust and efficient system.",
-		link: LINKS.servicesForm,
+			"Stablecoin issuance and redemption, yield-bearing deposits, peg and collateral management, and programmable payments. We built the $BREAD engine and the Solidarity Fund's distribution system.",
+		link: LINKS.solidarityFund,
+		linkLabel: "See it live",
 	},
 	{
-		chip: "Eigenlayer",
+		chip: "Contracts to frontend",
 		chipColor: "blue" as ChipColor,
-		title: "AVS Architecture",
+		title: "Full-Stack dApp & Mobile Development",
 		description:
-			"We identified a significant challenge in the infrastructure for restaking and AVS. To address this, we implemented targeted development strategies that enhanced the overall framework, ensuring a more robust and efficient system.",
-		link: LINKS.servicesForm,
+			"Full-stack Web3 app development from contracts through frontend. Mobile apps for iOS and Android, wallet integration, savings-circle (ROSCA) mechanisms like Stacks, and onchain data dashboards.",
+		link: LINKS.stacks,
+		linkLabel: "See it live",
 	},
 	{
-		chip: "Infrastructure",
-		chipColor: "jade" as ChipColor,
-		title: "Yield Distribution Mechanisms",
+		chip: "Open rails",
+		chipColor: "orange" as ChipColor,
+		title: "AI Agents & Automation",
 		description:
-			"We identified a significant challenge in the infrastructure for restaking and AVS. To address this, we implemented targeted development strategies that enhanced the overall framework, ensuring a more robust and efficient system.",
+			"AI agents and bots that work where your people are. Messaging bots on open rails like Signal, workflow automation, and LLM integration built into real processes — not bolted on.",
 		link: LINKS.servicesForm,
+		linkLabel: "Start a project",
+	},
+	{
+		chip: "Kohaku",
+		chipColor: "blue" as ChipColor,
+		title: "UX/UI Design & Frontend",
+		description:
+			"Frontend engineering, performance optimisation, and UX/UI design. We designed and built the Kohaku Extension for the Ethereum Foundation — a reference for private-by-default wallets.",
+		link: LINKS.servicesForm,
+		linkLabel: "Start a project",
+	},
+	{
+		chip: "Workshops",
+		chipColor: "jade" as ChipColor,
+		title: "Advisory, Content & Education",
+		description:
+			"Technical consultation, integration support, and workshops. Content strategy, narrative development, documentation, and user guides — we explain the work as well as we do it.",
+		link: LINKS.servicesForm,
+		linkLabel: "Book a session",
 	},
 ];
 
@@ -73,15 +94,18 @@ const WhatWeCanDevelop = () => {
 						>
 							{service.chip}
 						</span>
-						<div className="flex flex-col gap-4">
+						<div className="flex flex-col gap-4 flex-1">
 							<Heading3 className="text-surface-ink">{service.title}</Heading3>
 							<Body className="text-surface-grey-2">{service.description}</Body>
 						</div>
 						<Link
 							href={service.link}
+							{...(service.link.startsWith("http")
+								? { target: "_blank", rel: "noopener noreferrer" }
+								: {})}
 							className="border border-surface-ink bg-paper-main px-4 py-1 shadow-[2px_2px_0px_0px_black] flex items-center gap-2 text-surface-ink hover:bg-paper-2 transition-colors"
 						>
-							<Body>View work</Body>
+							<Body>{service.linkLabel}</Body>
 							<ArrowUpRightIcon className="w-5 h-5" />
 						</Link>
 					</article>

@@ -1,25 +1,24 @@
 import { Body } from "@breadcoop/ui";
 import OverlappedHeading from "@/components/overlapped-heading";
 
-/* TODO: replace with real client quotes, names, and roles */
 const TESTIMONIALS = [
 	{
 		quote:
-			"Working with the Bread Cooperative team was seamless from research to launch. They shipped exactly what we needed, on time.",
-		name: "Client name",
-		role: "Role, Company",
+			"Bread Cooperative was our Web3 partner on a project funded by the European Commission. They delivered the technical components reliably while patiently breaking down each piece so everyone involved understood what they were using and why. They're as good at explaining the work as they are at doing it.",
+		name: "Alessandro Longo",
+		role: "Curve Labs",
 	},
 	{
 		quote:
-			"A senior team that understands both the technology and the people using it. We'd build with them again in a heartbeat.",
-		name: "Client name",
-		role: "Role, Company",
+			"Bread Cooperative is one of my favorite curatorial partners. They're working on fascinating things and know how to share them with a broad audience. Their sessions are always among the busiest and most engaged at any event we've done together.",
+		name: "Beth McCarthy",
+		role: "Web3 Privacy Now",
 	},
 	{
 		quote:
-			"They took our idea from a rough sketch to a production system without drama. Communication was clear the whole way.",
-		name: "Client name",
-		role: "Role, Company",
+			"Bread Cooperative did the design and frontend for our Kohaku Extension, a reference implementation for private-by-default Ethereum wallets. They brought a fresh, untraditional approach to wallet design and the Web3 frontend expertise to pull it off, all while staying true to Ethereum's values. They helped make our vision real.",
+		name: "Kassandra.eth",
+		role: "Ethereum Foundation",
 	},
 ];
 
@@ -33,9 +32,9 @@ const Testimonials = () => {
 				subTitleClassName="text-left mr-auto ml-0"
 			/>
 			<div className="grid gap-6 pt-6 tablet:grid-cols-3">
-				{TESTIMONIALS.map((testimonial, index) => (
+				{TESTIMONIALS.map((testimonial) => (
 					<figure
-						key={index}
+						key={testimonial.name}
 						className="flex flex-col justify-between gap-6 bg-paper-1 p-6"
 					>
 						<blockquote>

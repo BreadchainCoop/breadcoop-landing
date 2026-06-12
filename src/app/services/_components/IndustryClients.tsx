@@ -1,16 +1,12 @@
 import { Body } from "@breadcoop/ui";
 import OverlappedHeading from "@/components/overlapped-heading";
 
-/* TODO: replace placeholders with real client logos (SVG/PNG in /public) */
+/* TODO: replace text placeholders with real client logos (SVG/PNG in /public) */
 const CLIENT_LOGOS = [
-	"Logo",
-	"Logo",
-	"Logo",
-	"Logo",
-	"Logo",
-	"Logo",
-	"Logo",
-	"Logo",
+	"Ethereum Foundation",
+	"Curve Labs",
+	"Web3 Privacy Now",
+	"European Commission",
 ];
 
 const IndustryClients = () => {

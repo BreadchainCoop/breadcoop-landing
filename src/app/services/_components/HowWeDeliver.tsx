@@ -16,13 +16,13 @@ const DELIVERY_COLUMNS = [
 	},
 	{
 		title: "Research, design, develop",
-		subtitle: "DeFi · Blockchain",
+		subtitle: "Full-stack dApps · Mobile · AI",
 		description:
 			"From problem discovery to working software. We research, prototype, and develop alongside you, with full transparency.",
 	},
 	{
 		title: "Launch & Maintenance",
-		subtitle: "DeFi · Infrastructure",
+		subtitle: "Monitoring · Integration support",
 		description:
 			"We ship to production and stay accountable — monitoring, maintenance, and improvements long after launch day.",
 	},

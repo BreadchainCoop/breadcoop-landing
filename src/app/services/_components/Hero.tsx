@@ -82,7 +82,8 @@ const Hero = () => {
 							<div className="col-span-2 md:col-span-1">
 								<Body className="my-6 max-w-[480px] text-2xl leading-snug text-paper-main xl:my-8">
 									A worker-owned dev team. We research, design, and ship real
-									products — fast, and built to last.
+									products — from smart contracts to mobile apps — fast, and
+									built to last.
 								</Body>
 
 								<div className="flex flex-col gap-4 md:flex-row xl:gap-6">
