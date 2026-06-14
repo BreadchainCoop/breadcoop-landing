@@ -7,22 +7,45 @@ const CLIENT_LOGOS = [
 		src: "/clients/ethereum-foundation.svg",
 	},
 	{
-		name: "Curve Labs",
-		src: "/clients/curve-labs.png",
-	},
-	{
 		name: "Optimism",
 		src: "/clients/optimism-white.svg",
 		// Official one-color wordmark on the brand red — keeps contrast in the grid
 		tileClass: "bg-[#FF0420]",
 	},
 	{
+		name: "Gnosis",
+		src: "/clients/gnosis.svg",
+	},
+	{
 		name: "Stellar",
 		src: "/clients/stellar.svg",
 	},
 	{
+		name: "Deloitte",
+		src: "/clients/deloitte.svg",
+	},
+	{
+		name: "EigenCloud",
+		src: "/clients/eigencloud.svg",
+	},
+	{
 		name: "European Commission",
 		src: "/clients/european-commission.svg",
+		// Squarer mark than the wordmarks — give it more height so its
+		// visual weight matches the others in the grid
+		logoClass: "h-16",
+	},
+	{
+		name: "Curve Labs",
+		src: "/clients/curve-labs.png",
+	},
+	{
+		name: "Funding the Commons",
+		src: "/clients/funding-the-commons.png",
+	},
+	{
+		name: "The Movements Trust",
+		src: "/clients/movements-trust.png",
 	},
 ];
 
@@ -47,7 +70,9 @@ const IndustryClients = () => {
 							alt={logo.name}
 							width={160}
 							height={48}
-							className="h-10 w-auto max-w-full object-contain"
+							className={`w-auto max-w-full object-contain ${
+								logo.logoClass ?? "h-10"
+							}`}
 						/>
 					</div>
 				))}
