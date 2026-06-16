@@ -8,16 +8,16 @@ import { LINKS } from "@/constants/links";
 
 const DELIVERY_COLUMNS = [
 	{
-		title: "Projects from $10,000/month",
+		title: "Engagements from $10,000/month",
 		subtitle: "One flat price",
 		description:
-			"No hourly billing, no surprises. One flat monthly price gets the whole worker-owned team — engineers, designers, and strategists — building for you.",
+			"No hourly billing, no surprises. One flat monthly price gets you the whole team: engineers, designers, and strategists, building for you.",
 	},
 	{
-		title: "2 weeks – 6 months",
+		title: "Ongoing, month to month",
 		subtitle: "Design · Develop · Deliver",
 		description:
-			"Scoped to ship. From a two-week sprint to a six-month build, we research, design, and develop — delivering working software at a steady rhythm.",
+			"We build as your team, not a one-off vendor. Research, design, and development delivered at a steady rhythm, scoped to ship.",
 	},
 	{
 		title: "Open Source Code",
@@ -58,7 +58,7 @@ const HowWeDeliver = () => {
 						</Heading2>
 						<Body className="text-paper-main tablet:max-w-[506px]">
 							One flat price, one dedicated team. The whole cooperative builds
-							for you — we design, develop, and deliver, working in the open
+							for you. We design, develop, and deliver, working in the open
 							from first call to launch.
 						</Body>
 					</div>

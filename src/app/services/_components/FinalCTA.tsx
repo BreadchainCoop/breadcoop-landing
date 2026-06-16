@@ -13,8 +13,8 @@ const FinalCTA = () => {
 					Let&apos;s work together
 				</Heading1>
 				<Body className="max-w-[886px] text-surface-ink">
-					Want to revolutionize finance with us? Book a call and let&apos;s
-					explore how we can build a worker-owned future together.
+					Got something to build? Book a call and let&apos;s figure out how we
+					can ship it together.
 				</Body>
 				<Link href={LINKS.servicesForm} className="w-full tablet:w-[440px]">
 					<LiftedButton

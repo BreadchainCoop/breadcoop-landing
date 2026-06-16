@@ -91,8 +91,8 @@ const Hero = () => {
 						<div className="grid grid-cols-2 items-start gap-4 xl:gap-12">
 							<div className="col-span-2 md:col-span-1">
 								<Body className="my-6 max-w-[480px] text-2xl leading-snug text-paper-main xl:my-8">
-									We research, design, and ship real products — from smart
-									contracts to mobile apps — fast, and built to last.
+									We research, design, and ship real products, from smart
+									contracts to mobile apps. Fast, and built to last.
 								</Body>
 
 								<div className="flex flex-col gap-4 md:flex-row xl:gap-6">

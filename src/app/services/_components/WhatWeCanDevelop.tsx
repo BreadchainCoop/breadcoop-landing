@@ -18,7 +18,7 @@ const SERVICES = [
 		chipColor: "orange" as ChipColor,
 		title: "Smart Contracts & Onchain Systems",
 		description:
-			"Smart contract development, architecture, and review across EVM chains. Onchain treasuries with distribution logic, yield mechanisms, and gas-optimised custom infrastructure — from Gas Killer to Eigenlayer AVS.",
+			"Smart contract development, architecture, and review across EVM chains. Onchain treasuries with distribution logic, yield mechanisms, and gas-optimised custom infrastructure: from Gas Killer to Eigenlayer AVS.",
 		link: LINKS.github,
 		linkLabel: "View our code",
 	},
@@ -45,7 +45,7 @@ const SERVICES = [
 		chipColor: "orange" as ChipColor,
 		title: "AI Agents & Automation",
 		description:
-			"AI agents and bots that work where your people are. Messaging bots on open rails like Signal, workflow automation, and LLM integration built into real processes — not bolted on.",
+			"AI agents and bots that work where your people are. Messaging bots on open rails like Signal, workflow automation, and LLM integration built into your real processes instead of bolted on top.",
 		link: LINKS.servicesForm,
 		linkLabel: "Start a project",
 	},
@@ -54,7 +54,7 @@ const SERVICES = [
 		chipColor: "blue" as ChipColor,
 		title: "UX/UI Design & Frontend",
 		description:
-			"Frontend engineering, performance optimisation, and UX/UI design. We designed and built the Kohaku Extension for the Ethereum Foundation — a reference for private-by-default wallets.",
+			"Frontend engineering, performance optimisation, and UX/UI design. We designed and built the Kohaku Extension for the Ethereum Foundation, a reference for private-by-default wallets.",
 		link: LINKS.servicesForm,
 		linkLabel: "Start a project",
 	},
@@ -63,7 +63,7 @@ const SERVICES = [
 		chipColor: "jade" as ChipColor,
 		title: "Advisory, Content & Education",
 		description:
-			"Technical consultation, integration support, and workshops. Content strategy, narrative development, documentation, and user guides — we explain the work as well as we do it.",
+			"Technical consultation, integration support, and workshops. Content strategy, narrative development, documentation, and user guides. We explain the work as well as we do it.",
 		link: LINKS.servicesForm,
 		linkLabel: "Book a session",
 	},
@@ -77,7 +77,7 @@ const WhatWeCanDevelop = () => {
 		>
 			<OverlappedHeading
 				title="WHAT WE CAN DEVELOP"
-				subTitle="We solve problems with solutions"
+				subTitle="We solve real problems with working software"
 				titleClassName="text-primary-orange text-right"
 				subTitleClassName="text-left mr-auto ml-0"
 			/>
