@@ -16,7 +16,12 @@ const FinalCTA = () => {
 					Got something to build? Book a call and let&apos;s figure out how we
 					can ship it together.
 				</Body>
-				<Link href={LINKS.servicesForm} className="w-full tablet:w-[440px]">
+				<Link
+					href={LINKS.servicesForm}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="w-full tablet:w-[440px]"
+				>
 					<LiftedButton
 						preset="primary"
 						width="full"

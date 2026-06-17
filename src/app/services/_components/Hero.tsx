@@ -96,7 +96,11 @@ const Hero = () => {
 								</Body>
 
 								<div className="flex flex-col gap-4 md:flex-row xl:gap-6">
-									<Link href={LINKS.servicesForm}>
+									<Link
+										href={LINKS.servicesForm}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
 										<LiftedButton
 											className="w-full md:w-[200px]"
 											rightIcon={<ArrowUpRightIcon />}

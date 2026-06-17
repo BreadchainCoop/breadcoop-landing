@@ -18,8 +18,7 @@ export const LINKS = {
 	postCapitalistIdea: "https://form.typeform.com/to/opwqWG8j",
 	projectApplicationForm: "https://forms.gle/DeTETFxCxZbKRCzS7",
 	services: "/services",
-	// TODO: replace with the real intake form URL (Typeform) once available
-	servicesForm: "#",
+	servicesForm: "https://form.typeform.com/to/b4X4t0yp",
 	solidarityFund: "https://fund.bread.coop",
 	sourdoughSystems: "https://www.sourdough.systems/",
 	stacks: "https://stacks.bread.coop",

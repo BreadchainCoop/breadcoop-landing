@@ -86,7 +86,12 @@ const HowWeDeliver = () => {
 				</div>
 
 				<div className="mt-12 flex justify-center">
-					<Link href={LINKS.servicesForm} className="w-full tablet:w-[440px]">
+					<Link
+						href={LINKS.servicesForm}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="w-full tablet:w-[440px]"
+					>
 						<LiftedButton
 							preset="primary"
 							width="full"
