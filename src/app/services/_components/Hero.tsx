@@ -105,7 +105,7 @@ const Hero = () => {
 											className="w-full md:w-[200px]"
 											rightIcon={<ArrowUpRightIcon />}
 										>
-											<span>Book a call</span>
+											<span>Start a project</span>
 										</LiftedButton>
 									</Link>
 									<div className="hidden md:block">

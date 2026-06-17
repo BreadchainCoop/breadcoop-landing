@@ -13,8 +13,8 @@ const FinalCTA = () => {
 					Let&apos;s work together
 				</Heading1>
 				<Body className="max-w-[886px] text-surface-ink">
-					Got something to build? Book a call and let&apos;s figure out how we
-					can ship it together.
+					Got something to build? Tell us about it and let&apos;s figure out
+					how we can ship it together.
 				</Body>
 				<Link
 					href={LINKS.servicesForm}
@@ -27,7 +27,7 @@ const FinalCTA = () => {
 						width="full"
 						rightIcon={<ArrowUpRightIcon />}
 					>
-						<span>Book a call</span>
+						<span>Start a project</span>
 					</LiftedButton>
 				</Link>
 			</div>

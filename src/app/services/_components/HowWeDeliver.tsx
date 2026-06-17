@@ -97,7 +97,7 @@ const HowWeDeliver = () => {
 							width="full"
 							rightIcon={<ArrowUpRightIcon />}
 						>
-							<span>Book a call</span>
+							<span>Start a project</span>
 						</LiftedButton>
 					</Link>
 				</div>
