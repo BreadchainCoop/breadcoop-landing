@@ -23,6 +23,7 @@ import {
 } from "@breadcoop/ui";
 import { SOLIDARITY_TOOLS } from "@/constants/solidarityTools";
 import { LINKS } from "@/constants/links";
+import VisitAppBtn from "./visit-app-btn";
 
 // Solidarity Tool Item Component
 interface SolidarityToolItemProps {
@@ -377,38 +378,8 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                 : "opacity-0"
             }`}
           >
-            {/* Desktop: Visit App Button */}
-            <div className="hidden md:block mt-1">
-              <Link
-                href={LINKS.solidarityFund}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LiftedButton
-                  preset="primary"
-                  rightIcon={<ArrowUpRightIcon />}
-                  className="!py-2"
-                >
-                  <span>Visit app</span>
-                </LiftedButton>
-              </Link>
-            </div>
-
-            {/* Mobile: Visit App Button */}
-            <div className="md:hidden mt-1">
-              <a
-                href={LINKS.solidarityFund}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LiftedButton
-                  preset="primary"
-                  rightIcon={<ArrowUpRightIcon />}
-                  className="bg-primary-orange h-[48px] flex items-center gap-2"
-                >
-                  <span>Visit app</span>
-                </LiftedButton>
-              </a>
+            <div className="mt-1">
+              <VisitAppBtn />
             </div>
 
             {/* Mobile: Hamburger Menu */}
@@ -436,13 +407,7 @@ export function Navbar({ static: isStatic = false }: NavbarProps) {
                 className="w-8 h-8"
               />
               <div className="flex items-center gap-4">
-                <LiftedButton
-                  preset="primary"
-                  rightIcon={<ArrowUpRightIcon />}
-                  className="flex items-center gap-2 h-[48px]"
-                >
-                  <span>Visit app</span>
-                </LiftedButton>
+                <VisitAppBtn />
                 <button
                   className="text-primary-orange"
                   onClick={toggleMobileMenu}
