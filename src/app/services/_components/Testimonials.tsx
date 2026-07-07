@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Body } from "@breadcoop/ui";
 import OverlappedHeading from "@/components/overlapped-heading";
 
@@ -7,18 +8,21 @@ const TESTIMONIALS = [
 			"Bread Cooperative was our Web3 partner on a project funded by the European Commission. They delivered the technical components reliably while patiently breaking down each piece so everyone involved understood what they were using and why. They're as good at explaining the work as they are at doing it.",
 		name: "Alessandro Longo",
 		role: "Curve Labs",
+		photo: "/testimonials/alessandro-longo.jpg",
 	},
 	{
 		quote:
 			"Bread Cooperative is one of my favorite curatorial partners. They're working on fascinating things and know how to share them with a broad audience. Their sessions are always among the busiest and most engaged at any event we've done together.",
 		name: "Beth McCarthy",
 		role: "Web3 Privacy Now",
+		photo: "/testimonials/beth-mccarthy.jpg",
 	},
 	{
 		quote:
 			"Bread Cooperative did the design and frontend for our Kohaku Extension, a reference implementation for private-by-default Ethereum wallets. They brought a fresh, untraditional approach to wallet design and the Web3 frontend expertise to pull it off, all while staying true to Ethereum's values. They helped make our vision real.",
 		name: "Kassandra.eth",
 		role: "Ethereum Foundation",
+		photo: "/testimonials/kassandra.jpg",
 	},
 ];
 
@@ -42,11 +46,20 @@ const Testimonials = () => {
 								&ldquo;{testimonial.quote}&rdquo;
 							</Body>
 						</blockquote>
-						<figcaption>
-							<Body bold className="text-surface-ink">
-								{testimonial.name}
-							</Body>
-							<Body className="text-surface-grey-2">{testimonial.role}</Body>
+						<figcaption className="flex items-center gap-4">
+							<Image
+								src={testimonial.photo}
+								alt={testimonial.name}
+								width={48}
+								height={48}
+								className="h-12 w-12 shrink-0 rounded-full object-cover"
+							/>
+							<div>
+								<Body bold className="text-surface-ink">
+									{testimonial.name}
+								</Body>
+								<Body className="text-surface-grey-2">{testimonial.role}</Body>
+							</div>
 						</figcaption>
 					</figure>
 				))}

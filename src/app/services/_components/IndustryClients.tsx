@@ -43,10 +43,6 @@ const CLIENT_LOGOS = [
 		name: "Funding the Commons",
 		src: "/clients/funding-the-commons.png",
 	},
-	{
-		name: "The Movements Trust",
-		src: "/clients/movements-trust.png",
-	},
 ];
 
 const IndustryClients = () => {
