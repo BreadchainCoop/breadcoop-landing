@@ -10,21 +10,21 @@
         "description": "Bread Cooperative is a worker collective building solidarity-focused financial tools. We believe technology should serve as a means of empowerment, not fear and control, and we're working to show what a worker-owned future can look like. Our tools include the Solidarity Fund (community funding for causes members believe in), Stacks (collective savings goals), and Safety Net (mutual-aid emergency funds, coming soon), all powered by $BREAD, a 1:1 USD-pegged token for mutual aid.",
         "webpageUrl": {
             "url": "https://bread.coop",
-            "wellKnown": ""
+            "wellKnown": "https://bread.coop/.well-known/funding-manifest-urls"
         }
     },
     "projects": [
         {
             "guid": "solidarity-fund",
             "name": "Solidarity Fund",
-            "description": "A community fund where members deposit $ pegged stablecoins to support projects they believe in through the interest accrued by the fund. They can get their stablecoins back anytime: giving without giving.",
+            "description": "A community fund where members deposit $ pegged stablecoins to support projects they believe in through the interest accrued by the fund. They can get their stablecoins back anytime: giving without giving. Smart contracts: https://github.com/BreadchainCoop/solidarity-fund",
             "webpageUrl": {
                 "url": "https://bread.coop/solidarity-fund",
-                "wellKnown": ""
+                "wellKnown": "https://bread.coop/.well-known/funding-manifest-urls"
             },
             "repositoryUrl": {
-                "url": "https://github.com/BreadchainCoop/solidarity-fund",
-                "wellKnown": ""
+                "url": "https://github.com/BreadchainCoop/crowdstaking-v2",
+                "wellKnown": "https://github.com/BreadchainCoop/crowdstaking-v2/blob/main/.well-known/funding-manifest-urls"
             },
             "licenses": [
                 "spdx:MIT"
@@ -40,14 +40,14 @@
         {
             "guid": "stacks",
             "name": "Stacks",
-            "description": "A tool for saving money together toward shared financial goals.",
+            "description": "A tool for saving money together toward shared financial goals. Smart contracts: https://github.com/BreadchainCoop/saving-circles",
             "webpageUrl": {
                 "url": "https://bread.coop/stacks",
-                "wellKnown": ""
+                "wellKnown": "https://bread.coop/.well-known/funding-manifest-urls"
             },
             "repositoryUrl": {
                 "url": "https://github.com/BreadchainCoop/app-stacks",
-                "wellKnown": ""
+                "wellKnown": "https://github.com/BreadchainCoop/app-stacks/blob/main/.well-known/funding-manifest-urls"
             },
             "licenses": [
                 "spdx:MIT"
