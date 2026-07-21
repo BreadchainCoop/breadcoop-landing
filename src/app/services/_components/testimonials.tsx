@@ -2,7 +2,7 @@ import { Body } from "@breadcoop/ui";
 import OverlappedHeading from "@/components/overlapped-heading";
 import Section from "./section";
 
-const TESTIMONIALS = [
+export const TESTIMONIALS = [
 	{
 		quote:
 			"Bread Cooperative was our Web3 partner on a project funded by the European Commission. They delivered the technical components reliably while patiently breaking down each piece so everyone involved understood what they were using and why. They're as good at explaining the work as they are at doing it.",
