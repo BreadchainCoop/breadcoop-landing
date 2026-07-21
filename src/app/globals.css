@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "@breadcoop/ui/theme";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --breakpoint-tablet: 52.125rem;
+}
+
+@layer base {
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+}
+
+@layer components {
+  .lifted-button-container {
+    @apply [&>*]:w-full w-full;
+  }
+
+  .lifted-button-container button {
+    @apply w-full;
+  }
+
+  .page-layout {
+    @apply w-full max-w-[71.0625rem] px-4 mx-auto;
+  }
+
+  .stack-page-section {
+    @apply py-12 xl:py-20;
+  }
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

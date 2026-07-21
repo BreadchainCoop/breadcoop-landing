@@ -1,0 +1,15 @@
+packages:
+    - "."
+
+# pnpm v11: explicit per-package build script approval
+allowBuilds:
+    "@tailwindcss/oxide": true
+    core-js-pure: true
+    esbuild: true
+    sharp: true
+    unrs-resolver: true
+
+blockExoticSubdeps: true
+minimumReleaseAge: 864000 # 10 days
+strictDepBuilds: true
+trustPolicy: no-downgrade
