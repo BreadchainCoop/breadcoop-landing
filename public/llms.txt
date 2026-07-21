@@ -1,0 +1,25 @@
+# Bread Cooperative
+
+> A worker-owned software development cooperative building tools for financial solidarity. We build smart contracts and onchain systems, stablecoin and treasury systems, full-stack dApps and mobile apps, AI agents, and UX/UI — and we run the $BREAD engine and Solidarity Fund.
+
+## Pages
+
+- [Home](https://bread.coop/): Bread Cooperative — financial tools today, solidarity forever.
+- [Services](https://bread.coop/services): What we build for clients, industry clients, and testimonials.
+- [Solidarity Fund](https://bread.coop/solidarity-fund): Bake $BREAD, generate yield, and vote to direct it to member projects.
+- [Stacks](https://bread.coop/stacks): Onchain savings circles (ROSCAs) for trusted groups.
+
+## Docs & apps
+
+- [Documentation](https://docs.bread.coop): Manifesto, $BREAD token, voting power, and member-project guides.
+- [Solidarity Fund app](https://fund.bread.coop): The live Solidarity Fund application.
+- [Stacks app](https://stacks.bread.coop): The live Stacks application.
+- [Analytics dashboard](https://dune.com/bread_cooperative/solidarity): Onchain metrics for the Solidarity Fund.
+
+## Community
+
+- [GitHub](https://github.com/BreadchainCoop)
+- [X / Twitter](https://x.com/breadcoop)
+- [Farcaster](https://farcaster.xyz/~/channel/cryptoleft)
+- [Discord](https://discord.com/invite/zmNqsHRHDa)
+- [Newsletter](https://paragraph.com/@breadcoop)

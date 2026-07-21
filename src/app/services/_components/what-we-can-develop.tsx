@@ -13,7 +13,7 @@ const CHIP_COLORS: Record<ChipColor, string> = {
 	blue: "border-primary-blue text-primary-blue",
 };
 
-const SERVICES = [
+export const SERVICES = [
 	{
 		chip: "Solidity · EVM",
 		chipColor: "orange" as ChipColor,
