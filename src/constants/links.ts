@@ -7,7 +7,7 @@ export const LINKS = {
 	docsBreadToken: "https://docs.bread.coop/about/bread-token",
 	docsManifesto: "https://docs.bread.coop/manifesto",
 	docsHowToBecomeAMemberProject:
-		"https://docs.bread.coop/become-a-member-project",
+		"https://docs.bread.coop/organization/operational-annex/#eligibility",
 	docsVotingPower: "https://docs.bread.coop/voting-power",
 	farcaster: "https://farcaster.xyz/~/channel/cryptoleft",
 	giveth: "https://giveth.io/project/breadchain-cooperative",
@@ -16,7 +16,7 @@ export const LINKS = {
 	newsletter: "http://paragraph.com/@breadcoop",
 	openCollective: "https://opencollective.com/bread-cooperative",
 	postCapitalistIdea: "https://form.typeform.com/to/opwqWG8j",
-	projectApplicationForm: "https://forms.gle/DeTETFxCxZbKRCzS7",
+	projectApplicationForm: "https://docs.bread.coop/organization/operational-annex/#member-projects",
 	services: "/services",
 	servicesForm: "https://form.typeform.com/to/b4X4t0yp",
 	solidarityFund: "https://fund.bread.coop",
