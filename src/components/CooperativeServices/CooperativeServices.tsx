@@ -80,11 +80,7 @@ export function CooperativeServices() {
                 </Body>
               </div>
               <div className="mt-auto">
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={LINKS.sourdoughSystems}
-                >
+                <Link href={LINKS.services}>
                   <LiftedButton
                     preset="primary"
                     width="full"
