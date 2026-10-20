@@ -5,9 +5,9 @@ import CTA from "./cta";
 const DELIVERY_COLUMNS = [
 	{
 		title: "Engagements from $10,000/month",
-		subtitle: "One flat price",
+		subtitle: "Scoped to your project",
 		description:
-			"No hourly billing, no surprises. One flat monthly price gets you the whole team: engineers, designers, and strategists, building for you.",
+			"No hourly billing, no surprises. Every engagement is scoped to what you need, with the whole team behind it: engineers, designers, and strategists, building for you.",
 	},
 	{
 		title: "Ongoing, month to month",
@@ -38,13 +38,13 @@ const HowWeDeliver = () => {
 			<div className="relative z-10 mx-auto max-w-7xl px-4 py-12 xl:px-16 xl:py-20">
 				<div className="grid gap-10 tablet:grid-cols-2 tablet:items-start">
 					{/* Team photo, desaturated like the design */}
-					<div className="relative bg-surface-grey-2 tablet:-mt-32 tablet:min-h-[25rem]">
+					<div className="relative bg-surface-grey-2">
 						<Image
 							src="/services-team.png"
 							alt="The Bread Cooperative team"
-							width={694}
-							height={489}
-							className="h-full w-full object-cover"
+							width={1024}
+							height={513}
+							className="h-auto w-full"
 						/>
 						<div className="absolute inset-0 bg-paper-0 mix-blend-color" />
 					</div>
@@ -53,8 +53,8 @@ const HowWeDeliver = () => {
 							How we work
 						</Heading2>
 						<Body className="text-paper-main tablet:max-w-[31.625rem]">
-							One flat price, one dedicated team. The whole
-							cooperative builds for you. We design, develop, and
+							One dedicated team. The whole cooperative builds
+							for you. We design, develop, and
 							deliver, working in the open from first call to
 							launch.
 						</Body>
