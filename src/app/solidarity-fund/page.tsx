@@ -9,6 +9,7 @@ import { ArrowUpRightIcon, UserPlusIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
 import { LINKS } from "@/constants/links";
+import { HowItWorksVideo } from "@/components/how-it-works-video";
 import { useTotalBread } from "@/hooks/use-total-bread";
 import { useBreadTvl } from "@/hooks/use-bread-tvl";
 import { formatSupply } from "@/util/formatter";
@@ -270,6 +271,12 @@ export default function SolidarityFund() {
                         <span>Visit Solidarity Fund</span>
                       </LiftedButton>
                     </Link>
+                    <HowItWorksVideo
+                      video="solidarity-fund"
+                      title="How the Solidarity Fund works"
+                      color="var(--color-primary-orange)"
+                      className="mt-6"
+                    />
                   </div>
 
                   {/* Right column - Image (2/3) */}
