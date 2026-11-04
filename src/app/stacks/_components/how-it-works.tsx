@@ -1,5 +1,6 @@
 import React from "react";
 import OverlappedHeading from "@/components/overlapped-heading";
+import StackVideos from "./stack-videos";
 
 const HowItWorks = () => {
 	return (
@@ -26,6 +27,7 @@ const HowItWorks = () => {
 					<img src="/how-it-works.svg" alt="Hero illustration" />
 				</picture>
 			</div>
+			<StackVideos />
 		</section>
 	);
 };
